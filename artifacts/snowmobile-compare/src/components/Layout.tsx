@@ -13,8 +13,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <nav className="header-nav">
             <Link href="/">Home</Link>
             <Link href="/guides">Guides</Link>
+            <Link href="/faq">FAQ</Link>
             <Link href="/contact">Contact</Link>
-            <Link href="/privacy">Privacy</Link>
           </nav>
         </div>
       </header>
@@ -26,6 +26,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <p style={{ marginTop: "6px" }}>
           © 2026 SledSpec.com — Made by a snowmobile enthusiast &nbsp;·&nbsp;{" "}
           <Link href="/privacy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</Link>
+          &nbsp;·&nbsp;
+          <Link href="/terms" style={{ color: "inherit", textDecoration: "underline" }}>Terms of Use</Link>
+          &nbsp;·&nbsp;
+          <Link href="/faq" style={{ color: "inherit", textDecoration: "underline" }}>FAQ</Link>
           &nbsp;·&nbsp;
           <Link href="/contact" style={{ color: "inherit", textDecoration: "underline" }}>Contact</Link>
         </p>
