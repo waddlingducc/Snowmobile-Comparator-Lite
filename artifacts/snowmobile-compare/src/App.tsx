@@ -88,7 +88,7 @@ export default function App() {
   const maxHp = Math.max(...snowmobiles.map(s => s.horsepower));
 
   return (
-    <div>
+    <div id="top">
       <header className="site-header">
         <div className="header-inner">
           <div className="header-title">
@@ -96,9 +96,9 @@ export default function App() {
             <p>23 models from {totalBrands} major manufacturers — specs, pricing, and side-by-side comparisons</p>
           </div>
           <nav className="header-nav">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#top">Home</a>
+            <a href="#about">About</a>
+            <a href="mailto:info@sledspec.com">Contact</a>
           </nav>
         </div>
       </header>
@@ -387,6 +387,19 @@ export default function App() {
           <span>Lightest: <strong>Polaris PRO RMK 850 — 420 lbs</strong></span>
           <span>Most Affordable: <strong>Yamaha Transporter Lite — $10,400</strong></span>
           <span>Most Expensive: <strong>Yamaha Sidewinder SRX LE — $21,200</strong></span>
+        </div>
+
+        <div id="about" className="about-section">
+          <h3>About SledSpec.com</h3>
+          <p>
+            SledSpec is a free snowmobile comparison tool built by a rider, for riders. We put together specs,
+            pricing, and side-by-side comparisons so you can cut through the manufacturer noise and figure out
+            which sled actually fits your riding style and budget. All specs come from manufacturer websites
+            and dealer sheets — always double-check with your local dealer before buying.
+          </p>
+          <p>
+            Have a correction or want a model added? Email us at <a href="mailto:info@sledspec.com">info@sledspec.com</a>.
+          </p>
         </div>
 
         <footer className="footer">
