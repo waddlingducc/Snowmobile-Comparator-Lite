@@ -4,6 +4,7 @@ export interface Guide {
   summary: string;
   readTime: string;
   sections: { heading: string; body: string }[];
+  sources?: { label: string; url: string }[];
 }
 
 export const guides: Guide[] = [
@@ -34,6 +35,12 @@ export const guides: Guide[] = [
         body: "All four major brands — Ski-Doo, Polaris, Arctic Cat, and Yamaha — make quality sleds. The bigger factor is your local dealer network. A great sled with a poor or distant dealer is a headache when you need parts, warranty work, or emergency service mid-season. Visit your local dealers before committing to a brand. The relationship matters more than people think.",
       },
     ],
+    sources: [
+      { label: "Ski-Doo 2026 Lineup", url: "https://www.ski-doo.com" },
+      { label: "Polaris Snowmobiles", url: "https://www.polaris.com/en-us/snowmobiles/" },
+      { label: "Arctic Cat Snowmobiles", url: "https://www.arctic-cat.com/snowmobiles" },
+      { label: "Yamaha Motor Snowmobiles", url: "https://www.yamahamotorsports.com/snowmobile" },
+    ],
   },
   {
     id: "trail-vs-mountain",
@@ -57,6 +64,12 @@ export const guides: Guide[] = [
         heading: "Crossover: The Compromise",
         body: "If you ride both groomed trails and occasional off-trail or backcountry terrain, a crossover sled is worth serious consideration. Models like the Ski-Doo Backcountry X-RS, Polaris Switchback Assault 850, and Arctic Cat RIOT 8500 run mid-length tracks (137\"–154\") with moderate lug depth. They're not as capable as a dedicated mountain sled in deep powder, and not as fast as a dedicated trail sled on hardpack — but they're genuinely competent in both environments and are often the most versatile choice for riders who don't want to own two sleds.",
       },
+    ],
+    sources: [
+      { label: "Ski-Doo MXZ Series", url: "https://www.ski-doo.com/us/en/snowmobiles/sport/mxz.html" },
+      { label: "Polaris Indy Trail Sleds", url: "https://www.polaris.com/en-us/snowmobiles/trail/" },
+      { label: "Polaris RMK Mountain Sleds", url: "https://www.polaris.com/en-us/snowmobiles/mountain/" },
+      { label: "Arctic Cat Mountain Sleds", url: "https://www.arctic-cat.com/snowmobiles/mountain" },
     ],
   },
   {
@@ -86,6 +99,11 @@ export const guides: Guide[] = [
         body: "For mountain and aggressive trail riding where weight matters, modern 2-strokes are hard to beat. For touring, long-distance trail riding, and cold-weather reliability, the 4-stroke advantage in smooth power delivery and fuel efficiency is real. Turbocharged 4-strokes (like the Yamaha Sidewinder or the Ski-Doo 900 ACE Turbo R) can match or exceed 2-stroke power numbers while delivering better low-end torque — but they carry a significant weight and cost penalty.",
       },
     ],
+    sources: [
+      { label: "Ski-Doo Rotax Engine Technology", url: "https://www.ski-doo.com/us/en/innovations/rotax-engines.html" },
+      { label: "Yamaha Sidewinder / Genesis Engine", url: "https://www.yamahamotorsports.com/snowmobile/models/sidewinder-srx-le" },
+      { label: "Arctic Cat C-TEC2 Engine Info", url: "https://www.arctic-cat.com/snowmobiles" },
+    ],
   },
   {
     id: "reading-specs",
@@ -114,6 +132,12 @@ export const guides: Guide[] = [
         body: "Most modern snowmobiles use independent front suspension (IFS) or A-arm style front ends for trail sleds, and ski-style \"A-arm\" or strut setups for mountain sleds. Rear suspensions vary significantly — trail sleds use parallel rail suspensions (like Ski-Doo's rMotion X), mountain sleds increasingly use single-beam designs (like Arctic Cat's Alpha One) that allow more independent ski movement for sidehilling. Premium shocks (FOX, Walker Evans, KYB) offer adjustable compression and rebound. For most riders, factory suspension is adequate, but serious riders often tune or upgrade shocks.",
       },
     ],
+    sources: [
+      { label: "Ski-Doo 2026 Specifications", url: "https://www.ski-doo.com" },
+      { label: "Polaris 2026 Snowmobile Specs", url: "https://www.polaris.com/en-us/snowmobiles/" },
+      { label: "Arctic Cat 2026 Specs", url: "https://www.arctic-cat.com/snowmobiles" },
+      { label: "Yamaha 2026 Snowmobile Specs", url: "https://www.yamahamotorsports.com/snowmobile" },
+    ],
   },
   {
     id: "safety-gear",
@@ -141,6 +165,86 @@ export const guides: Guide[] = [
         heading: "Trail Riding Safety Basics",
         body: "Even on groomed trails, basic safety habits prevent most incidents. Always ride with at least one other person — riding solo in remote areas means no one to help if you get hurt or stuck. Carry a charged phone, a hand warmer, a basic tool kit, tow rope, and enough fuel for unexpected detours. Know the trail system and download offline maps before you head out. Respect trail speed limits and right-of-way rules — trail collisions are the leading cause of serious snowmobile injuries. Ride at a speed where you can stop within your line of sight.",
       },
+    ],
+    sources: [
+      { label: "International Snowmobile Safety Institute", url: "https://www.snowmobile.org/snowmobile-safety.php" },
+      { label: "American Council of Snowmobile Associations", url: "https://www.snowmobilersofmichigan.org/" },
+      { label: "Avalanche.org — Know Before You Go", url: "https://avalanche.org" },
+    ],
+  },
+  {
+    id: "best-beginner-snowmobiles",
+    title: "Best Snowmobiles for Beginners in 2026",
+    summary: "Not every sled is forgiving when you're learning. These models stand out for manageable power, approachable handling, and fair pricing for first-time buyers.",
+    readTime: "5 min read",
+    sections: [
+      {
+        heading: "What Makes a Good Beginner Sled",
+        body: "A beginner snowmobile has three things going for it: manageable engine output, a chassis that doesn't punish mistakes, and a purchase price that doesn't hurt as much if you decide the sport isn't for you. That means staying under about 130 hp, choosing trail or touring categories over mountain or performance, and picking a sled with forgiving suspension tuning. Many experienced riders also recommend starting on a used sled for your first season — the learning curve involves some tip-overs and bumps, and a $7,000 used sled handles those better than a $16,000 new one.",
+      },
+      {
+        heading: "Yamaha Transporter Lite — Best Value Entry Point",
+        body: "The Yamaha Transporter Lite earns the top beginner recommendation for one simple reason: it's the least expensive new snowmobile you can buy from a major manufacturer at $10,400 MSRP. Its 400cc single-cylinder 2-stroke produces 65 hp — enough to be fun without being overwhelming. The utility category means it's stable, forgiving, and designed for controlled conditions. It won't win drag races, but for someone learning the basics of sled handling on groomed trails or open fields, it's nearly impossible to outgrow too fast.",
+      },
+      {
+        heading: "Polaris Indy XC 650 — Best Trail Beginner",
+        body: "If you want a proper trail sled without the intimidating power of an 850cc engine, the Polaris Indy XC 650 threads the needle well. The 650cc Patriot engine produces 135 hp — spirited but not snappy — and the Indy platform is one of the best-handling trail chassis on the market. The 129\" track is short enough for quick, responsive steering. At $14,200 it's not cheap, but Polaris's dealer network is strong and the Indy line has a well-earned reputation for reliability. Many seasoned riders started on an Indy and still own one.",
+      },
+      {
+        heading: "Ski-Doo MXZ Sport 600 — A Trusted Gateway Sled",
+        body: "Ski-Doo's MXZ Sport 600 has served as the entry point into the performance trail category for years. The 600cc Rotax E-TEC engine is reliable, the REV platform chassis handles beautifully, and the sled benefits from decades of continuous refinement. It's lively without being hair-trigger, and the aftermarket parts and service support for Ski-Doo's 600 platform is among the best in the industry. A solid choice for anyone who wants a real performance feel from day one without the full 850cc power spike.",
+      },
+      {
+        heading: "Arctic Cat Pantera 7000 — Best for Touring Beginners",
+        body: "Not every beginner wants a sport sled — some just want to explore trails comfortably with a passenger. The Arctic Cat Pantera 7000 is purpose-built for two-up touring, with a wide padded rear seat, heated grips, a large windshield, and storage. Its Yamaha-sourced 1049cc 4-stroke 3-cylinder engine is smooth and predictable — not exciting, but completely manageable. At $15,500 it's pricier than the Transporter, but for someone whose primary plan is scenic rides with a partner, it's the most comfortable way to start.",
+      },
+      {
+        heading: "Tips Before You Buy",
+        body: "Whatever sled you choose, take a safety course before your first full season. The Snowmobile Safety Institute and most state snowmobile associations offer courses that cover machine handling, trail etiquette, and emergency procedures. Gear up properly — a good helmet and riding suit are not optional. And consider a demo ride or rental on the model you're considering before committing. Most dealers offer demo events in early season. An hour of seat time is worth more than hours of spec research.",
+      },
+    ],
+    sources: [
+      { label: "Yamaha Transporter Lite — Official Page", url: "https://www.yamahamotorsports.com/snowmobile/models/transporter-lite" },
+      { label: "Polaris Indy XC 650 — Official Page", url: "https://www.polaris.com/en-us/snowmobiles/trail/indy-xc-650/" },
+      { label: "Ski-Doo MXZ Sport 600 — Official Page", url: "https://www.ski-doo.com" },
+      { label: "International Snowmobile Safety Courses", url: "https://www.snowmobile.org/snowmobile-safety.php" },
+    ],
+  },
+  {
+    id: "snowmobile-maintenance",
+    title: "Snowmobile Pre-Season Maintenance: A Complete Checklist",
+    summary: "Nothing ruins a riding season like a preventable breakdown. Here's the full pre-season checklist experienced riders use before the first ride of the year.",
+    readTime: "6 min read",
+    sections: [
+      {
+        heading: "Why Pre-Season Prep Matters",
+        body: "Snowmobiles sit in storage for 6–8 months of the year. Fuel degrades, seals dry out, belts develop set, and small issues that were \"good enough\" at the end of last season become real problems in cold temperatures. A thorough pre-season inspection takes 2–4 hours and can prevent the most common mid-season breakdowns. Think of it as the difference between discovering a cracked track on your garage floor versus 30 miles from the trailhead in a blizzard.",
+      },
+      {
+        heading: "Fuel System and Carb/Injector Check",
+        body: "If you didn't stabilize your fuel before storage, drain the tank and start with fresh fuel. Stale gasoline (especially ethanol-blended fuel) degrades in as little as 30 days and can gum up carburetors and injectors. For carbureted sleds, remove and clean the carbs if the sled sat without stabilizer. For fuel-injected models (Ski-Doo E-TEC, Yamaha FICSM), check fuel filter condition and replace if you're over the manufacturer's interval. Inspect all fuel lines for cracking, hardening, or seeping at connections.",
+      },
+      {
+        heading: "Drive Belt and Clutch Inspection",
+        body: "The drive belt is one of the highest-wear components on a snowmobile and one of the most common causes of trail-side breakdowns. Inspect the belt for cracks, fraying, chunking, or glazing. Measure the belt width — if it's worn below the manufacturer's minimum spec, replace it. While you have the clutch cover off, inspect the primary and secondary clutch sheaves for wear, scoring, and debris. Clean the sheave faces with brake cleaner and a rag — glazed clutch surfaces cause poor engagement and belt slip. Carry a spare belt on every ride.",
+      },
+      {
+        heading: "Track and Suspension",
+        body: "Inspect the track for cracked or broken lugs, missing studs, and tears at the seam. A track failure at speed is dangerous — if you see significant cracking or any internal cord showing, replace it before the season starts. Check track tension and alignment according to your owner's manual. Incorrect tension causes premature track and slide wear. On the suspension, check all wear bars, slides, and idler wheels for wear. Compressed or cracked springs, bent limiter straps, and worn bushings on suspension arms are all common after a full season of riding.",
+      },
+      {
+        heading: "Engine and Fluid Service",
+        body: "For 4-stroke engines: change the engine oil and filter, even if you're not at the mileage interval — oil sitting in an engine over summer absorbs moisture and degrades. Check coolant level and condition; flush and replace if it's been more than two years. For 2-stroke engines: check the oil injection reservoir, inspect the injection pump operation, and check the power valve system (if equipped) for carbon buildup, which is a common cause of power loss. Check spark plugs for fouling, wear, or cracking and replace on schedule.",
+      },
+      {
+        heading: "Electrical and Safety Systems",
+        body: "Test all lights — headlight, taillight, and brake light. A non-functioning brake light on a trail is both unsafe and illegal in most jurisdictions. Check the kill switch function: it should cut the engine immediately when activated. Test the throttle for smooth operation and full return to idle — a sticky throttle is a serious safety hazard. Inspect hand warmer and grip warmer connections if equipped. Charge or replace the battery on electric-start models. Finally, verify that your registration documents and trail pass are current and stored on the sled.",
+      },
+    ],
+    sources: [
+      { label: "Ski-Doo Owner's Manuals & Maintenance", url: "https://www.ski-doo.com/us/en/owners.html" },
+      { label: "Polaris Snowmobile Owner Resources", url: "https://www.polaris.com/en-us/owner/" },
+      { label: "International Snowmobile Manufacturers Association", url: "https://www.snowmobile.org" },
     ],
   },
 ];

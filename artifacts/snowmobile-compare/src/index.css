@@ -1074,3 +1074,68 @@ tbody td {
 .faq-footer-cta a { color: #1d4ed8; font-weight: 600; text-decoration: none; }
 .faq-footer-cta a:hover { text-decoration: underline; }
 .faq-footer-cta p { margin: 0; }
+
+/* ---------- COOKIE CONSENT BANNER ---------- */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1e293b;
+  color: #cbd5e1;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  z-index: 9999;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.25);
+}
+.cookie-banner p {
+  margin: 0;
+  line-height: 1.5;
+}
+.cookie-banner__btn {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.cookie-banner__btn:hover { background: #7dd3fc; }
+
+/* ---------- GUIDE SOURCES ---------- */
+.guide-sources {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+.guide-sources__heading {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.guide-sources__list {
+  margin: 0;
+  padding-left: 18px;
+}
+.guide-sources__list li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.guide-sources__link {
+  color: #2563eb;
+  text-decoration: none;
+}
+.guide-sources__link:hover { text-decoration: underline; }

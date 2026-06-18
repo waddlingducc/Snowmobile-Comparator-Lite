@@ -41,7 +41,7 @@ export default function GuideDetailPage() {
         <div className="guide-detail">
           <div className="guide-detail__header">
             <h2 className="guide-detail__title">{guide.title}</h2>
-            <p className="guide-detail__meta">{guide.readTime} &nbsp;·&nbsp; Updated 2026</p>
+            <p className="guide-detail__meta">{guide.readTime} &nbsp;·&nbsp; Updated June 2026</p>
             <p className="guide-detail__summary">{guide.summary}</p>
           </div>
 
@@ -53,6 +53,26 @@ export default function GuideDetailPage() {
               </div>
             ))}
           </div>
+
+          {guide.sources && guide.sources.length > 0 && (
+            <div className="guide-sources">
+              <h4 className="guide-sources__heading">Sources & Further Reading</h4>
+              <ul className="guide-sources__list">
+                {guide.sources.map((src, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={src.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="guide-sources__link"
+                    >
+                      {src.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="guide-detail__nav">
             {prev ? (

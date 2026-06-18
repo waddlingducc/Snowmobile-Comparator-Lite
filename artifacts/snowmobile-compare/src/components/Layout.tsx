@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import CookieConsent from "./CookieConsent";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
           <nav className="header-nav">
             <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
             <Link href="/guides">Guides</Link>
             <Link href="/faq">FAQ</Link>
             <Link href="/contact">Contact</Link>
@@ -24,7 +26,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="footer">
         <p>Prices are approximate MSRP and may vary by region and dealer. Always verify specs before purchasing.</p>
         <p style={{ marginTop: "6px" }}>
-          © 2026 SledSpec.com — Made by a snowmobile enthusiast &nbsp;·&nbsp;{" "}
+          © 2026 SledSpec.com — Independent snowmobile comparison tool &nbsp;·&nbsp;{" "}
+          <Link href="/about" style={{ color: "inherit", textDecoration: "underline" }}>About</Link>
+          &nbsp;·&nbsp;
           <Link href="/privacy" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</Link>
           &nbsp;·&nbsp;
           <Link href="/terms" style={{ color: "inherit", textDecoration: "underline" }}>Terms of Use</Link>
@@ -34,6 +38,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/contact" style={{ color: "inherit", textDecoration: "underline" }}>Contact</Link>
         </p>
       </footer>
+
+      <CookieConsent />
     </div>
   );
 }
