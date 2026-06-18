@@ -1,8 +1,13 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "C5y8W4x8RviyjJjrfq6kj"
 uri = "file://artifacts/snowmobile-compare/public/favicon-sled.png"
 type = "image"
 title = "snowmobile favicon icon"
+
+[[outputs]]
+id = "08vAiy2a5-mRRhTO-trPa"
+uri = "file://snowmobile-compare-site.tar.gz"
+type = "unspecified"
+title = "Snowmobile Comparison Site Files"
