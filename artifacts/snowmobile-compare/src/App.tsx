@@ -382,7 +382,7 @@ export default function App() {
         </div>
 
         <div className="quick-stats">
-          <span>📊 Quick Stats:</span>
+          <span>Quick Stats:</span>
           <span>Most Powerful: <strong>Yamaha Sidewinder SRX LE — 200 hp</strong></span>
           <span>Lightest: <strong>Polaris PRO RMK 850 — 420 lbs</strong></span>
           <span>Most Affordable: <strong>Yamaha Transporter Lite — $10,400</strong></span>
@@ -391,7 +391,7 @@ export default function App() {
 
         <footer className="footer">
           <p>Prices are approximate MSRP and may vary by region and dealer. Always verify specs before purchasing.</p>
-          <p style={{ marginTop: "4px" }}>© 2025 SnowmobileCompare.net — Made by a snowmobile enthusiast</p>
+          <p style={{ marginTop: "4px" }}>© 2026 SledSpec.com — Made by a snowmobile enthusiast</p>
         </footer>
       </div>
     </div>
