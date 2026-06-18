@@ -9,7 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/" style={{ textDecoration: "none" }}>
               <h1><span className="domain-tld">SledSpec</span><span className="domain-dot">.com</span></h1>
             </Link>
-            <p>23 models from 4 major manufacturers — specs, pricing, and side-by-side comparisons</p>
           </div>
           <nav className="header-nav">
             <Link href="/">Home</Link>
