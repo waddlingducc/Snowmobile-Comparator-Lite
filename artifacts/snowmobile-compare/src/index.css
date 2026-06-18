@@ -443,6 +443,147 @@ tbody td {
 }
 
 /* ---------- FOOTER ---------- */
+/* ---------- GUIDES ---------- */
+.guides-section {
+  margin-top: 24px;
+}
+
+.guides-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.guides-subheading {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 14px;
+}
+
+.guides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guide-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.guide-card--open {
+  border-color: #93c5fd;
+}
+
+.guide-card__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.guide-card__header:hover {
+  background: #f8fafc;
+}
+
+.guide-card--open .guide-card__header {
+  background: #eff6ff;
+  border-bottom: 1px solid #bfdbfe;
+}
+
+.guide-card__meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.guide-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.guide-card__summary {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.guide-card__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.guide-card__read-time {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.guide-card__chevron {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.guide-card__body {
+  padding: 4px 0 8px;
+}
+
+.guide-section {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.guide-section:last-child {
+  border-bottom: none;
+}
+
+.guide-section__heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  gap: 12px;
+}
+
+.guide-section__heading:hover {
+  background: #f8fafc;
+  color: #1e3a8a;
+}
+
+.guide-section__chevron {
+  font-size: 16px;
+  font-weight: 400;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.guide-section__body {
+  padding: 4px 16px 12px;
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ---------- ABOUT ---------- */
 .about-section {
   background: white;
   border: 1px solid #e2e8f0;

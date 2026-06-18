@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { snowmobiles, Snowmobile, Category } from "./data/snowmobiles";
+import { guides } from "./data/guides";
 import "./index.css";
 
 type SortKey = keyof Pick<Snowmobile, "brand" | "model" | "horsepower" | "weight" | "price" | "displacement" | "trackLength">;
@@ -28,6 +29,8 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [compareIds, setCompareIds] = useState<number[]>([]);
   const [showCompare, setShowCompare] = useState(false);
+  const [openGuideId, setOpenGuideId] = useState<string | null>(null);
+  const [openSectionIdx, setOpenSectionIdx] = useState<number | null>(null);
 
   const handleSort = (key: SortKey) => {
     if (sortKey === key) {
@@ -97,6 +100,7 @@ export default function App() {
           </div>
           <nav className="header-nav">
             <a href="#top">Home</a>
+            <a href="#guides">Guides</a>
             <a href="#about">About</a>
             <a href="mailto:info@sledspec.com">Contact</a>
           </nav>
@@ -387,6 +391,57 @@ export default function App() {
           <span>Lightest: <strong>Polaris PRO RMK 850 — 420 lbs</strong></span>
           <span>Most Affordable: <strong>Yamaha Transporter Lite — $10,400</strong></span>
           <span>Most Expensive: <strong>Yamaha Sidewinder SRX LE — $21,200</strong></span>
+        </div>
+
+        <div id="guides" className="guides-section">
+          <h2 className="guides-heading">Snowmobile Guides</h2>
+          <p className="guides-subheading">In-depth articles to help you ride smarter, buy better, and stay safe.</p>
+          <div className="guides-list">
+            {guides.map(guide => {
+              const isOpen = openGuideId === guide.id;
+              return (
+                <div key={guide.id} className={`guide-card ${isOpen ? "guide-card--open" : ""}`}>
+                  <button
+                    className="guide-card__header"
+                    onClick={() => {
+                      setOpenGuideId(isOpen ? null : guide.id);
+                      setOpenSectionIdx(null);
+                    }}
+                  >
+                    <div className="guide-card__meta">
+                      <span className="guide-card__title">{guide.title}</span>
+                      <span className="guide-card__summary">{guide.summary}</span>
+                    </div>
+                    <div className="guide-card__right">
+                      <span className="guide-card__read-time">{guide.readTime}</span>
+                      <span className="guide-card__chevron">{isOpen ? "▲" : "▼"}</span>
+                    </div>
+                  </button>
+                  {isOpen && (
+                    <div className="guide-card__body">
+                      {guide.sections.map((section, idx) => {
+                        const secOpen = openSectionIdx === idx;
+                        return (
+                          <div key={idx} className="guide-section">
+                            <button
+                              className="guide-section__heading"
+                              onClick={() => setOpenSectionIdx(secOpen ? null : idx)}
+                            >
+                              {section.heading}
+                              <span className="guide-section__chevron">{secOpen ? "−" : "+"}</span>
+                            </button>
+                            {secOpen && (
+                              <p className="guide-section__body">{section.body}</p>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div id="about" className="about-section">
