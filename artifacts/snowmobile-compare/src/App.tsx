@@ -257,9 +257,18 @@ export default function App() {
               <span className={`badge ${categoryBadge[selectedSled.category]}`}>{selectedSled.category}</span>
               <button className="close-btn" onClick={() => setSelectedId(null)}>✕ Close</button>
             </div>
-            <p style={{ margin: "0 0 12px", fontSize: "13px", color: "#475569" }}>
-              <strong>Engine:</strong> {selectedSled.engine}
-            </p>
+            <div style={{ display: "flex", gap: "16px", marginBottom: "14px", alignItems: "flex-start" }}>
+              {selectedSled.image && (
+                <img
+                  src={selectedSled.image}
+                  alt={`${selectedSled.brand} ${selectedSled.model}`}
+                  style={{ height: "160px", width: "260px", objectFit: "contain", flexShrink: 0, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "3px", padding: "4px" }}
+                />
+              )}
+              <p style={{ margin: "0", fontSize: "13px", color: "#475569", alignSelf: "center" }}>
+                <strong>Engine:</strong> {selectedSled.engine}
+              </p>
+            </div>
             <div className="detail-grid">
               <div className="detail-item">
                 <span className="label">Displacement</span>
@@ -305,6 +314,7 @@ export default function App() {
             <thead>
               <tr>
                 <th className="checkbox-col">✓</th>
+                <th style={{ width: "80px" }}>Photo</th>
                 <th onClick={() => handleSort("brand")}>Brand {arrow("brand")}</th>
                 <th onClick={() => handleSort("model")}>Model {arrow("model")}</th>
                 <th>Category</th>
@@ -319,7 +329,7 @@ export default function App() {
             <tbody>
               {filtered.length === 0 && (
                 <tr>
-                  <td colSpan={10} style={{ textAlign: "center", padding: "30px", color: "#94a3b8" }}>
+                  <td colSpan={11} style={{ textAlign: "center", padding: "30px", color: "#94a3b8" }}>
                     No snowmobiles match your filters.
                   </td>
                 </tr>
@@ -338,6 +348,19 @@ export default function App() {
                       onChange={() => {}}
                       style={{ cursor: "pointer" }}
                     />
+                  </td>
+                  <td style={{ padding: "4px 8px" }}>
+                    {sled.image ? (
+                      <img
+                        src={sled.image}
+                        alt={sled.model}
+                        style={{ width: "76px", height: "48px", objectFit: "contain", display: "block", background: "#f8fafc" }}
+                      />
+                    ) : (
+                      <div style={{ width: "76px", height: "48px", background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", color: "#94a3b8" }}>
+                        No photo
+                      </div>
+                    )}
                   </td>
                   <td><span className={brandClass[sled.brand]}>{sled.brand}</span></td>
                   <td>

@@ -1,3 +1,24 @@
+import img23 from "@assets/2000000021_1781809560373.jpg";
+import img22 from "@assets/images_1781809571644.jpg";
+import img16 from "@assets/2000000003_1781809584733.jpg";
+import img12 from "@assets/2000000001_1781809594011.jpg";
+import img17 from "@assets/2000000001_1781809604140.jpg";
+import img18 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-2-1024x640_1781809629992.jpg";
+import img21 from "@assets/2000000001_1781809665231.jpg";
+import img8  from "@assets/2000000002_1781809686693.jpg";
+import img7  from "@assets/2000000001_1781809702238.jpg";
+import img10 from "@assets/2000000001_1781809714846.jpg";
+import img15 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-2-1024x640_1781809723118.jpg";
+import img13 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-11-1024x640_1781809735377.jpg";
+import img11 from "@assets/2000000013_1781809744512.jpg";
+import img3  from "@assets/SKI-MY25-MXZ-X-RS-850-ETEC-TurboR-Neo-Yellow-000UCSC00-Studio_1781809754493.avif";
+import img14 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-2-1024x640_1781809768230.jpg";
+import img5  from "@assets/SKI-MY25-SUM-Edge-850-ETEC-Catalyst-Grey-000CHSB00-Studio-RSI_1781809781593.avif";
+import img6  from "@assets/SKI-MY25-BCK-X-RS-850-ETEC-TurboR-Flare-Yellow-000UZST00-Stud_1781809803673.avif";
+import img2  from "@assets/SKI-MY25-MXZ-X-RS-850-ETEC-TurboR-Neo-Yellow-000UCSC00-Studio_1781809815033.avif";
+import img4  from "@assets/SKI-MY25-SUM-Expert-850-ETEC-Dusty-Navy-Satin-000TGSA00-Studi_1781809829759.avif";
+import img9  from "@assets/2000000001_1781809842723.jpg";
+
 export type Category = "Trail" | "Mountain" | "Touring" | "Crossover" | "Utility";
 
 export interface Snowmobile {
@@ -13,6 +34,7 @@ export interface Snowmobile {
   category: Category;
   trackLength: number;
   features: string[];
+  image?: string;
 }
 
 export const snowmobiles: Snowmobile[] = [
@@ -43,6 +65,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 137,
     features: ["Smart-Shox semi-active suspension", "RAS X front suspension", "Turbocharged 4-stroke"],
+    image: img2,
   },
   {
     id: 3,
@@ -57,6 +80,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["Competition-grade shocks", "rMotion X rear suspension", "Race-proven chassis"],
+    image: img3,
   },
   {
     id: 4,
@@ -71,6 +95,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 154,
     features: ["KYB Pro shocks", "High-strength chassis", "Powder-specific track"],
+    image: img4,
   },
   {
     id: 5,
@@ -85,6 +110,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 154,
     features: ["cMotion rear suspension", "146\" or 154\" track options", "All-terrain versatility"],
+    image: img5,
   },
   {
     id: 6,
@@ -99,6 +125,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Touring",
     trackLength: 154,
     features: ["Air-controlled suspension", "Removable passenger seat", "Utility winch", "Heated seats"],
+    image: img6,
   },
   {
     id: 7,
@@ -113,6 +140,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 155,
     features: ["Matryx platform", "Slash short tunnel", "Walker Evans Velocity shocks"],
+    image: img7,
   },
   {
     id: 8,
@@ -127,6 +155,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 163,
     features: ["QuickDrive2 belt drive", "3\" Series 8 track", "Ultralight construction"],
+    image: img8,
   },
   {
     id: 9,
@@ -141,6 +170,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 137,
     features: ["7\" Ride Command display", "Smart CRM rear suspension", "Semi-active shocks"],
+    image: img9,
   },
   {
     id: 10,
@@ -155,6 +185,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 146,
     features: ["IGX 146 rear suspension", "Matryx ergonomics", "Aggressive styling"],
+    image: img10,
   },
   {
     id: 11,
@@ -169,6 +200,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Utility",
     trackLength: 155,
     features: ["Integrated winch", "20\" wide track", "Cargo rack", "Utility footrest"],
+    image: img11,
   },
   {
     id: 12,
@@ -183,6 +215,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["FOX QS3 shocks", "Matryx chassis", "Great value trail sled"],
+    image: img12,
   },
   {
     id: 13,
@@ -197,6 +230,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 154,
     features: ["Catalyst platform", "Alpha One single-beam rear suspension", "Centralized mass"],
+    image: img13,
   },
   {
     id: 14,
@@ -211,6 +245,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["FOX 1.5 ZERO QS3R shocks", "Catalyst platform", "Race-ready setup"],
+    image: img14,
   },
   {
     id: 15,
@@ -225,6 +260,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 146,
     features: ["ARS II front suspension", "CROSS-ACTION rear suspension", "Versatile terrain sled"],
+    image: img15,
   },
   {
     id: 16,
@@ -239,6 +275,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 137,
     features: ["Slide-Action rear suspension", "ADAPT CVT system", "Budget-friendly 600cc"],
+    image: img16,
   },
   {
     id: 17,
@@ -253,6 +290,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 154,
     features: ["Alpha One single-beam suspension", "Mountain-specific ergonomics", "Lightweight 600cc"],
+    image: img17,
   },
   {
     id: 18,
@@ -267,6 +305,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Touring",
     trackLength: 154,
     features: ["2-up touring seating", "Heated seats and grips", "Yamaha reliability"],
+    image: img18,
   },
   {
     id: 19,
@@ -309,6 +348,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Touring",
     trackLength: 146,
     features: ["FOX QS3 shocks", "Long-distance touring comfort", "Reliable 4-stroke"],
+    image: img21,
   },
   {
     id: 22,
@@ -323,6 +363,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["Lightweight trail agility", "2-stroke simplicity", "Entry-level performance"],
+    image: img22,
   },
   {
     id: 23,
@@ -337,5 +378,6 @@ export const snowmobiles: Snowmobile[] = [
     category: "Utility",
     trackLength: 146,
     features: ["CVTech drive system", "Articulated rail suspension", "Workhorse utility sled"],
+    image: img23,
   },
 ];
