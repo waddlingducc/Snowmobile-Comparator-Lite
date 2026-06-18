@@ -39,8 +39,8 @@ export default function App() {
   };
 
   const arrow = (key: SortKey) => {
-    if (sortKey !== key) return "";
-    return sortDir === "asc" ? "▲" : "▼";
+    if (sortKey !== key) return <span className="sort-arrow">↕</span>;
+    return <span className="sort-arrow">{sortDir === "asc" ? "▲" : "▼"}</span>;
   };
 
   const filtered = useMemo(() => {
@@ -80,81 +80,105 @@ export default function App() {
   };
 
   const compareSleds = snowmobiles.filter(s => compareIds.includes(s.id));
-
   const brands = ["All", ...Array.from(new Set(snowmobiles.map(s => s.brand)))];
   const categories: (Category | "All")[] = ["All", "Trail", "Mountain", "Crossover", "Touring", "Utility"];
 
+  const totalBrands = new Set(snowmobiles.map(s => s.brand)).size;
+  const avgPrice = Math.round(snowmobiles.reduce((a, b) => a + b.price, 0) / snowmobiles.length);
+  const maxHp = Math.max(...snowmobiles.map(s => s.horsepower));
+
   return (
     <div>
-      <div className="top-bar">
-        ❄️ SnowmobileCompare.net &nbsp;|&nbsp;
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <span style={{ float: "right", fontSize: "11px" }}>Updated: Jan 2025 | All prices approx. MSRP</span>
-      </div>
+      <header className="site-header">
+        <div className="header-inner">
+          <div className="header-logo">🏔️</div>
+          <div className="header-title">
+            <h1>2025 Snowmobile Comparison</h1>
+            <p>23 models from {totalBrands} major manufacturers — specs, pricing, and side-by-side comparisons</p>
+          </div>
+          <nav className="header-nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
 
       <div className="container">
-        <h1>❄️ 2025 Snowmobile Comparison Guide ❄️</h1>
-        <p className="subtitle">
-          Compare 23 snowmobiles from Ski-Doo, Polaris, Arctic Cat, and Yamaha. Click a row for details. Check boxes to compare side-by-side.
-        </p>
+        <div className="stats-bar">
+          <div className="stat-card">
+            <span className="stat-value">23</span>
+            <span className="stat-label">Models Listed</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-value">{totalBrands}</span>
+            <span className="stat-label">Manufacturers</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-value">{maxHp} hp</span>
+            <span className="stat-label">Highest Horsepower</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-value">${avgPrice.toLocaleString()}</span>
+            <span className="stat-label">Avg. MSRP</span>
+          </div>
+        </div>
 
         <div className="controls">
           <div>
-            <label>Brand:</label>
+            <label>Brand</label>
             <select value={filterBrand} onChange={e => setFilterBrand(e.target.value)}>
               {brands.map(b => <option key={b}>{b}</option>)}
             </select>
           </div>
           <div>
-            <label>Category:</label>
+            <label>Category</label>
             <select value={filterCategory} onChange={e => setFilterCategory(e.target.value)}>
               {categories.map(c => <option key={c}>{c}</option>)}
             </select>
           </div>
           <div>
-            <label>Search:</label>
+            <label>Search</label>
             <input
               type="search"
               placeholder="model, brand, engine..."
               value={searchText}
               onChange={e => setSearchText(e.target.value)}
-              style={{ width: "170px" }}
+              style={{ width: "180px" }}
             />
           </div>
-          <button onClick={() => { setFilterBrand("All"); setFilterCategory("All"); setSearchText(""); }}>
+          <button className="btn btn-secondary" onClick={() => { setFilterBrand("All"); setFilterCategory("All"); setSearchText(""); }}>
             Reset
           </button>
           {compareIds.length >= 2 && (
-            <button onClick={() => setShowCompare(!showCompare)}>
+            <button className="btn btn-primary" onClick={() => setShowCompare(!showCompare)}>
               {showCompare ? "Hide" : "Compare"} ({compareIds.length})
             </button>
           )}
+          <span style={{ marginLeft: "auto", fontSize: "12px", color: "#94a3b8" }}>
+            Click column headers to sort • Check boxes to compare
+          </span>
         </div>
 
         {compareIds.length > 0 && (
           <div className="compare-bar">
-            <strong>Compare:</strong>
+            <strong>Comparing:</strong>
             {compareIds.map(id => {
               const s = snowmobiles.find(x => x.id === id)!;
               return (
-                <span key={id} style={{ background: "white", padding: "2px 8px", border: "1px solid #ccc" }}>
-                  {s.brand} {s.model}&nbsp;
-                  <span
-                    style={{ cursor: "pointer", color: "red" }}
-                    onClick={() => toggleCompare(id)}
-                  >✕</span>
+                <span key={id} className="compare-tag">
+                  {s.brand} {s.model}
+                  <span className="remove" onClick={() => toggleCompare(id)}>✕</span>
                 </span>
               );
             })}
             {compareIds.length >= 2 && (
-              <button className="compare-btn" onClick={() => setShowCompare(!showCompare)}>
-                {showCompare ? "Hide Comparison" : "Show Comparison Table"}
+              <button className="btn btn-primary" onClick={() => setShowCompare(!showCompare)}>
+                {showCompare ? "Hide Table" : "Compare Side-by-Side"}
               </button>
             )}
-            <button className="compare-btn" style={{ background: "#cc0000" }} onClick={() => { setCompareIds([]); setShowCompare(false); }}>
-              Clear All
+            <button className="btn btn-danger" onClick={() => { setCompareIds([]); setShowCompare(false); }}>
+              Clear
             </button>
           </div>
         )}
@@ -166,7 +190,10 @@ export default function App() {
                 <tr>
                   <th className="row-label">Spec</th>
                   {compareSleds.map(s => (
-                    <th key={s.id}>{s.brand}<br />{s.model}</th>
+                    <th key={s.id}>
+                      <span className={brandClass[s.brand]}>{s.brand}</span><br />
+                      {s.model}
+                    </th>
                   ))}
                 </tr>
               </thead>
@@ -174,10 +201,10 @@ export default function App() {
                 {(
                   [
                     ["Engine", (s: Snowmobile) => s.engine],
-                    ["Displacement (cc)", (s: Snowmobile) => s.displacement + " cc"],
+                    ["Displacement", (s: Snowmobile) => s.displacement + " cc"],
                     ["Horsepower", (s: Snowmobile) => s.horsepower + " hp"],
-                    ["Weight (lbs)", (s: Snowmobile) => s.weight + " lbs"],
-                    ["Track Length", (s: Snowmobile) => s.trackLength + "\""],
+                    ["Weight", (s: Snowmobile) => s.weight + " lbs"],
+                    ["Track Length", (s: Snowmobile) => s.trackLength + '"'],
                     ["Price (MSRP)", (s: Snowmobile) => "$" + s.price.toLocaleString()],
                     ["Category", (s: Snowmobile) => s.category],
                   ] as [string, (s: Snowmobile) => string][]
@@ -186,12 +213,10 @@ export default function App() {
                   if (label === "Horsepower") {
                     const vals = compareSleds.map(s => s.horsepower);
                     bestIdx = vals.indexOf(Math.max(...vals));
-                  }
-                  if (label === "Price (MSRP)") {
+                  } else if (label === "Price (MSRP)") {
                     const vals = compareSleds.map(s => s.price);
                     bestIdx = vals.indexOf(Math.min(...vals));
-                  }
-                  if (label === "Weight (lbs)") {
+                  } else if (label === "Weight") {
                     const vals = compareSleds.map(s => s.weight);
                     bestIdx = vals.indexOf(Math.min(...vals));
                   }
@@ -210,7 +235,7 @@ export default function App() {
                   <td className="row-label">Features</td>
                   {compareSleds.map(s => (
                     <td key={s.id}>
-                      <ul style={{ margin: 0, paddingLeft: "16px" }}>
+                      <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "12px", color: "#475569" }}>
                         {s.features.map((f, i) => <li key={i}>{f}</li>)}
                       </ul>
                     </td>
@@ -218,19 +243,23 @@ export default function App() {
                 </tr>
               </tbody>
             </table>
-            <p style={{ fontSize: "11px", color: "#666" }}>★ = best in category among selected sleds</p>
+            <p style={{ fontSize: "11px", color: "#94a3b8", marginTop: "4px" }}>★ = best in category among selected sleds</p>
           </div>
         )}
 
         {selectedSled && (
           <div className="detail-panel">
-            <button className="close-btn" onClick={() => setSelectedId(null)}>✕ Close</button>
-            <h3>
-              <span className={brandClass[selectedSled.brand]}>{selectedSled.brand}</span>{" "}
-              {selectedSled.year} {selectedSled.model}
+            <div className="detail-header">
+              <h3>
+                <span className={brandClass[selectedSled.brand]}>{selectedSled.brand}</span>{" "}
+                {selectedSled.year} {selectedSled.model}
+              </h3>
               <span className={`badge ${categoryBadge[selectedSled.category]}`}>{selectedSled.category}</span>
-            </h3>
-            <strong>Engine:</strong> {selectedSled.engine}
+              <button className="close-btn" onClick={() => setSelectedId(null)}>✕ Close</button>
+            </div>
+            <p style={{ margin: "0 0 12px", fontSize: "13px", color: "#475569" }}>
+              <strong>Engine:</strong> {selectedSled.engine}
+            </p>
             <div className="detail-grid">
               <div className="detail-item">
                 <span className="label">Displacement</span>
@@ -257,8 +286,8 @@ export default function App() {
                 <span className="value">{selectedSled.category}</span>
               </div>
             </div>
-            <div style={{ marginTop: "8px" }}>
-              <strong>Key Features:</strong>
+            <div>
+              <p style={{ margin: "0 0 6px", fontSize: "12px", fontWeight: 600, color: "#475569", textTransform: "uppercase", letterSpacing: "0.4px" }}>Key Features</p>
               <ul className="features-list">
                 {selectedSled.features.map((f, i) => <li key={i}>{f}</li>)}
               </ul>
@@ -268,82 +297,80 @@ export default function App() {
 
         <div className="count-info">
           Showing {filtered.length} of {snowmobiles.length} snowmobiles
-          {filterBrand !== "All" || filterCategory !== "All" || searchText ? " (filtered)" : ""}
+          {(filterBrand !== "All" || filterCategory !== "All" || searchText) && " (filtered)"}
         </div>
 
-        <table>
-          <thead>
-            <tr>
-              <th className="checkbox-col">✓</th>
-              <th onClick={() => handleSort("brand")}>Brand <span className="sort-arrow">{arrow("brand")}</span></th>
-              <th onClick={() => handleSort("model")}>Model <span className="sort-arrow">{arrow("model")}</span></th>
-              <th>Category</th>
-              <th>Engine</th>
-              <th onClick={() => handleSort("displacement")}>CC <span className="sort-arrow">{arrow("displacement")}</span></th>
-              <th onClick={() => handleSort("horsepower")}>HP <span className="sort-arrow">{arrow("horsepower")}</span></th>
-              <th onClick={() => handleSort("weight")}>Wt (lbs) <span className="sort-arrow">{arrow("weight")}</span></th>
-              <th onClick={() => handleSort("trackLength")}>Track" <span className="sort-arrow">{arrow("trackLength")}</span></th>
-              <th onClick={() => handleSort("price")}>MSRP <span className="sort-arrow">{arrow("price")}</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            {filtered.length === 0 && (
+        <div className="table-wrap">
+          <table>
+            <thead>
               <tr>
-                <td colSpan={10} style={{ textAlign: "center", padding: "20px", color: "#888" }}>
-                  No snowmobiles match your filters.
-                </td>
+                <th className="checkbox-col">✓</th>
+                <th onClick={() => handleSort("brand")}>Brand {arrow("brand")}</th>
+                <th onClick={() => handleSort("model")}>Model {arrow("model")}</th>
+                <th>Category</th>
+                <th>Engine</th>
+                <th onClick={() => handleSort("displacement")}>CC {arrow("displacement")}</th>
+                <th onClick={() => handleSort("horsepower")}>HP {arrow("horsepower")}</th>
+                <th onClick={() => handleSort("weight")}>Weight {arrow("weight")}</th>
+                <th onClick={() => handleSort("trackLength")}>Track {arrow("trackLength")}</th>
+                <th onClick={() => handleSort("price")}>MSRP {arrow("price")}</th>
               </tr>
-            )}
-            {filtered.map(sled => (
-              <tr
-                key={sled.id}
-                className={`clickable-row ${selectedId === sled.id ? "selected-row" : ""}`}
-                onClick={() => setSelectedId(selectedId === sled.id ? null : sled.id)}
-              >
-                <td className="checkbox-col" onClick={e => { e.stopPropagation(); toggleCompare(sled.id); }}>
-                  <input
-                    type="checkbox"
-                    checked={compareIds.includes(sled.id)}
-                    onChange={() => {}}
-                    style={{ cursor: "pointer" }}
-                  />
-                </td>
-                <td><span className={brandClass[sled.brand]}>{sled.brand}</span></td>
-                <td>
-                  <strong>{sled.model}</strong>
-                  <br />
-                  <span style={{ fontSize: "11px", color: "#666" }}>{sled.year}</span>
-                </td>
-                <td>
-                  <span className={`badge ${categoryBadge[sled.category]}`}>{sled.category}</span>
-                </td>
-                <td style={{ fontSize: "12px" }}>{sled.engine}</td>
-                <td>{sled.displacement}</td>
-                <td><strong>{sled.horsepower}</strong></td>
-                <td>{sled.weight}</td>
-                <td>{sled.trackLength}"</td>
-                <td><strong>${sled.price.toLocaleString()}</strong></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-
-        <div style={{ background: "#fff", border: "1px solid #ccc", padding: "10px 14px", marginTop: "14px", fontSize: "12px" }}>
-          <strong>Quick Stats:</strong> &nbsp;
-          Most Powerful: <strong>Yamaha Sidewinder SRX LE (200 hp)</strong> &nbsp;|&nbsp;
-          Lightest: <strong>Polaris PRO RMK 850 (420 lbs)</strong> &nbsp;|&nbsp;
-          Most Affordable: <strong>Yamaha Transporter Lite ($10,400)</strong> &nbsp;|&nbsp;
-          Most Expensive: <strong>Yamaha Sidewinder SRX LE ($21,200)</strong>
+            </thead>
+            <tbody>
+              {filtered.length === 0 && (
+                <tr>
+                  <td colSpan={10} style={{ textAlign: "center", padding: "30px", color: "#94a3b8" }}>
+                    No snowmobiles match your filters.
+                  </td>
+                </tr>
+              )}
+              {filtered.map(sled => (
+                <tr
+                  key={sled.id}
+                  className={selectedId === sled.id ? "selected-row" : ""}
+                  onClick={() => setSelectedId(selectedId === sled.id ? null : sled.id)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <td className="checkbox-col" onClick={e => { e.stopPropagation(); toggleCompare(sled.id); }}>
+                    <input
+                      type="checkbox"
+                      checked={compareIds.includes(sled.id)}
+                      onChange={() => {}}
+                      style={{ cursor: "pointer" }}
+                    />
+                  </td>
+                  <td><span className={brandClass[sled.brand]}>{sled.brand}</span></td>
+                  <td>
+                    <span className="model-name">{sled.model}</span>
+                    <span className="model-year"> '{String(sled.year).slice(2)}</span>
+                  </td>
+                  <td>
+                    <span className={`badge ${categoryBadge[sled.category]}`}>{sled.category}</span>
+                  </td>
+                  <td style={{ fontSize: "12px", color: "#475569" }}>{sled.engine}</td>
+                  <td>{sled.displacement}</td>
+                  <td><strong>{sled.horsepower}</strong></td>
+                  <td>{sled.weight} lbs</td>
+                  <td>{sled.trackLength}"</td>
+                  <td><strong>${sled.price.toLocaleString()}</strong></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
-        <div className="footer">
-          <p>
-            SnowmobileCompare.net — This site is for informational purposes only.<br />
-            All specs from manufacturer websites and dealer info. Prices are approximate MSRP and may vary by region.<br />
-            Always verify specs with your local dealer before purchasing.
-          </p>
-          <p>© 2025 SnowmobileCompare.net | Made by a snowmobile enthusiast</p>
+        <div className="quick-stats">
+          <span>📊 Quick Stats:</span>
+          <span>Most Powerful: <strong>Yamaha Sidewinder SRX LE — 200 hp</strong></span>
+          <span>Lightest: <strong>Polaris PRO RMK 850 — 420 lbs</strong></span>
+          <span>Most Affordable: <strong>Yamaha Transporter Lite — $10,400</strong></span>
+          <span>Most Expensive: <strong>Yamaha Sidewinder SRX LE — $21,200</strong></span>
         </div>
+
+        <footer className="footer">
+          <p>Prices are approximate MSRP and may vary by region and dealer. Always verify specs before purchasing.</p>
+          <p style={{ marginTop: "4px" }}>© 2025 SnowmobileCompare.net — Made by a snowmobile enthusiast</p>
+        </footer>
       </div>
     </div>
   );
