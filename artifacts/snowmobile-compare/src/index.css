@@ -34,9 +34,18 @@ body {
 
 .header-title h1 {
   margin: 0;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.domain-tld {
+  color: #ffffff;
+}
+
+.domain-dot {
+  color: #38bdf8;
+  font-weight: 400;
 }
 
 .header-title p {

@@ -91,9 +91,8 @@ export default function App() {
     <div>
       <header className="site-header">
         <div className="header-inner">
-          <div className="header-logo">🏔️</div>
           <div className="header-title">
-            <h1>2025 Snowmobile Comparison</h1>
+            <h1><span className="domain-tld">SledSpec</span><span className="domain-dot">.com</span></h1>
             <p>23 models from {totalBrands} major manufacturers — specs, pricing, and side-by-side comparisons</p>
           </div>
           <nav className="header-nav">
