@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 interface FaqItem {
   q: string;
@@ -107,6 +108,7 @@ const faqs: { category: string; items: FaqItem[] }[] = [
 ];
 
 export default function FaqPage() {
+  usePageTitle("Snowmobile FAQ — Common Questions Answered | SledSpec.com");
   const [openIdx, setOpenIdx] = useState<string | null>(null);
   const totalQuestions = faqs.reduce((sum, cat) => sum + cat.items.length, 0);
 

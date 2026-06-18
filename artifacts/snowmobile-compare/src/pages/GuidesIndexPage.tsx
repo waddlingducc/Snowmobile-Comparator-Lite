@@ -1,8 +1,10 @@
 import { Link } from "wouter";
 import { guides } from "../data/guides";
 import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function GuidesIndexPage() {
+  usePageTitle("Snowmobile Guides & Articles | SledSpec.com");
   const featured = guides.slice(0, 3);
 
   return (

@@ -1,7 +1,9 @@
 import { Link } from "wouter";
 import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function PrivacyPage() {
+  usePageTitle("Privacy Policy | SledSpec.com");
   return (
     <Layout>
       <div className="container">

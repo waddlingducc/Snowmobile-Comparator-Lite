@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { snowmobiles, Snowmobile, Category } from "../data/snowmobiles";
 import { guides } from "../data/guides";
 import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 type SortKey = keyof Pick<Snowmobile, "brand" | "model" | "horsepower" | "weight" | "price" | "displacement" | "trackLength">;
 
@@ -22,6 +23,7 @@ const categoryBadge: Record<Category, string> = {
 };
 
 export default function HomePage() {
+  usePageTitle("SledSpec.com — 2026 Snowmobile Specs, Prices & Comparisons");
   const [sortKey, setSortKey] = useState<SortKey>("price");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [filterBrand, setFilterBrand] = useState("All");

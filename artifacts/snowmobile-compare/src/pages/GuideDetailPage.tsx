@@ -1,10 +1,12 @@
 import { Link, useParams } from "wouter";
 import { guides } from "../data/guides";
 import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function GuideDetailPage() {
   const { id } = useParams<{ id: string }>();
   const guide = guides.find(g => g.id === id);
+  usePageTitle(guide ? `${guide.title} | SledSpec.com` : "Guide | SledSpec.com");
 
   if (!guide) {
     return (

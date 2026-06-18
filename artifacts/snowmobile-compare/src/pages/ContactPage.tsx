@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function ContactPage() {
+  usePageTitle("Contact Us | SledSpec.com");
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
