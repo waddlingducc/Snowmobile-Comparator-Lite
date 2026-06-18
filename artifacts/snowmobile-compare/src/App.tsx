@@ -341,7 +341,11 @@ export default function App() {
                 <tr
                   key={sled.id}
                   className={selectedId === sled.id ? "selected-row" : ""}
-                  onClick={() => setSelectedId(selectedId === sled.id ? null : sled.id)}
+                  onClick={() => {
+                    const next = selectedId === sled.id ? null : sled.id;
+                    setSelectedId(next);
+                    if (next !== null) window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                   style={{ cursor: "pointer" }}
                 >
                   <td className="checkbox-col" onClick={e => { e.stopPropagation(); toggleCompare(sled.id); }}>
