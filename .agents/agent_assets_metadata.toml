@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "C5y8W4x8RviyjJjrfq6kj"
+uri = "file://artifacts/snowmobile-compare/public/favicon-sled.png"
+type = "image"
+title = "snowmobile favicon icon"
