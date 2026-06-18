@@ -18,6 +18,9 @@ import img6  from "@assets/SKI-MY25-BCK-X-RS-850-ETEC-TurboR-Flare-Yellow-000UZS
 import img2  from "@assets/SKI-MY25-MXZ-X-RS-850-ETEC-TurboR-Neo-Yellow-000UCSC00-Studio_1781809815033.avif";
 import img4  from "@assets/SKI-MY25-SUM-Expert-850-ETEC-Dusty-Navy-Satin-000TGSA00-Studi_1781809829759.avif";
 import img9  from "@assets/2000000001_1781809842723.jpg";
+import img20 from "@assets/2000000001_480px_1781810220628.jpg";
+import img1  from "@assets/SKI-MY25-SUM-Edge-850-ETEC-Catalyst-Grey-000CHSB00-Studio-RSI_1781810224173.avif";
+import img19 from "@assets/2000000001_480px_1781810227435.jpg";
 
 export type Category = "Trail" | "Mountain" | "Touring" | "Crossover" | "Utility";
 
@@ -51,6 +54,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 165,
     features: ["Rev Gen5 platform", "tMotion XT suspension", "DS 4 skis", "Deep snow optimized"],
+    image: img1,
   },
   {
     id: 2,
@@ -320,6 +324,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["Electronic iQS suspension", "200+ hp turbo 4-stroke", "Lowered stance for speed"],
+    image: img19,
   },
   {
     id: 20,
@@ -334,6 +339,7 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 162,
     features: ["PowerClaw 162\" track", "Mountain-focused suspension", "Turbo 4-stroke power"],
+    image: img20,
   },
   {
     id: 21,
