@@ -779,8 +779,73 @@ tbody td {
 .guides-quick-links a:hover { text-decoration: underline; }
 
 /* ---------- GUIDE DETAIL PAGE ---------- */
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .article-layout { grid-template-columns: 1fr; }
+  .article-sidebar { display: none; }
+}
+.article-sidebar {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar-box {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 18px 20px;
+}
+.sidebar-box__heading {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  margin: 0 0 12px;
+}
+.sidebar-box__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sidebar-box__links li a {
+  font-size: 13px;
+  color: #1d4ed8;
+  text-decoration: none;
+  line-height: 1.4;
+  display: block;
+}
+.sidebar-box__links li a:hover { text-decoration: underline; }
+.sidebar-cta {
+  display: block;
+  background: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 4px;
+}
+.sidebar-cta:hover { background: #1d4ed8; }
+.sidebar-disclaimer {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
 .guide-detail {
-  max-width: 720px;
 }
 .guide-detail__header {
   margin-bottom: 28px;
