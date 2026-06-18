@@ -1,0 +1,301 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e8e8e8;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #003399;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 0px #aaa;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 12px;
+}
+
+.top-bar {
+  background-color: #003399;
+  color: white;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-bottom: 3px solid #ffcc00;
+}
+
+.top-bar a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin-right: 14px;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+.controls {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.controls select, .controls input {
+  font-size: 13px;
+  border: 1px solid #999;
+  padding: 3px 6px;
+}
+
+.controls button {
+  background: #003399;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #0044cc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: white;
+  border: 1px solid #aaa;
+}
+
+thead {
+  background-color: #003399;
+  color: white;
+}
+
+thead th {
+  padding: 8px 10px;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  border-right: 1px solid #224;
+}
+
+thead th:hover {
+  background-color: #0044cc;
+}
+
+.sort-arrow {
+  font-size: 10px;
+  margin-left: 4px;
+  color: #ffcc00;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f0f4ff;
+}
+
+tbody tr:hover {
+  background-color: #dce7ff;
+}
+
+tbody td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #eee;
+  vertical-align: top;
+}
+
+.brand-skidoo { color: #cc0000; font-weight: bold; }
+.brand-polaris { color: #003399; font-weight: bold; }
+.brand-arctic { color: #008800; font-weight: bold; }
+.brand-yamaha { color: #990099; font-weight: bold; }
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 2px;
+  margin-left: 4px;
+  font-weight: bold;
+}
+.badge-trail { background: #cce5ff; color: #003366; }
+.badge-mountain { background: #d4edda; color: #155724; }
+.badge-touring { background: #fff3cd; color: #856404; }
+.badge-crossover { background: #f8d7da; color: #721c24; }
+.badge-utility { background: #e2e3e5; color: #383d41; }
+
+.detail-panel {
+  border: 2px solid #003399;
+  background: #f5f8ff;
+  padding: 14px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
+.detail-panel h3 {
+  margin: 0 0 8px;
+  color: #003399;
+  font-size: 16px;
+}
+
+.detail-panel .close-btn {
+  float: right;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.detail-item {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px 8px;
+}
+
+.detail-item .label {
+  color: #777;
+  font-size: 11px;
+  display: block;
+}
+
+.detail-item .value {
+  font-weight: bold;
+  color: #111;
+}
+
+.features-list {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #333;
+}
+
+.compare-bar {
+  background: #ffcc00;
+  border: 1px solid #cc9900;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.compare-bar strong {
+  color: #003399;
+}
+
+.compare-btn {
+  background: #003399;
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.compare-btn:hover {
+  background: #0044cc;
+}
+
+.compare-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 18px;
+}
+
+.compare-table {
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 600px;
+}
+
+.compare-table th {
+  background: #003399;
+  color: white;
+  padding: 8px 10px;
+  border: 1px solid #224;
+  text-align: left;
+  min-width: 120px;
+}
+
+.compare-table td {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+.compare-table tr:nth-child(even) td {
+  background: #f0f4ff;
+}
+
+.compare-table .row-label {
+  background: #eeeeee;
+  font-weight: bold;
+  color: #333;
+  min-width: 110px;
+}
+
+.best-value {
+  color: #008800;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  border-top: 1px solid #ccc;
+  padding: 12px;
+  margin-top: 20px;
+}
+
+.count-info {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.selected-row {
+  background-color: #fffacc !important;
+  outline: 2px solid #cc9900;
+}
+
+.checkbox-col {
+  width: 30px;
+  text-align: center;
+}

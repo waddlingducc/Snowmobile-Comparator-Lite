@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Snowmobile Comparison"
+version = "1.0.0"
+id = "artifacts/snowmobile-compare"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18446
+
+[services.development]
+run = "pnpm --filter @workspace/snowmobile-compare run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/snowmobile-compare", "run", "build" ]
+publicDir = "artifacts/snowmobile-compare/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18446"
+BASE_PATH = "/"
