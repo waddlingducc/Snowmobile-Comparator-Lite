@@ -15,7 +15,7 @@ export default function PrivacyPage() {
 
         <div className="page-hero">
           <h2 className="page-hero__title">Privacy Policy</h2>
-          <p className="page-hero__sub">Last updated: June 18, 2026</p>
+          <p className="page-hero__sub">Last updated: June 12, 2026</p>
         </div>
 
         <div className="prose-content">
