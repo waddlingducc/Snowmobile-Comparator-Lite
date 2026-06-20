@@ -59,15 +59,6 @@ export default function PrivacyPage() {
               interact with SledSpec.com, which pages are most popular, and where visitors
               come from. We use Google Analytics for this purpose.
             </li>
-            <li>
-              <strong>Advertising cookies:</strong> We use Google AdSense to display ads on
-              SledSpec.com. Google and its partners may use cookies to serve ads based on your
-              visits to this site and other sites on the internet. You can opt out of
-              personalized advertising by visiting{" "}
-              <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">
-                Google Ads Settings
-              </a>.
-            </li>
           </ul>
           <p>
             You can instruct your browser to refuse all cookies or to indicate when a cookie is
@@ -75,37 +66,11 @@ export default function PrivacyPage() {
             function properly.
           </p>
 
-          <h3>4. Google AdSense and Third-Party Advertising</h3>
-          <p>
-            SledSpec.com uses Google AdSense, a third-party advertising service provided by
-            Google LLC. Google AdSense may use cookies and web beacons to collect data about
-            your visits to this and other websites in order to provide relevant advertisements.
-          </p>
-          <p>
-            Google's use of advertising cookies enables it and its partners to serve ads to you
-            based on your visit to our site and/or other sites on the internet. You may opt out
-            of personalized advertising by visiting{" "}
-            <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">
-              aboutads.info
-            </a>{" "}
-            or{" "}
-            <a href="https://www.networkadvertising.org/choices/" target="_blank" rel="noopener noreferrer">
-              networkadvertising.org
-            </a>.
-          </p>
-          <p>
-            For more information on how Google uses data when you use our site, visit{" "}
-            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">
-              Google's Privacy &amp; Terms
-            </a>.
-          </p>
-
-          <h3>5. How We Use Your Information</h3>
+          <h3>4. How We Use Your Information</h3>
           <p>We use the information we collect to:</p>
           <ul>
             <li>Operate and improve SledSpec.com</li>
             <li>Understand how visitors use the site so we can add more useful content</li>
-            <li>Display relevant advertisements through Google AdSense</li>
             <li>Respond to messages sent through our Contact form</li>
             <li>Monitor for and prevent abuse or misuse of the site</li>
           </ul>
@@ -113,35 +78,35 @@ export default function PrivacyPage() {
             We do not sell your personal information to third parties.
           </p>
 
-          <h3>6. Data Sharing</h3>
+          <h3>5. Data Sharing</h3>
           <p>
             We do not share your personal information with third parties except as required by
-            law or as described in this policy (e.g., data shared with Google Analytics and
-            Google AdSense as described above).
+            law or as described in this policy (e.g., data shared with Google Analytics as
+            described above).
           </p>
 
-          <h3>7. Children's Privacy</h3>
+          <h3>6. Children's Privacy</h3>
           <p>
             SledSpec.com is not directed at children under the age of 13. We do not knowingly
             collect personal information from children under 13. If you believe we have
             inadvertently collected such information, please contact us so we can delete it.
           </p>
 
-          <h3>8. Your Rights</h3>
+          <h3>7. Your Rights</h3>
           <p>
             Depending on your location, you may have the right to access, correct, or delete
             personal information we hold about you. To exercise these rights, contact us at{" "}
             <a href="mailto:info@sledspec.com">info@sledspec.com</a>.
           </p>
 
-          <h3>9. Changes to This Policy</h3>
+          <h3>8. Changes to This Policy</h3>
           <p>
             We may update this Privacy Policy from time to time. Changes will be posted on this
             page with an updated date. Your continued use of SledSpec.com after any changes
             constitutes your acceptance of the revised policy.
           </p>
 
-          <h3>10. Contact Us</h3>
+          <h3>9. Contact Us</h3>
           <p>
             If you have any questions about this Privacy Policy, please contact us at{" "}
             <a href="mailto:info@sledspec.com">info@sledspec.com</a> or use our{" "}
