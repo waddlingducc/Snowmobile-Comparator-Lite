@@ -52,14 +52,6 @@ export default function PrivacyPage() {
             SledSpec.com uses cookies and similar tracking technologies. Cookies are small text
             files stored on your device that help us understand how visitors use the site.
           </p>
-          <p>We use the following types of cookies:</p>
-          <ul>
-            <li>
-              <strong>Analytics cookies:</strong> These help us understand how visitors
-              interact with SledSpec.com, which pages are most popular, and where visitors
-              come from. We use Google Analytics for this purpose.
-            </li>
-          </ul>
           <p>
             You can instruct your browser to refuse all cookies or to indicate when a cookie is
             being sent. However, if you do not accept cookies, some portions of our site may not
@@ -81,8 +73,7 @@ export default function PrivacyPage() {
           <h3>5. Data Sharing</h3>
           <p>
             We do not share your personal information with third parties except as required by
-            law or as described in this policy (e.g., data shared with Google Analytics as
-            described above).
+            law.
           </p>
 
           <h3>6. Children's Privacy</h3>
