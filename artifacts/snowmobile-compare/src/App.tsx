@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import GuidesIndexPage from "./pages/GuidesIndexPage";
 import GuideDetailPage from "./pages/GuideDetailPage";
+import SledDetailPage from "./pages/SledDetailPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import FaqPage from "./pages/FaqPage";
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
+      <Route path="/sled/:id" component={SledDetailPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/guides" component={GuidesIndexPage} />
       <Route path="/guides/:id" component={GuideDetailPage} />

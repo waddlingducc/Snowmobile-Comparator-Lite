@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { snowmobiles, Snowmobile, Category } from "../data/snowmobiles";
 import { guides } from "../data/guides";
 import Layout from "../components/Layout";
@@ -34,11 +34,11 @@ const sortLabels: Record<SortKey, string> = {
 
 export default function HomePage() {
   usePageTitle("SledSpec.com — 2026 Snowmobile Specs, Prices & Comparisons");
+  const [, navigate] = useLocation();
   const [sortKey, setSortKey] = useState<SortKey>("price");
   const [filterBrand, setFilterBrand] = useState("All");
   const [filterCategory, setFilterCategory] = useState("All");
   const [searchText, setSearchText] = useState("");
-  const [selectedId, setSelectedId] = useState<number | null>(null);
   const [compareIds, setCompareIds] = useState<number[]>([]);
   const [showCompare, setShowCompare] = useState(false);
 
@@ -64,9 +64,7 @@ export default function HomePage() {
     return result;
   }, [filterBrand, filterCategory, searchText, sortKey]);
 
-  const selectedSled = selectedId !== null ? snowmobiles.find(s => s.id === selectedId) : null;
-
-  const toggleCompare = (id: number, e: React.MouseEvent) => {
+  const toggleCompare = (id: number, e: React.MouseEvent | React.ChangeEvent) => {
     e.stopPropagation();
     setCompareIds(prev => {
       if (prev.includes(id)) return prev.filter(x => x !== id);
@@ -149,7 +147,7 @@ export default function HomePage() {
               return (
                 <span key={id} className="compare-tag">
                   {s.brand} {s.model}
-                  <span className="remove" onClick={e => toggleCompare(id, e)}>✕</span>
+                  <span className="remove" onClick={e => toggleCompare(id, e as React.MouseEvent)}>✕</span>
                 </span>
               );
             })}
@@ -228,68 +226,6 @@ export default function HomePage() {
           </div>
         )}
 
-        {selectedSled && (
-          <div className="detail-panel">
-            <div className="detail-header">
-              <h3>
-                <span className={brandClass[selectedSled.brand]}>{selectedSled.brand}</span>{" "}
-                {selectedSled.year} {selectedSled.model}
-              </h3>
-              <span className={`badge ${categoryBadge[selectedSled.category]}`}>{selectedSled.category}</span>
-              <button className="close-btn" onClick={() => setSelectedId(null)}>✕ Close</button>
-            </div>
-            <div style={{ display: "flex", gap: "16px", marginBottom: "14px", alignItems: "flex-start" }}>
-              {selectedSled.image && (
-                <img
-                  src={selectedSled.image}
-                  alt={`${selectedSled.brand} ${selectedSled.model}`}
-                  style={{ height: "160px", width: "260px", objectFit: "contain", flexShrink: 0, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "3px", padding: "4px" }}
-                />
-              )}
-              <div>
-                <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#475569" }}>
-                  <strong>Engine:</strong> {selectedSled.engine}
-                </p>
-                <p style={{ margin: 0, fontSize: "13px", color: "#475569", lineHeight: "1.65" }}>
-                  {selectedSled.description}
-                </p>
-              </div>
-            </div>
-            <div className="detail-grid">
-              <div className="detail-item">
-                <span className="label">Displacement</span>
-                <span className="value">{selectedSled.displacement} cc</span>
-              </div>
-              <div className="detail-item">
-                <span className="label">Horsepower</span>
-                <span className="value">{selectedSled.horsepower} hp</span>
-              </div>
-              <div className="detail-item">
-                <span className="label">Weight</span>
-                <span className="value">{selectedSled.weight} lbs</span>
-              </div>
-              <div className="detail-item">
-                <span className="label">Track Length</span>
-                <span className="value">{selectedSled.trackLength}"</span>
-              </div>
-              <div className="detail-item">
-                <span className="label">MSRP (approx.)</span>
-                <span className="value">${selectedSled.price.toLocaleString()}</span>
-              </div>
-              <div className="detail-item">
-                <span className="label">Category</span>
-                <span className="value">{selectedSled.category}</span>
-              </div>
-            </div>
-            <div>
-              <p style={{ margin: "0 0 6px", fontSize: "12px", fontWeight: 600, color: "#475569", textTransform: "uppercase", letterSpacing: "0.4px" }}>Key Features</p>
-              <ul className="features-list">
-                {selectedSled.features.map((f, i) => <li key={i}>{f}</li>)}
-              </ul>
-            </div>
-          </div>
-        )}
-
         <div className="sled-section-header">
           <div>
             <span className="sled-section-count">
@@ -297,7 +233,7 @@ export default function HomePage() {
               {(filterBrand !== "All" || filterCategory !== "All" || searchText) && " (filtered)"}
             </span>
             <span style={{ fontSize: "12px", color: "#94a3b8", marginLeft: "12px" }}>
-              Check a card to compare • Click for full details
+              Check to compare • Click for full details
             </span>
           </div>
           <div className="sled-sort-row">
@@ -319,22 +255,15 @@ export default function HomePage() {
             {filtered.map(sled => (
               <div
                 key={sled.id}
-                className={[
-                  "sled-card",
-                  selectedId === sled.id ? "sled-card--selected" : "",
-                  compareIds.includes(sled.id) ? "sled-card--comparing" : "",
-                ].filter(Boolean).join(" ")}
-                onClick={() => {
-                  const next = selectedId === sled.id ? null : sled.id;
-                  setSelectedId(next);
-                  if (next !== null) window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
+                className={["sled-card", compareIds.includes(sled.id) ? "sled-card--comparing" : ""].filter(Boolean).join(" ")}
+                onClick={() => navigate(`/sled/${sled.id}`)}
+                style={{ cursor: "pointer" }}
               >
                 {sled.image ? (
                   <img
                     className="sled-card__photo"
                     src={sled.image}
-                    alt={`2026 ${sled.brand} ${sled.model}`}
+                    alt={`${sled.year} ${sled.brand} ${sled.model}`}
                   />
                 ) : (
                   <div className="sled-card__photo-placeholder">No photo</div>
@@ -350,7 +279,7 @@ export default function HomePage() {
                       <input
                         type="checkbox"
                         checked={compareIds.includes(sled.id)}
-                        onChange={e => toggleCompare(sled.id, e as unknown as React.MouseEvent)}
+                        onChange={e => toggleCompare(sled.id, e)}
                       />
                       Compare
                     </label>
@@ -363,7 +292,7 @@ export default function HomePage() {
                     <p className="sled-card__engine">{sled.engine}</p>
                   </div>
 
-                  <p className="sled-card__description">{sled.description}</p>
+                  <p className="sled-card__description">{sled.tagline}</p>
 
                   <div className="sled-card__specs">
                     <div className="sled-card__spec">
@@ -384,23 +313,12 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <ul className="sled-card__features">
-                    {sled.features.map((f, i) => <li key={i}>{f}</li>)}
-                  </ul>
-
                   <div className="sled-card__footer">
                     <div>
                       <span className="sled-card__price-label">MSRP (approx.)</span>
                       <span className="sled-card__price">${sled.price.toLocaleString()}</span>
                     </div>
-                    <button className="sled-card__detail-btn" onClick={e => {
-                      e.stopPropagation();
-                      const next = selectedId === sled.id ? null : sled.id;
-                      setSelectedId(next);
-                      if (next !== null) window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}>
-                      {selectedId === sled.id ? "Hide Details" : "Full Details ↑"}
-                    </button>
+                    <span className="sled-card__detail-btn">Full Details →</span>
                   </div>
                 </div>
               </div>

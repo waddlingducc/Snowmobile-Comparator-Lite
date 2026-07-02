@@ -37,6 +37,7 @@ export interface Snowmobile {
   category: Category;
   trackLength: number;
   features: string[];
+  tagline: string;
   description: string;
   image?: string;
 }
@@ -55,7 +56,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 165,
     features: ["Rev Gen5 platform", "tMotion XT suspension", "DS 4 skis", "Deep snow optimized"],
-    description: "Ski-Doo's top mountain sled. 180 hp turbo through a 165\" track — built for steep chutes and deep untracked snow, not casual weekend riding.",
+    tagline: "Ski-Doo's top mountain sled — 180 hp turbo through a 165\" track.",
+    description: "The Summit X Expert is built specifically for riders who spend their season on steep, untracked terrain. It runs a turbocharged 850 E-TEC producing 180 hp, mounted to Ski-Doo's lightest Gen5 REV chassis. The tMotion XT rear suspension is tuned for powder — it keeps the rear end planted when you're sidehilling and lets the sled float in deep snow rather than plow through it. The DS 4 skis up front track well on variable backcountry terrain where conditions change fast. At $20,500 it's an expensive machine, but every dollar goes toward mountain-specific capability rather than trail comfort. If you ride steep chutes and deep bowls, there's nothing in the Ski-Doo lineup above it.",
     image: img1,
   },
   {
@@ -71,7 +73,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 137,
     features: ["Smart-Shox semi-active suspension", "RAS X front suspension", "Turbocharged 4-stroke"],
-    description: "Turbo 4-stroke with Smart-Shox semi-active suspension. Carves groomed trails well and handles off-trail better than most crossovers, though it's heavier than a dedicated trail sled.",
+    tagline: "Turbo 4-stroke crossover with suspension that adjusts itself.",
+    description: "The Renegade X-RS pairs a 900 ACE Turbo R 4-stroke engine with Ski-Doo's Smart-Shox semi-active suspension — the dampers read terrain input and adjust automatically, which makes a real difference on variable groomed trails. On packed snow it carves confidently despite weighing 530 lbs; the suspension does enough work that you mostly stop noticing the extra weight. The 4-stroke engine character is smooth and torquey rather than peaky, which suits the crossover use case well. The RAS X front suspension keeps the skis tracking on hardpack. It's heavier and pricier than a dedicated trail sled, but riders who want capable off-trail performance without giving up a proper groomed-trail feel will find it a reasonable tradeoff.",
     image: img2,
   },
   {
@@ -87,7 +90,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["Competition-grade shocks", "rMotion X rear suspension", "Race-proven chassis"],
-    description: "The race-focused end of the MXZ lineup. Competition shocks, rMotion X suspension, 165 hp — spec'd for riders who push hard on groomed trail.",
+    tagline: "Race-spec trail sled — competition shocks, 165 hp 850 E-TEC.",
+    description: "The MXZ X-RS is the aggressive end of the MXZ family, spec'd for riders who actually push trail sleds hard. The 850 E-TEC produces 165 hp and delivers it with the crisp, immediate power characteristic that 2-stroke riders prefer. The rMotion X rear suspension is tuned for aggressive riding — it handles mid-corner bumps and rough straightaways better than the standard rMotion setup. Competition-grade shocks front and rear absorb the kind of hits that happen when you're not lifting for every rough patch. At $17,600 it's priced for serious riders, not beginners, and the ride quality reflects that — it's not plush, it's precise. If you're buying a trail sled to go fast on groomed snow, this is the version of the MXZ to get.",
     image: img3,
   },
   {
@@ -103,7 +107,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 154,
     features: ["KYB Pro shocks", "High-strength chassis", "Powder-specific track"],
-    description: "154\" track and 180 hp turbo in a mountain chassis. Sits between the trail and deep-snow worlds — good pick for riders who split time between packed and off-trail.",
+    tagline: "180 hp turbo on a 154\" mountain track — good for riders who do both.",
+    description: "The Freeride 850 uses the same turbocharged 850 E-TEC as the Summit X Expert, but on a 154\" track instead of 165\". That makes it more manageable on groomed trails while still providing enough float for serious powder riding. KYB Pro shocks handle the front end on variable terrain — they're stiffer than trail-oriented setups and work well when conditions are unpredictable. The high-strength chassis keeps the machine stiff under the extra stress of off-trail use. At 445 lbs it sits between the touring sleds and the dedicated mountain machines — lighter than most crossovers, heavier than the top mountain sleds. Riders who split their season between resort-area groomed runs and backcountry access won't feel like they're compromising on either end.",
     image: img4,
   },
   {
@@ -119,7 +124,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 154,
     features: ["cMotion rear suspension", "146\" or 154\" track options", "All-terrain versatility"],
-    description: "Groomed mornings, off-trail afternoons. The cMotion suspension and 154\" track handle both without much compromise — it won't top any one category but it covers both.",
+    tagline: "Handles groomed trails and off-trail riding without forcing a choice.",
+    description: "The Backcountry X-RS addresses a common problem: most riders don't spend their whole season doing one thing. The 154\" track and cMotion rear suspension manage well in powder without the sled becoming unruly when you're back on packed snow. The 850 E-TEC at 165 hp gives it enough power to stay interesting in both environments. Compared to dedicated trail sleds the ride is softer; compared to true mountain sleds it's heavier and less nimble in steep terrain. But for riders who genuinely split time between trail riding and backcountry days, the X-RS handles both without requiring separate machines. The 146\" track option is also available if you're leaning more toward trail use.",
     image: img5,
   },
   {
@@ -135,7 +141,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Touring",
     trackLength: 154,
     features: ["Air-controlled suspension", "Removable passenger seat", "Utility winch", "Heated seats"],
-    description: "A two-up touring sled — 640 lbs, heated seats, winch, air-controlled suspension. Heavy and slow by sport standards, but nothing beats it for long-distance comfort with a passenger.",
+    tagline: "Two-up touring sled — heated seats, winch, built for long distances.",
+    description: "The Expedition SE is a two-up touring machine, which means it prioritizes comfort and range over performance. The 900 ACE Turbo 4-stroke produces 130 hp — enough to move 640 lbs with a passenger and gear without straining, and the engine is smooth and quiet on long runs. Air-controlled suspension lets you adjust the ride without tools, which matters when you're loading the rear with cargo weight. Heated seats and grips are standard, the rear passenger seat is wide and padded, and there's a utility winch for the times you need it. It's not a machine you'd want to ride solo on tight trails, but for covering serious distance comfortably with a passenger, it's one of the better setups available.",
     image: img6,
   },
   {
@@ -151,7 +158,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 155,
     features: ["Matryx platform", "Slash short tunnel", "Walker Evans Velocity shocks"],
-    description: "The short Slash tunnel makes it easier to throw around in trees and tight terrain. 425 lbs with Walker Evans shocks — a strong option for technical mountain riding.",
+    tagline: "Short-tunnel mountain sled built for riding tight trees.",
+    description: "The Slash designation on the Khaos refers to the shortened tunnel design — a geometry that makes the sled easier to maneuver in tight, technical terrain like trees and variable couloirs. Most mountain sleds are optimized for open bowls; the Khaos Slash is more at home where you need to make quick, deliberate direction changes. At 425 lbs it's competitive with the lightest mountain sleds on the market, and Walker Evans Velocity shocks give it quality damping up front. The 850 Patriot Series 9 engine produces 165 hp with a 2-stroke character that suits active mountain riding. If you spend most of your season in the trees rather than on wide-open slopes, the shorter footprint is worth seeking out.",
     image: img7,
   },
   {
@@ -167,7 +175,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 163,
     features: ["QuickDrive2 belt drive", "3\" Series 8 track", "Ultralight construction"],
-    description: "420 lbs with a 163\" track and 3\" lugs — one of the lightest, deepest-floating mountain sleds available. The QuickDrive2 belt keeps throttle response sharp despite the long track.",
+    tagline: "420 lbs — one of the lightest mountain sleds in its class.",
+    description: "Weight is everything in deep mountain riding, and the PRO RMK 850 takes that seriously. At 420 lbs it's among the lightest capable mountain sleds you can buy new. The QuickDrive2 belt drive system reduces rotational mass so the engine's 165 hp gets to the track with less mechanical drag — throttle response feels snappier than the horsepower number alone suggests. The 163\" Series 8 track runs 3\" lugs, which is enough to float in substantial powder without bogging. The whole machine is built around the idea that less weight means better performance on steep terrain, easier recovery when things go sideways, and less fatigue at the end of a long day in the mountains. It's the sled to start with if untracked powder is your primary riding environment.",
     image: img8,
   },
   {
@@ -183,7 +192,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 137,
     features: ["7\" Ride Command display", "Smart CRM rear suspension", "Semi-active shocks"],
-    description: "185 hp with semi-active shocks, GPS display, and Smart CRM suspension. Polaris's most loaded trail sled — and the most powerful they make.",
+    tagline: "Polaris's most powerful and most loaded trail sled — 185 hp.",
+    description: "The Indy VR1 is Polaris's flagship trail machine and it's loaded accordingly. The Patriot Boost Turbo produces 185 hp, which is more than most trail riders will ever use fully, but it makes the mid-range pull exceptional — passing power and hill climbing feel effortless. Smart CRM semi-active suspension reads the terrain and adjusts damping automatically, which takes the edge off rough trails without feeling disconnected. The 7\" Ride Command display handles GPS navigation, trail maps, and sled telemetry. At 500 lbs it's heavier than a non-turbo trail sled, but the suspension compensates well at trail speeds. If you're buying a Polaris trail sled and want the best they make, this is it — priced at $19,800, it competes at the top of the trail category.",
     image: img9,
   },
   {
@@ -199,7 +209,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 146,
     features: ["IGX 146 rear suspension", "Matryx ergonomics", "Aggressive styling"],
-    description: "Stand-up Matryx ergonomics with a 146\" track and the 850 Patriot engine. Works well on groomed trails and holds its own off them.",
+    tagline: "Stand-up Matryx crossover — works on trail and handles off it.",
+    description: "The Switchback Assault runs the 850 Patriot engine on a Matryx platform with stand-up ergonomics and a 146\" track — the configuration Polaris uses for riders who want to get off-trail without committing to a full mountain sled. The IGX 146 rear suspension is tuned for mixed terrain: it absorbs groomed trail chop and handles powder runs without the sled becoming hard to manage. At 485 lbs it's in crossover territory — not as light as a mountain sled, not as heavy as a tourer. Riders who do mostly groomed trail riding but want occasional backcountry access find it a practical middle ground. Not the top pick if you're going deep into the mountains regularly, but solid for the rider who splits time.",
     image: img10,
   },
   {
@@ -215,7 +226,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Utility",
     trackLength: 155,
     features: ["Integrated winch", "20\" wide track", "Cargo rack", "Utility footrest"],
-    description: "650 lbs of work sled. The 20\" wide track hauls serious loads without sinking, and the integrated winch and racks make it actually useful in the field.",
+    tagline: "650-lb work sled with a winch, racks, and a 20\" wide track.",
+    description: "The Titan Adventure is built for utility rather than performance. At 650 lbs it's heavy, but that weight carries a purpose: a 20\" wide track distributes load across a larger footprint so it stays on top of soft snow even when hauling weight. The integrated winch handles recovery situations and can pull loads out of terrain where other sleds won't follow. Cargo racks front and rear carry gear on backcountry trips, and the utility footrests make it easier to manage when loading and unloading. The 800 Cleanfire H.O. at 150 hp has enough power to move the sled's weight without struggling. If you're running a trapline, hauling ice fishing gear, or accessing remote properties, the Titan Adventure earns its keep in ways sport sleds don't.",
     image: img11,
   },
   {
@@ -231,7 +243,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["FOX QS3 shocks", "Matryx chassis", "Great value trail sled"],
-    description: "One of the better-value trail sleds in the lineup — 135 hp, FOX QS3 shocks, Matryx chassis. Priced honestly at $14,200 and a common first performance sled for good reason.",
+    tagline: "Well-priced entry performance trail sled — 135 hp, FOX shocks, Matryx chassis.",
+    description: "The Indy XC 650 sits at a useful price point in the Polaris trail lineup. 135 hp from the 650 Patriot engine is enough to be genuinely fun on groomed trails without the intimidation factor of the high-horsepower turbos. The Matryx chassis is a modern platform — it handles well and compares favorably with sleds that cost considerably more. FOX QS3 shocks give it adjustable damping, which is better equipment than you'd expect at this price. At $14,200 it's a sensible first performance trail sled or a solid secondary machine for someone who already owns a flagship but wants something lower-stakes for casual riding days. It comes up often as a recommended first sled because it's genuinely capable rather than just accessible.",
     image: img12,
   },
   {
@@ -247,7 +260,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 154,
     features: ["Catalyst platform", "Alpha One single-beam rear suspension", "Centralized mass"],
-    description: "The Alpha One single-beam suspension is what sets this apart — it lets each ski move more independently, which helps on steep sidehill terrain. 165 hp, 435 lbs, worth a demo.",
+    tagline: "Alpha One single-beam suspension — a different geometry for steep terrain.",
+    description: "The M 8500 Sno Pro is built around Arctic Cat's Alpha One rear suspension, which uses a single-beam design instead of the traditional dual-rail setup. That geometry allows each ski more independent movement and shifts mass toward the center of the sled, which translates to better sidehill handling on steep terrain. It's a noticeably different feel from other mountain sleds — riders who've tried it tend to have a strong opinion one way or the other. The 858 C-TEC2 produces 165 hp with a strong 2-stroke hit. At 435 lbs the Sno Pro is competitive in weight with the Polaris and Ski-Doo mountain offerings. Worth riding before you buy if you haven't experienced the Alpha One geometry — it's genuinely distinctive.",
     image: img13,
   },
   {
@@ -263,7 +277,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["FOX 1.5 ZERO QS3R shocks", "Catalyst platform", "Race-ready setup"],
-    description: "RR means race-ready, and the FOX 1.5 ZERO QS3R shocks back that up. The 858 C-TEC2 on the Catalyst platform competes directly with the Ski-Doo and Polaris trail flagships.",
+    tagline: "Race-ready trail sled with FOX 1.5 ZERO shocks on the Catalyst platform.",
+    description: "The ZR 8500 RR is Arctic Cat's top-end trail machine, and it's spec'd accordingly. The FOX 1.5 ZERO QS3R shocks up front are not entry-level equipment — they're the same dampers riders upgrade to after buying lesser setups, and having them from the factory is a genuine advantage. The 858 C-TEC2 engine produces 165 hp with solid 2-stroke character. The Catalyst platform is Arctic Cat's modern trail chassis, updated from the aging ZR frame that preceded it — stiffer, better balanced, and more competitive with what Ski-Doo and Polaris offer. At $17,800 the ZR 8500 RR sits in the serious trail category and justifies it with hardware that holds up to the comparison.",
     image: img14,
   },
   {
@@ -279,7 +294,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Crossover",
     trackLength: 146,
     features: ["ARS II front suspension", "CROSS-ACTION rear suspension", "Versatile terrain sled"],
-    description: "Arctic Cat's crossover entry — 146\" track, CROSS-ACTION rear suspension, 165 hp. Handles mixed conditions without major complaints and is priced fairly for the category.",
+    tagline: "Arctic Cat's crossover — 858 C-TEC2 on a 146\" track.",
+    description: "The RIOT 8500 is Arctic Cat's crossover offering — 858 C-TEC2 engine, 146\" track, CROSS-ACTION rear suspension tuned for variable terrain. It handles groomed trails without feeling sluggish and goes off-trail without falling apart. The ARS II front suspension keeps the skis tracking on mixed surfaces. At 480 lbs and $16,900 it's priced competitively in the crossover category. It won't win a race against a dedicated trail sled or out-climb a dedicated mountain machine, but that's not what it's for. The RIOT fills the same role as the Ski-Doo Backcountry and Polaris Switchback — a reasonable choice for riders who want one sled that handles two different kinds of days.",
     image: img15,
   },
   {
@@ -295,7 +311,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 137,
     features: ["Slide-Action rear suspension", "ADAPT CVT system", "Budget-friendly 600cc"],
-    description: "125 hp, 137\" track, $13,500. A solid entry-level trail sled — the longer track gives it a more planted feel than most short-track 600s.",
+    tagline: "125 hp, 137\" track, $13,500 — solid entry-level trail sled.",
+    description: "The ZR 6000 137 is one of the more straightforwardly priced trail sleds in the 2026 lineup. The 600 C-TEC2 engine produces 125 hp — enough for recreational trail riding and light spirited riding without the complexity or cost of a 850cc or turbo setup. The 137\" track is longer than the short-track 129\" sleds common in the trail category, which gives it a more stable, planted feel at speed. The Slide-Action rear suspension is tuned for trail use, and the ADAPT CVT keeps the power delivery smooth. At $13,500 it's an honest price for what it is — not spec'd to compete with the flagships, but a capable, unpretentious trail sled for someone getting into snowmobiling or looking for a lower-cost second machine.",
     image: img16,
   },
   {
@@ -311,7 +328,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 154,
     features: ["Alpha One single-beam suspension", "Mountain-specific ergonomics", "Lightweight 600cc"],
-    description: "Alpha One suspension in a 600cc package — 125 hp, 440 lbs, 154\" track. A legitimate mountain setup at a price that doesn't require a second mortgage.",
+    tagline: "Alpha One mountain sled in an affordable 600cc package.",
+    description: "The M 6000 Alpha One puts Arctic Cat's single-beam Alpha One suspension into a 600cc package at $14,300 — making the geometry accessible without requiring the 8500's price tag. At 440 lbs on a 154\" track with 125 hp, it's a legitimate mountain setup. It won't keep up with the 850cc sleds on long climbs, but for riders who are still learning mountain technique or don't need maximum horsepower, the power is plenty. The stand-up mountain ergonomics feel right, and the Alpha One suspension delivers the same sidehill advantage found on the higher-end M series. A reasonable entry point into serious mountain riding.",
     image: img17,
   },
   {
@@ -327,7 +345,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Touring",
     trackLength: 154,
     features: ["2-up touring seating", "Heated seats and grips", "Yamaha reliability"],
-    description: "Arctic Cat used a Yamaha 1049cc 4-stroke here — smooth, proven, and reliable on long trips. Wide padded rear seat, heated everything, 154\" track for a calm ride with a passenger.",
+    tagline: "Arctic Cat two-up touring — with a Yamaha engine inside.",
+    description: "Arctic Cat uses a Yamaha 1049cc 3-cylinder 4-stroke engine in the Pantera 7000, which gives it one of the more proven powerplants in the touring category. The Yamaha engine is known for smooth, reliable operation over long distances — the kind of reliability you want when you're 50 miles from the trailhead with a passenger. The touring-specific setup includes a wide, padded two-person seat, heated grips and heated seating positions, and a 154\" track that gives the heavy machine a calm, stable ride. At 620 lbs it's not a performance sled, but it covers ground comfortably and starts reliably in cold weather, which is what touring riders tend to care about most.",
     image: img18,
   },
   {
@@ -343,7 +362,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["Electronic iQS suspension", "200+ hp turbo 4-stroke", "Lowered stance for speed"],
-    description: "200 hp — more than anything else in the 2026 lineup. The Genesis 998 Turbo delivers smooth, relentless power rather than the sharp hit of a 2-stroke. Fast on trail, full stop.",
+    tagline: "200 hp — the most powerful sled in the 2026 lineup.",
+    description: "Nothing in the 2026 lineup matches the Sidewinder SRX LE's power output. The Genesis 998 Turbo 4-stroke produces 200 hp and delivers it with the broad, sustained pull that 4-strokes are known for — it doesn't spike like a 2-stroke, it just keeps building. The electronic iQS suspension reads terrain and adjusts damping automatically, which helps manage the consequences of that much power on imperfect trail surfaces. The lowered stance optimizes the geometry for straight-line trail speed. At 595 lbs it's heavier than 2-stroke competition, but the suspension and power advantage make it fast in context. $21,200 is top-of-market pricing, and you're paying for the engine — but if outright trail speed is what you're after, nothing here beats it.",
     image: img19,
   },
   {
@@ -359,7 +379,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Mountain",
     trackLength: 162,
     features: ["PowerClaw 162\" track", "Mountain-focused suspension", "Turbo 4-stroke power"],
-    description: "200 hp in a mountain sled on a 162\" PowerClaw track. Heavier than a dedicated mountain machine, but the 4-stroke torque helps on long climbs where 2-strokes can bog.",
+    tagline: "200 hp mountain sled on a 162\" PowerClaw track.",
+    description: "Yamaha put the same 200 hp Genesis 998 Turbo from the SRX LE into a mountain-oriented package with a 162\" PowerClaw track. The result is a heavy mountain sled with unusual power delivery — the 4-stroke torque curve actually works well on sustained climbs where 2-strokes can lose steam. The PowerClaw track manages the power reasonably without excessive wheelspin. At 580 lbs it's heavier than the dedicated mountain machines from Ski-Doo and Polaris, which affects handling in technical terrain. But for riders who prioritize raw power on mountain rides rather than extreme nimbleness, the M-TX LE is a different kind of capable. The price at $19,900 is steep, but the engine alone justifies serious attention.",
     image: img20,
   },
   {
@@ -375,7 +396,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Touring",
     trackLength: 146,
     features: ["FOX QS3 shocks", "Long-distance touring comfort", "Reliable 4-stroke"],
-    description: "Reliable 4-stroke touring with FOX QS3 shocks and a 146\" track. Not exciting, but a Yamaha that'll start every time and still be running when flashier sleds are getting worked on.",
+    tagline: "Reliable Yamaha touring — 4-stroke engine, FOX shocks, no drama.",
+    description: "The Viper L-TX GT runs Yamaha's 1049cc 4-stroke, which has a long track record of reliable operation in cold weather. FOX QS3 shocks take the edge off rough trails and can be adjusted to match riding preference. The 146\" track keeps the machine stable at the speeds touring riders typically run. At 545 lbs it's lighter than the heavier two-up touring sleds, making it manageable for solo riding on longer trips. Yamaha's reputation in this category is built on engines that start reliably and keep running — not on flashy specs. The Viper L-TX GT fits that pattern. It won't excite anyone at the dealer, but it tends to be the machine still running clean after several hard seasons.",
     image: img21,
   },
   {
@@ -391,7 +413,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Trail",
     trackLength: 129,
     features: ["Lightweight trail agility", "2-stroke simplicity", "Entry-level performance"],
-    description: "125 hp, 2-stroke, $12,500. No frills — just a light trail sled that does what it's supposed to. A sensible starting point for performance riding.",
+    tagline: "125 hp, 2-stroke, $12,500 — a straightforward trail sled.",
+    description: "The SXViper 600 is Yamaha's no-frills trail entry — 125 hp from a 600cc 2-stroke, a 129\" track, and a price of $12,500. There's no semi-active suspension, no GPS display, no turbo. It does what a trail sled is supposed to do: go fast on groomed snow without complication. The 2-stroke engine is lighter and simpler to service than the 4-strokes in Yamaha's touring lineup. At 480 lbs it handles responsively. For newer riders who want to get into performance trail riding without spending flagship money, or experienced riders who want a second machine without a big investment, the SXViper 600 is an honest option at an honest price.",
     image: img22,
   },
   {
@@ -407,7 +430,8 @@ export const snowmobiles: Snowmobile[] = [
     category: "Utility",
     trackLength: 146,
     features: ["CVTech drive system", "Articulated rail suspension", "Workhorse utility sled"],
-    description: "The most affordable new sled from a major manufacturer. 65 hp from a 400cc single-cylinder — not fast, but it hauls gear, accesses remote terrain, and gets the job done.",
+    tagline: "The most affordable new sled from a major manufacturer at $10,400.",
+    description: "The Transporter Lite is the lowest-cost new snowmobile available from a major manufacturer in 2026, and it earns its price by being genuinely useful rather than trying to be something it's not. The 400cc single-cylinder 2-stroke produces 65 hp — not fast, but enough to move the machine and a reasonable cargo load across varied terrain. The CVTech drive system keeps power delivery predictable, and the articulated rail suspension handles uneven snow surface without the sled wandering. At 440 lbs it's not heavy. Utility riders who need something reliable and affordable for accessing remote areas, hauling supplies, or covering rough ground in practical conditions will find the Transporter Lite straightforward and dependable. It's not glamorous, but $10,400 for a new machine from a reputable manufacturer is genuinely good value.",
     image: img23,
   },
 ];
