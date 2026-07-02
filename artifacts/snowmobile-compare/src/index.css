@@ -1440,6 +1440,17 @@ tbody td {
   color: #94a3b8;
   width: 130px;
 }
+.sdp__official-link {
+  margin: 0;
+  font-size: 13px;
+}
+.sdp__official-link a {
+  color: #2563eb;
+  text-decoration: none;
+}
+.sdp__official-link a:hover {
+  text-decoration: underline;
+}
 .sdp__features {
   margin: 0;
   padding-left: 18px;

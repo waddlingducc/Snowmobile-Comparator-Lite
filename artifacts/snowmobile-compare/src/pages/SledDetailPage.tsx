@@ -62,6 +62,12 @@ export default function SledDetailPage() {
 
             <p className="sdp__description">{sled.description}</p>
 
+            <p className="sdp__official-link">
+              <a href={sled.officialUrl} target="_blank" rel="noopener noreferrer">
+                View on {sled.brand}'s official site →
+              </a>
+            </p>
+
             <h3 className="sdp__specs-heading">Specs</h3>
             <table className="sdp__specs-table">
               <tbody>
