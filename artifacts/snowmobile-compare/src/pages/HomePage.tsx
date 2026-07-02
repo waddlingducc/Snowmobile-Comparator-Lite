@@ -5,7 +5,7 @@ import { guides } from "../data/guides";
 import Layout from "../components/Layout";
 import { usePageTitle } from "../hooks/usePageTitle";
 
-type SortKey = keyof Pick<Snowmobile, "brand" | "model" | "horsepower" | "weight" | "price" | "displacement" | "trackLength">;
+type SortKey = "price" | "horsepower" | "weight" | "displacement" | "trackLength" | "brand" | "model";
 
 const brandClass: Record<string, string> = {
   "Ski-Doo": "brand-skidoo",
@@ -22,30 +22,25 @@ const categoryBadge: Record<Category, string> = {
   "Utility": "badge-utility",
 };
 
+const sortLabels: Record<SortKey, string> = {
+  price: "Price: Low to High",
+  horsepower: "Horsepower: High to Low",
+  weight: "Weight: Light to Heavy",
+  displacement: "Displacement (CC)",
+  trackLength: "Track Length",
+  brand: "Brand (A–Z)",
+  model: "Model (A–Z)",
+};
+
 export default function HomePage() {
   usePageTitle("SledSpec.com — 2026 Snowmobile Specs, Prices & Comparisons");
   const [sortKey, setSortKey] = useState<SortKey>("price");
-  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
   const [filterBrand, setFilterBrand] = useState("All");
   const [filterCategory, setFilterCategory] = useState("All");
   const [searchText, setSearchText] = useState("");
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [compareIds, setCompareIds] = useState<number[]>([]);
   const [showCompare, setShowCompare] = useState(false);
-
-  const handleSort = (key: SortKey) => {
-    if (sortKey === key) {
-      setSortDir(d => d === "asc" ? "desc" : "asc");
-    } else {
-      setSortKey(key);
-      setSortDir("asc");
-    }
-  };
-
-  const arrow = (key: SortKey) => {
-    if (sortKey !== key) return <span className="sort-arrow">↕</span>;
-    return <span className="sort-arrow">{sortDir === "asc" ? "▲" : "▼"}</span>;
-  };
 
   const filtered = useMemo(() => {
     let result = [...snowmobiles];
@@ -60,23 +55,23 @@ export default function HomePage() {
       );
     }
     result.sort((a, b) => {
-      const av = a[sortKey];
-      const bv = b[sortKey];
-      if (typeof av === "string" && typeof bv === "string") {
-        return sortDir === "asc" ? av.localeCompare(bv) : bv.localeCompare(av);
-      }
-      return sortDir === "asc" ? (av as number) - (bv as number) : (bv as number) - (av as number);
+      if (sortKey === "brand") return a.brand.localeCompare(b.brand);
+      if (sortKey === "model") return a.model.localeCompare(b.model);
+      if (sortKey === "horsepower") return b.horsepower - a.horsepower;
+      if (sortKey === "weight") return a.weight - b.weight;
+      return (a[sortKey] as number) - (b[sortKey] as number);
     });
     return result;
-  }, [filterBrand, filterCategory, searchText, sortKey, sortDir]);
+  }, [filterBrand, filterCategory, searchText, sortKey]);
 
   const selectedSled = selectedId !== null ? snowmobiles.find(s => s.id === selectedId) : null;
 
-  const toggleCompare = (id: number) => {
+  const toggleCompare = (id: number, e: React.MouseEvent) => {
+    e.stopPropagation();
     setCompareIds(prev => {
       if (prev.includes(id)) return prev.filter(x => x !== id);
       if (prev.length >= 4) {
-        alert("You can only compare up to 4 snowmobiles at once!");
+        alert("You can compare up to 4 snowmobiles at once.");
         return prev;
       }
       return [...prev, id];
@@ -144,9 +139,6 @@ export default function HomePage() {
               {showCompare ? "Hide" : "Compare"} ({compareIds.length})
             </button>
           )}
-          <span style={{ marginLeft: "auto", fontSize: "12px", color: "#94a3b8" }}>
-            Click column headers to sort • Check boxes to compare
-          </span>
         </div>
 
         {compareIds.length > 0 && (
@@ -157,7 +149,7 @@ export default function HomePage() {
               return (
                 <span key={id} className="compare-tag">
                   {s.brand} {s.model}
-                  <span className="remove" onClick={() => toggleCompare(id)}>✕</span>
+                  <span className="remove" onClick={e => toggleCompare(id, e)}>✕</span>
                 </span>
               );
             })}
@@ -254,9 +246,14 @@ export default function HomePage() {
                   style={{ height: "160px", width: "260px", objectFit: "contain", flexShrink: 0, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: "3px", padding: "4px" }}
                 />
               )}
-              <p style={{ margin: "0", fontSize: "13px", color: "#475569", alignSelf: "center" }}>
-                <strong>Engine:</strong> {selectedSled.engine}
-              </p>
+              <div>
+                <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#475569" }}>
+                  <strong>Engine:</strong> {selectedSled.engine}
+                </p>
+                <p style={{ margin: 0, fontSize: "13px", color: "#475569", lineHeight: "1.65" }}>
+                  {selectedSled.description}
+                </p>
+              </div>
             </div>
             <div className="detail-grid">
               <div className="detail-item">
@@ -293,87 +290,123 @@ export default function HomePage() {
           </div>
         )}
 
-        <div className="count-info">
-          Showing {filtered.length} of {snowmobiles.length} snowmobiles
-          {(filterBrand !== "All" || filterCategory !== "All" || searchText) && " (filtered)"}
+        <div className="sled-section-header">
+          <div>
+            <span className="sled-section-count">
+              Showing <strong>{filtered.length}</strong> of {snowmobiles.length} snowmobiles
+              {(filterBrand !== "All" || filterCategory !== "All" || searchText) && " (filtered)"}
+            </span>
+            <span style={{ fontSize: "12px", color: "#94a3b8", marginLeft: "12px" }}>
+              Check a card to compare • Click for full details
+            </span>
+          </div>
+          <div className="sled-sort-row">
+            <label htmlFor="sort-select" style={{ fontWeight: 600, fontSize: "12px", textTransform: "uppercase", letterSpacing: "0.4px" }}>Sort</label>
+            <select id="sort-select" value={sortKey} onChange={e => setSortKey(e.target.value as SortKey)}>
+              {(Object.keys(sortLabels) as SortKey[]).map(k => (
+                <option key={k} value={k}>{sortLabels[k]}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
-        <div className="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th className="checkbox-col">✓</th>
-                <th style={{ width: "80px" }}>Photo</th>
-                <th onClick={() => handleSort("brand")}>Brand {arrow("brand")}</th>
-                <th onClick={() => handleSort("model")}>Model {arrow("model")}</th>
-                <th>Category</th>
-                <th>Engine</th>
-                <th onClick={() => handleSort("displacement")}>CC {arrow("displacement")}</th>
-                <th onClick={() => handleSort("horsepower")}>HP {arrow("horsepower")}</th>
-                <th onClick={() => handleSort("weight")}>Weight {arrow("weight")}</th>
-                <th onClick={() => handleSort("trackLength")}>Track {arrow("trackLength")}</th>
-                <th onClick={() => handleSort("price")}>MSRP {arrow("price")}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.length === 0 && (
-                <tr>
-                  <td colSpan={11} style={{ textAlign: "center", padding: "30px", color: "#94a3b8" }}>
-                    No snowmobiles match your filters.
-                  </td>
-                </tr>
-              )}
-              {filtered.map(sled => (
-                <tr
-                  key={sled.id}
-                  className={selectedId === sled.id ? "selected-row" : ""}
-                  onClick={() => {
-                    const next = selectedId === sled.id ? null : sled.id;
-                    setSelectedId(next);
-                    if (next !== null) window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  style={{ cursor: "pointer" }}
-                >
-                  <td className="checkbox-col" onClick={e => { e.stopPropagation(); toggleCompare(sled.id); }}>
-                    <input
-                      type="checkbox"
-                      checked={compareIds.includes(sled.id)}
-                      onChange={() => {}}
-                      style={{ cursor: "pointer" }}
-                    />
-                  </td>
-                  <td style={{ padding: "4px 8px" }}>
-                    {sled.image ? (
-                      <img
-                        src={sled.image}
-                        alt={sled.model}
-                        style={{ width: "76px", height: "48px", objectFit: "contain", display: "block", background: "#f8fafc" }}
+        {filtered.length === 0 ? (
+          <div style={{ textAlign: "center", padding: "40px", color: "#94a3b8", background: "white", border: "1px solid #e2e8f0", borderRadius: "6px" }}>
+            No snowmobiles match your filters.
+          </div>
+        ) : (
+          <div className="sled-grid">
+            {filtered.map(sled => (
+              <div
+                key={sled.id}
+                className={[
+                  "sled-card",
+                  selectedId === sled.id ? "sled-card--selected" : "",
+                  compareIds.includes(sled.id) ? "sled-card--comparing" : "",
+                ].filter(Boolean).join(" ")}
+                onClick={() => {
+                  const next = selectedId === sled.id ? null : sled.id;
+                  setSelectedId(next);
+                  if (next !== null) window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                {sled.image ? (
+                  <img
+                    className="sled-card__photo"
+                    src={sled.image}
+                    alt={`2026 ${sled.brand} ${sled.model}`}
+                  />
+                ) : (
+                  <div className="sled-card__photo-placeholder">No photo</div>
+                )}
+
+                <div className="sled-card__body">
+                  <div className="sled-card__top">
+                    <div className="sled-card__badges">
+                      <span className={`badge ${categoryBadge[sled.category]}`}>{sled.category}</span>
+                      <span style={{ fontSize: "10px", color: "#94a3b8", alignSelf: "center" }}>{sled.year}</span>
+                    </div>
+                    <label className="sled-card__compare" onClick={e => e.stopPropagation()}>
+                      <input
+                        type="checkbox"
+                        checked={compareIds.includes(sled.id)}
+                        onChange={e => toggleCompare(sled.id, e as unknown as React.MouseEvent)}
                       />
-                    ) : (
-                      <div style={{ width: "76px", height: "48px", background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", color: "#94a3b8" }}>
-                        No photo
-                      </div>
-                    )}
-                  </td>
-                  <td><span className={brandClass[sled.brand]}>{sled.brand}</span></td>
-                  <td>
-                    <span className="model-name">{sled.model}</span>
-                    <span className="model-year"> '{String(sled.year).slice(2)}</span>
-                  </td>
-                  <td>
-                    <span className={`badge ${categoryBadge[sled.category]}`}>{sled.category}</span>
-                  </td>
-                  <td style={{ fontSize: "12px", color: "#475569" }}>{sled.engine}</td>
-                  <td>{sled.displacement}</td>
-                  <td><strong>{sled.horsepower}</strong></td>
-                  <td>{sled.weight} lbs</td>
-                  <td>{sled.trackLength}"</td>
-                  <td><strong>${sled.price.toLocaleString()}</strong></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                      Compare
+                    </label>
+                  </div>
+
+                  <div>
+                    <h2 className="sled-card__name">
+                      <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
+                    </h2>
+                    <p className="sled-card__engine">{sled.engine}</p>
+                  </div>
+
+                  <p className="sled-card__description">{sled.description}</p>
+
+                  <div className="sled-card__specs">
+                    <div className="sled-card__spec">
+                      <span className="sled-card__spec-label">Horsepower</span>
+                      <span className="sled-card__spec-value">{sled.horsepower} hp</span>
+                    </div>
+                    <div className="sled-card__spec">
+                      <span className="sled-card__spec-label">Weight</span>
+                      <span className="sled-card__spec-value">{sled.weight} lbs</span>
+                    </div>
+                    <div className="sled-card__spec">
+                      <span className="sled-card__spec-label">Track</span>
+                      <span className="sled-card__spec-value">{sled.trackLength}"</span>
+                    </div>
+                    <div className="sled-card__spec">
+                      <span className="sled-card__spec-label">Displacement</span>
+                      <span className="sled-card__spec-value">{sled.displacement} cc</span>
+                    </div>
+                  </div>
+
+                  <ul className="sled-card__features">
+                    {sled.features.map((f, i) => <li key={i}>{f}</li>)}
+                  </ul>
+
+                  <div className="sled-card__footer">
+                    <div>
+                      <span className="sled-card__price-label">MSRP (approx.)</span>
+                      <span className="sled-card__price">${sled.price.toLocaleString()}</span>
+                    </div>
+                    <button className="sled-card__detail-btn" onClick={e => {
+                      e.stopPropagation();
+                      const next = selectedId === sled.id ? null : sled.id;
+                      setSelectedId(next);
+                      if (next !== null) window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}>
+                      {selectedId === sled.id ? "Hide Details" : "Full Details ↑"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div className="quick-stats">
           <span>Quick Stats:</span>

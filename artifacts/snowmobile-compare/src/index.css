@@ -1175,6 +1175,221 @@ tbody td {
 }
 .cookie-banner__btn:hover { background: #7dd3fc; }
 
+/* ---------- SLED CARDS ---------- */
+.sled-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.sled-section-count {
+  font-size: 13px;
+  color: #64748b;
+}
+.sled-sort-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #475569;
+}
+.sled-sort-row select {
+  font-size: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 4px 8px;
+  background: #f8fafc;
+  color: #222;
+}
+.sled-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.sled-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.sled-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 3px 12px rgba(30,58,138,0.1);
+}
+.sled-card--selected {
+  border-color: #1d4ed8;
+  border-width: 2px;
+  box-shadow: 0 0 0 3px rgba(29,78,216,0.12);
+}
+.sled-card--comparing {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+.sled-card__photo {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #f8fafc;
+  display: block;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 8px;
+}
+.sled-card__photo-placeholder {
+  width: 100%;
+  height: 180px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #94a3b8;
+  border-bottom: 1px solid #f1f5f9;
+}
+.sled-card__body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.sled-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sled-card__badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.sled-card__compare {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.sled-card__compare input {
+  cursor: pointer;
+}
+.sled-card__name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.3;
+}
+.sled-card__brand-line {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+.sled-card__description {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+.sled-card__specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.sled-card__spec {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.sled-card__spec-label {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.sled-card__spec-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+.sled-card__engine {
+  font-size: 12px;
+  color: #64748b;
+  font-style: italic;
+  margin: 0;
+}
+.sled-card__features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sled-card__features li {
+  font-size: 12px;
+  color: #475569;
+  padding-left: 14px;
+  position: relative;
+}
+.sled-card__features li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: #3b82f6;
+  font-weight: 700;
+}
+.sled-card__footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sled-card__price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+.sled-card__price-label {
+  font-size: 10px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1;
+  margin-bottom: 1px;
+}
+.sled-card__detail-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 4px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.sled-card__detail-btn:hover {
+  background: #dbeafe;
+}
+@media (max-width: 600px) {
+  .sled-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- GUIDE SOURCES ---------- */
 .guide-sources {
   margin-top: 32px;
