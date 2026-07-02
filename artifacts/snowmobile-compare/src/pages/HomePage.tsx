@@ -270,11 +270,10 @@ export default function HomePage() {
                 )}
 
                 <div className="sled-card__body">
-                  <div className="sled-card__top">
-                    <div className="sled-card__badges">
-                      <span className={`badge ${categoryBadge[sled.category]}`}>{sled.category}</span>
-                      <span style={{ fontSize: "10px", color: "#94a3b8", alignSelf: "center" }}>{sled.year}</span>
-                    </div>
+                  <div className="sled-card__title-row">
+                    <h2 className="sled-card__name">
+                      <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
+                    </h2>
                     <label className="sled-card__compare" onClick={e => e.stopPropagation()}>
                       <input
                         type="checkbox"
@@ -285,40 +284,16 @@ export default function HomePage() {
                     </label>
                   </div>
 
-                  <div>
-                    <h2 className="sled-card__name">
-                      <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
-                    </h2>
-                    <p className="sled-card__engine">{sled.engine}</p>
-                  </div>
+                  <p className="sled-card__engine">{sled.engine}</p>
+                  <p className="sled-card__tagline">{sled.tagline}</p>
 
-                  <p className="sled-card__description">{sled.tagline}</p>
-
-                  <div className="sled-card__specs">
-                    <div className="sled-card__spec">
-                      <span className="sled-card__spec-label">Horsepower</span>
-                      <span className="sled-card__spec-value">{sled.horsepower} hp</span>
-                    </div>
-                    <div className="sled-card__spec">
-                      <span className="sled-card__spec-label">Weight</span>
-                      <span className="sled-card__spec-value">{sled.weight} lbs</span>
-                    </div>
-                    <div className="sled-card__spec">
-                      <span className="sled-card__spec-label">Track</span>
-                      <span className="sled-card__spec-value">{sled.trackLength}"</span>
-                    </div>
-                    <div className="sled-card__spec">
-                      <span className="sled-card__spec-label">Displacement</span>
-                      <span className="sled-card__spec-value">{sled.displacement} cc</span>
-                    </div>
-                  </div>
+                  <p className="sled-card__stats">
+                    {sled.horsepower} hp &nbsp;·&nbsp; {sled.weight} lbs &nbsp;·&nbsp; {sled.trackLength}" track
+                  </p>
 
                   <div className="sled-card__footer">
-                    <div>
-                      <span className="sled-card__price-label">MSRP (approx.)</span>
-                      <span className="sled-card__price">${sled.price.toLocaleString()}</span>
-                    </div>
-                    <span className="sled-card__detail-btn">Full Details →</span>
+                    <span className="sled-card__price">${sled.price.toLocaleString()}</span>
+                    <span className="sled-card__link">View specs →</span>
                   </div>
                 </div>
               </div>
