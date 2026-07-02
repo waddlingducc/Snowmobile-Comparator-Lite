@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "wouter";
 import Layout from "../components/Layout";
 import { usePageTitle } from "../hooks/usePageTitle";
@@ -109,7 +108,6 @@ const faqs: { category: string; items: FaqItem[] }[] = [
 
 export default function FaqPage() {
   usePageTitle("Snowmobile FAQ — Common Questions Answered | SledSpec.com");
-  const [openIdx, setOpenIdx] = useState<string | null>(null);
   const totalQuestions = faqs.reduce((sum, cat) => sum + cat.items.length, 0);
 
   return (
@@ -132,26 +130,16 @@ export default function FaqPage() {
           <div key={cat.category} className="faq-category">
             <h3 className="faq-category__heading">{cat.category}</h3>
             <div className="faq-list">
-              {cat.items.map((item, idx) => {
-                const key = `${cat.category}-${idx}`;
-                const isOpen = openIdx === key;
-                return (
-                  <div key={key} className={`faq-item ${isOpen ? "faq-item--open" : ""}`}>
-                    <button
-                      className="faq-item__question"
-                      onClick={() => setOpenIdx(isOpen ? null : key)}
-                    >
-                      <span>{item.q}</span>
-                      <span className="faq-item__chevron">{isOpen ? "−" : "+"}</span>
-                    </button>
-                    {isOpen && (
-                      <div className="faq-item__answer">
-                        <p>{item.a}</p>
-                      </div>
-                    )}
+              {cat.items.map((item, idx) => (
+                <div key={idx} className="faq-item faq-item--open">
+                  <div className="faq-item__question" style={{ cursor: "default" }}>
+                    <span>{item.q}</span>
                   </div>
-                );
-              })}
+                  <div className="faq-item__answer">
+                    <p>{item.a}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
