@@ -5,6 +5,7 @@ import img12 from "@assets/2000000001_1781809594011.jpg";
 import img17 from "@assets/2000000001_1781809604140.jpg";
 import img18 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-2-1024x640_1781809629992.jpg";
 import imgPantera7000 from "@assets/2000000003_1783103406846.jpg";
+import imgRiot8500 from "@assets/2000000002_1783103661566.jpg";
 import img21 from "@assets/2000000001_1781809665231.jpg";
 import img8  from "@assets/2000000002_1781809686693.jpg";
 import img7  from "@assets/2000000001_1781809702238.jpg";
@@ -313,7 +314,7 @@ export const snowmobiles: Snowmobile[] = [
     tagline: "Arctic Cat's crossover — 858 C-TEC2 on a 146\" track.",
     description: "The RIOT 8500 is Arctic Cat's crossover offering — 858 C-TEC2 engine, 146\" track, CROSS-ACTION rear suspension tuned for variable terrain. It handles groomed trails without feeling sluggish and goes off-trail without falling apart. The ARS II front suspension keeps the skis tracking on mixed surfaces. At 480 lbs and $16,900 it's priced competitively in the crossover category. It won't win a race against a dedicated trail sled or out-climb a dedicated mountain machine, but that's not what it's for. The RIOT fills the same role as the Ski-Doo Backcountry and Polaris Switchback — a reasonable choice for riders who want one sled that handles two different kinds of days.",
     officialUrl: "https://www.arcticcat.com/snowmobiles/crossover/riot-8500/",
-    image: img15,
+    image: imgRiot8500,
   },
   {
     id: 16,
