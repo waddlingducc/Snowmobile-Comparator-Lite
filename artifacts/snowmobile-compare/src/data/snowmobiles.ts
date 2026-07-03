@@ -6,6 +6,7 @@ import img17 from "@assets/2000000001_1781809604140.jpg";
 import img18 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-2-1024x640_1781809629992.jpg";
 import imgPantera7000 from "@assets/2000000003_1783103406846.jpg";
 import imgRiot8500 from "@assets/2000000002_1783103661566.jpg";
+import imgZR858RR from "@assets/MY25_ZR_858_R-XC_ES_137_profile-right_1783104012702.jpg";
 import img21 from "@assets/2000000001_1781809665231.jpg";
 import img8  from "@assets/2000000002_1781809686693.jpg";
 import img7  from "@assets/2000000001_1781809702238.jpg";
@@ -283,7 +284,7 @@ export const snowmobiles: Snowmobile[] = [
   {
     id: 14,
     brand: "Arctic Cat",
-    model: "ZR 8500 RR",
+    model: "ZR 858 RR",
     year: 2026,
     engine: "858 C-TEC2",
     displacement: 858,
@@ -294,9 +295,9 @@ export const snowmobiles: Snowmobile[] = [
     trackLength: 129,
     features: ["FOX 1.5 ZERO QS3R shocks", "Catalyst platform", "Race-ready setup"],
     tagline: "Race-ready trail sled with FOX 1.5 ZERO shocks on the Catalyst platform.",
-    description: "The ZR 8500 RR is Arctic Cat's top-end trail machine, and it's spec'd accordingly. The FOX 1.5 ZERO QS3R shocks up front are not entry-level equipment — they're the same dampers riders upgrade to after buying lesser setups, and having them from the factory is a genuine advantage. The 858 C-TEC2 engine produces 165 hp with solid 2-stroke character. The Catalyst platform is Arctic Cat's modern trail chassis, updated from the aging ZR frame that preceded it — stiffer, better balanced, and more competitive with what Ski-Doo and Polaris offer. At $17,800 the ZR 8500 RR sits in the serious trail category and justifies it with hardware that holds up to the comparison.",
+    description: "The ZR 858 RR is Arctic Cat's top-end trail machine, and it's spec'd accordingly. The FOX 1.5 ZERO QS3R shocks up front are not entry-level equipment — they're the same dampers riders upgrade to after buying lesser setups, and having them from the factory is a genuine advantage. The 858 C-TEC2 engine produces 165 hp with solid 2-stroke character. The Catalyst platform is Arctic Cat's modern trail chassis, updated from the aging ZR frame that preceded it — stiffer, better balanced, and more competitive with what Ski-Doo and Polaris offer. At $17,800 the ZR 858 RR sits in the serious trail category and justifies it with hardware that holds up to the comparison.",
     officialUrl: "https://www.arcticcat.com/snowmobiles/trail/zr-8500-rr/",
-    image: img14,
+    image: imgZR858RR,
   },
   {
     id: 15,
