@@ -44,7 +44,7 @@ export default function SledDetailPage() {
   return (
     <Layout>
       <div className="container">
-        <Link href="/" className="listing-back">← BACK TO LISTINGS</Link>
+        <Link href="/" className="listing-back">← Back to listings</Link>
 
         <div className="listing-main">
           <div className="listing-photo-box">
@@ -62,7 +62,7 @@ export default function SledDetailPage() {
               <h1 className="listing-title">
                 <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
               </h1>
-              <span className="listing-verified">✓ VERIFIED SPECS</span>
+              <span className="listing-verified">✓ Verified specs</span>
               <p className="listing-price">${sled.price.toLocaleString()}</p>
               <div className="listing-badges">
                 <span className="listing-badge">{sled.category}</span>
@@ -78,7 +78,7 @@ export default function SledDetailPage() {
               rel="noopener noreferrer"
               className="listing-visit"
             >
-              VISIT {sled.brand.toUpperCase()} SITE
+              View on {sled.brand}'s official site
             </a>
           </div>
         </div>
