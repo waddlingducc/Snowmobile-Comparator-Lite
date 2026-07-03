@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import CookieConsent from "./CookieConsent";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -38,8 +37,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Link href="/contact" style={{ color: "inherit", textDecoration: "underline" }}>Contact</Link>
         </p>
       </footer>
-
-      <CookieConsent />
     </div>
   );
 }
