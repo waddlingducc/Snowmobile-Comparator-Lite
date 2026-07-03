@@ -23,3 +23,9 @@ id = "UMX-NQr0k7neOrZgEYprw"
 uri = "file://export/sledspec-site.zip"
 type = "unspecified"
 title = "SledSpec — updated site, no cookie banner (.zip)"
+
+[[outputs]]
+id = "ZUkSSGS1Fyml6ZHipqN1f"
+uri = "file://artifacts/snowmobile-compare/dist/snowmobile-github-pages.zip"
+type = "unspecified"
+title = "Snowmobile Static Site (GitHub Pages)"
