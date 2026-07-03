@@ -1,1 +1,2 @@
 - [Snowmobile spec consistency](snowmobile-spec-consistency.md) — sled specs are duplicated in prose across snowmobiles.ts/guides.ts/FaqPage.tsx; change one → grep + update all; some specs are model-year sensitive.
+- [Snowmobile image sizing](snowmobile-image-sizing.md) — sled "size" differences are baked into source images (aspect + whitespace), not CSS; normalize via ImageMagick trim+repad to norm_idNN.jpg.
