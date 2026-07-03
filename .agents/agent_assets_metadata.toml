@@ -17,3 +17,9 @@ id = "eH8J1LWh3_sK9tVXizdQJ"
 uri = "file://export/sledspec-github.zip"
 type = "unspecified"
 title = "SledSpec — GitHub-ready project (.zip)"
+
+[[outputs]]
+id = "UMX-NQr0k7neOrZgEYprw"
+uri = "file://export/sledspec-site.zip"
+type = "unspecified"
+title = "SledSpec — static website for GitHub Pages (.zip)"
