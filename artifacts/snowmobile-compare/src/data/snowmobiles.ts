@@ -428,7 +428,7 @@ export const snowmobiles: Snowmobile[] = [
   {
     id: 22,
     brand: "Yamaha",
-    model: "SXViper 600",
+    model: "SR Viper 600",
     year: 2025,
     engine: "600cc 2-stroke",
     displacement: 599,
@@ -439,7 +439,7 @@ export const snowmobiles: Snowmobile[] = [
     trackLength: 129,
     features: ["Lightweight trail agility", "2-stroke simplicity", "Entry-level performance"],
     tagline: "125 hp, 2-stroke, $12,500 — a straightforward trail sled.",
-    description: "The SXViper 600 is Yamaha's no-frills trail entry — 125 hp from a 600cc 2-stroke, a 129\" track, and a price of $12,500. There's no semi-active suspension, no GPS display, no turbo. It does what a trail sled is supposed to do: go fast on groomed snow without complication. The 2-stroke engine is lighter and simpler to service than the 4-strokes in Yamaha's touring lineup. At 480 lbs it handles responsively. For newer riders who want to get into performance trail riding without spending flagship money, or experienced riders who want a second machine without a big investment, the SXViper 600 is an honest option at an honest price.",
+    description: "The SR Viper 600 is Yamaha's no-frills trail entry — 125 hp from a 600cc 2-stroke, a 129\" track, and a price of $12,500. There's no semi-active suspension, no GPS display, no turbo. It does what a trail sled is supposed to do: go fast on groomed snow without complication. The 2-stroke engine is lighter and simpler to service than the 4-strokes in Yamaha's touring lineup. At 480 lbs it handles responsively. For newer riders who want to get into performance trail riding without spending flagship money, or experienced riders who want a second machine without a big investment, the SR Viper 600 is an honest option at an honest price.",
     officialUrl: "https://www.yamahamotorsports.com/snowmobile/models/sxviper-600/",
     image: img22,
   },
