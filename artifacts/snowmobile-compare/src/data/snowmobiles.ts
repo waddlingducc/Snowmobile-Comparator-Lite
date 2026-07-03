@@ -4,6 +4,7 @@ import img16 from "@assets/2000000003_1781809584733.jpg";
 import img12 from "@assets/2000000001_1781809594011.jpg";
 import img17 from "@assets/2000000001_1781809604140.jpg";
 import img18 from "@assets/Arctic-Cat-2025-A-Beautiful-Rebound-2-1024x640_1781809629992.jpg";
+import imgPantera7000 from "@assets/2000000003_1783103406846.jpg";
 import img21 from "@assets/2000000001_1781809665231.jpg";
 import img8  from "@assets/2000000002_1781809686693.jpg";
 import img7  from "@assets/2000000001_1781809702238.jpg";
@@ -366,7 +367,7 @@ export const snowmobiles: Snowmobile[] = [
     tagline: "Arctic Cat two-up touring — with a Yamaha engine inside.",
     description: "Arctic Cat uses a Yamaha 1049cc 3-cylinder 4-stroke engine in the Pantera 7000, which gives it one of the more proven powerplants in the touring category. The Yamaha engine is known for smooth, reliable operation over long distances — the kind of reliability you want when you're 50 miles from the trailhead with a passenger. The touring-specific setup includes a wide, padded two-person seat, heated grips and heated seating positions, and a 154\" track that gives the heavy machine a calm, stable ride. At 620 lbs it's not a performance sled, but it covers ground comfortably and starts reliably in cold weather, which is what touring riders tend to care about most.",
     officialUrl: "https://www.arcticcat.com/snowmobiles/touring/pantera-7000/",
-    image: img18,
+    image: imgPantera7000,
   },
   {
     id: 19,
