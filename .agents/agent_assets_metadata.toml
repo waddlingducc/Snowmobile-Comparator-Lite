@@ -29,3 +29,9 @@ id = "ZUkSSGS1Fyml6ZHipqN1f"
 uri = "file://artifacts/snowmobile-compare/dist/snowmobile-github-pages.zip"
 type = "unspecified"
 title = "Snowmobile Static Site (GitHub Pages)"
+
+[[outputs]]
+id = "KP27lsAFSgY1TUd5gCiHD"
+uri = "file://artifacts/snowmobile-compare/snowmobile-github-pages.zip"
+type = "unspecified"
+title = "Snowmobile Static Site (GitHub Pages)"
