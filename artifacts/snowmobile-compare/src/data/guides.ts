@@ -50,7 +50,7 @@ export const guides: Guide[] = [
     sections: [
       {
         heading: "Trail Sleds: Built for Speed on Packed Snow",
-        body: "Trail snowmobiles are optimized for groomed trails and hardpack snow conditions. They typically run shorter, narrower tracks (120\"–137\") with shallow lugs (around 1\" profile) designed to grip packed surfaces rather than float on powder. The chassis sits lower to the ground for a sportier feel and better cornering. Suspension is tuned firm to handle the bumps and chatter of a groomed trail at speed. Top trail sleds can hit speeds well over 100 mph on the right surface. Models like the Ski-Doo MXZ X-RS, Arctic Cat ZR 8500 RR, and Polaris Indy VR1 are purpose-built for this environment.",
+        body: "Trail snowmobiles are optimized for groomed trails and hardpack snow conditions. They typically run shorter, narrower tracks (120\"–137\") with shallow lugs (around 1\" profile) designed to grip packed surfaces rather than float on powder. The chassis sits lower to the ground for a sportier feel and better cornering. Suspension is tuned firm to handle the bumps and chatter of a groomed trail at speed. Top trail sleds can hit speeds well over 100 mph on the right surface. Models like the Ski-Doo MXZ X-RS, Arctic Cat ZR 858 RR, and Polaris Indy VR1 are purpose-built for this environment.",
       },
       {
         heading: "Mountain Sleds: Float, Not Speed",
@@ -62,7 +62,7 @@ export const guides: Guide[] = [
       },
       {
         heading: "Crossover: The Compromise",
-        body: "If you ride both groomed trails and occasional off-trail or backcountry terrain, a crossover sled is worth serious consideration. Models like the Ski-Doo Backcountry X-RS, Polaris Switchback Assault 850, and Arctic Cat RIOT 8500 run mid-length tracks (137\"–154\") with moderate lug depth. They're not as capable as a dedicated mountain sled in deep powder, and not as fast as a dedicated trail sled on hardpack — but they're genuinely competent in both environments and are often the most versatile choice for riders who don't want to own two sleds.",
+        body: "If you ride both groomed trails and occasional off-trail or backcountry terrain, a crossover sled is worth serious consideration. Models like the Ski-Doo Backcountry X-RS, Polaris Switchback Assault 850, and Arctic Cat Riot 858 run mid-length tracks (137\"–154\") with moderate lug depth. They're not as capable as a dedicated mountain sled in deep powder, and not as fast as a dedicated trail sled on hardpack — but they're genuinely competent in both environments and are often the most versatile choice for riders who don't want to own two sleds.",
       },
     ],
     sources: [
@@ -117,7 +117,7 @@ export const guides: Guide[] = [
       },
       {
         heading: "Displacement (CC): Engine Size",
-        body: "Displacement is the total volume swept by all pistons in cubic centimeters. A 600cc engine is smaller and lighter but produces less power than an 850cc engine. For newer riders, a 600cc sled (like the Arctic Cat ZR 6000 or Polaris Indy XC 650) offers manageable power that's easier to learn on and is significantly cheaper to buy and insure. 850cc–900cc engines are the current performance sweet spot for most riders. Engines above 998cc are typically reserved for high-performance touring or turbocharged applications.",
+        body: "Displacement is the total volume swept by all pistons in cubic centimeters. A 600cc engine is smaller and lighter but produces less power than an 850cc engine. For newer riders, a 600cc sled (like the Arctic Cat ZR 600 or Polaris Indy XC 650) offers manageable power that's easier to learn on and is significantly cheaper to buy and insure. 850cc–900cc engines are the current performance sweet spot for most riders. Engines above 998cc are typically reserved for high-performance touring or turbocharged applications.",
       },
       {
         heading: "Dry Weight: Why It Matters More Than You Think",
@@ -184,11 +184,11 @@ export const guides: Guide[] = [
       },
       {
         heading: "Yamaha Transporter Lite — Best Value Entry Point",
-        body: "The Yamaha Transporter Lite earns the top beginner recommendation for one simple reason: it's the least expensive new snowmobile you can buy from a major manufacturer at $10,400 MSRP. Its 400cc single-cylinder 2-stroke produces 65 hp — enough to be fun without being overwhelming. The utility category means it's stable, forgiving, and designed for controlled conditions. It won't win drag races, but for someone learning the basics of sled handling on groomed trails or open fields, it's nearly impossible to outgrow too fast.",
+        body: "The Yamaha Transporter Lite earns the top beginner recommendation for one simple reason: it's the least expensive new snowmobile you can buy from a major manufacturer at $9,999 MSRP. Its 400cc single-cylinder 2-stroke produces around 50 hp — enough to be fun without being overwhelming. The utility category means it's stable, forgiving, and designed for controlled conditions. It won't win drag races, but for someone learning the basics of sled handling on groomed trails or open fields, it's nearly impossible to outgrow too fast.",
       },
       {
         heading: "Polaris Indy XC 650 — Best Trail Beginner",
-        body: "If you want a proper trail sled without the intimidating power of an 850cc engine, the Polaris Indy XC 650 threads the needle well. The 650cc Patriot engine produces 135 hp — spirited but not snappy — and the Indy platform is one of the best-handling trail chassis on the market. The 129\" track is short enough for quick, responsive steering. At $14,200 it's not cheap, but Polaris's dealer network is strong and the Indy line has a well-earned reputation for reliability. Many seasoned riders started on an Indy and still own one.",
+        body: "If you want a proper trail sled without the intimidating power of an 850cc engine, the Polaris Indy XC 650 threads the needle well. The 650cc Patriot engine produces 130 hp — spirited but not snappy — and the Indy platform is one of the best-handling trail chassis on the market. The 129\" track is short enough for quick, responsive steering. At $14,200 it's not cheap, but Polaris's dealer network is strong and the Indy line has a well-earned reputation for reliability. Many seasoned riders started on an Indy and still own one.",
       },
       {
         heading: "Ski-Doo MXZ Sport 600 — A Trusted Gateway Sled",

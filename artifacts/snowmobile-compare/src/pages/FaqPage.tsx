@@ -13,11 +13,11 @@ const faqs: { category: string; items: FaqItem[] }[] = [
     items: [
       {
         q: "What is a good beginner snowmobile?",
-        a: "For most first-time buyers, a mid-range trail sled in the 600cc class is the right starting point. Models like the Arctic Cat ZR 6000 137, Polaris Indy XC 650, or Yamaha SXViper 600 offer manageable power, reliable drivetrains, and wide dealer support. Avoid high-performance 850cc or turbocharged sleds until you have at least one full season of riding experience — the power delivery is significantly more aggressive and the learning curve for handling them safely is real.",
+        a: "For most first-time buyers, a mid-range trail sled in the 600cc class is the right starting point. Models like the Arctic Cat ZR 600 137 or Polaris Indy XC 650 offer manageable power, reliable drivetrains, and wide dealer support. Avoid high-performance 850cc or turbocharged sleds until you have at least one full season of riding experience — the power delivery is significantly more aggressive and the learning curve for handling them safely is real.",
       },
       {
         q: "How much does a new snowmobile cost?",
-        a: "Entry-level utility and trail sleds start around $10,000–$14,000. Mid-range performance trail and crossover sleds run $14,000–$18,000. High-performance mountain sleds and turbocharged models push past $18,000, with top-tier options like the Yamaha Sidewinder SRX LE reaching $21,200. Budget an additional $800–$1,500 for safety gear (helmet, suit, boots, gloves), $1,500–$4,000 for a trailer, and variable costs for insurance, registration, and storage. First-year total cost of ownership is often 40–60% above sticker price.",
+        a: "Entry-level utility and trail sleds start around $10,000–$14,000. Mid-range performance trail and crossover sleds run $14,000–$18,000. High-performance mountain sleds and turbocharged models push past $18,000, with top-tier options like the Ski-Doo Summit X Expert reaching around $21,750. Budget an additional $800–$1,500 for safety gear (helmet, suit, boots, gloves), $1,500–$4,000 for a trailer, and variable costs for insurance, registration, and storage. First-year total cost of ownership is often 40–60% above sticker price.",
       },
       {
         q: "Should I buy new or used?",
@@ -79,7 +79,7 @@ const faqs: { category: string; items: FaqItem[] }[] = [
       },
       {
         q: "How fast do snowmobiles go?",
-        a: "Stock trail snowmobiles commonly reach 90–110 mph under the right conditions. High-performance trail sleds like the Polaris Indy VR1 or Arctic Cat ZR 8500 RR can exceed 120 mph. Turbocharged sleds like the Yamaha Sidewinder SRX LE (200 hp) are capable of even higher speeds. Mountain sleds have lower top speeds due to longer, heavier tracks but offer superior acceleration through deep snow. That said, trail speed limits on groomed trail systems are typically 50–60 mph, and responsible trail riding means operating well within the speed where you can stop within your line of sight. High-speed riding should only occur on closed, controlled environments.",
+        a: "Stock trail snowmobiles commonly reach 90–110 mph under the right conditions. High-performance trail sleds like the Polaris Indy VR1 or Arctic Cat ZR 858 RR can exceed 120 mph. Turbocharged sleds like the Yamaha Sidewinder SRX LE (200 hp) are capable of even higher speeds. Mountain sleds have lower top speeds due to longer, heavier tracks but offer superior acceleration through deep snow. That said, trail speed limits on groomed trail systems are typically 50–60 mph, and responsible trail riding means operating well within the speed where you can stop within your line of sight. High-speed riding should only occur on closed, controlled environments.",
       },
       {
         q: "How do I avoid getting stuck in deep snow?",

@@ -42,6 +42,19 @@ export default function HomePage() {
   const [compareIds, setCompareIds] = useState<number[]>([]);
   const [showCompare, setShowCompare] = useState(false);
 
+  const extremes = useMemo(() => {
+    const maxBy = (key: "horsepower" | "price") =>
+      snowmobiles.reduce((best, s) => (s[key] > best[key] ? s : best), snowmobiles[0]);
+    const minBy = (key: "weight" | "price") =>
+      snowmobiles.reduce((best, s) => (s[key] < best[key] ? s : best), snowmobiles[0]);
+    return {
+      mostPowerful: maxBy("horsepower"),
+      lightest: minBy("weight"),
+      mostAffordable: minBy("price"),
+      mostExpensive: maxBy("price"),
+    };
+  }, []);
+
   const filtered = useMemo(() => {
     let result = [...snowmobiles];
     if (filterBrand !== "All") result = result.filter(s => s.brand === filterBrand);
@@ -303,10 +316,10 @@ export default function HomePage() {
 
         <div className="quick-stats">
           <span>Quick Stats:</span>
-          <span>Most Powerful: <strong>Yamaha Sidewinder SRX LE — 200 hp</strong></span>
-          <span>Lightest: <strong>Polaris PRO RMK 850 — 420 lbs</strong></span>
-          <span>Most Affordable: <strong>Yamaha Transporter Lite — $10,400</strong></span>
-          <span>Most Expensive: <strong>Yamaha Sidewinder SRX LE — $21,200</strong></span>
+          <span>Most Powerful: <strong>{extremes.mostPowerful.brand} {extremes.mostPowerful.model} — {extremes.mostPowerful.horsepower} hp</strong></span>
+          <span>Lightest: <strong>{extremes.lightest.brand} {extremes.lightest.model} — {extremes.lightest.weight} lbs</strong></span>
+          <span>Most Affordable: <strong>{extremes.mostAffordable.brand} {extremes.mostAffordable.model} — ${extremes.mostAffordable.price.toLocaleString()}</strong></span>
+          <span>Most Expensive: <strong>{extremes.mostExpensive.brand} {extremes.mostExpensive.model} — ${extremes.mostExpensive.price.toLocaleString()}</strong></span>
         </div>
 
         <div className="guides-teaser-section">
