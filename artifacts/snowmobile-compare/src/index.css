@@ -1344,11 +1344,15 @@ tbody td {
 .listing-back {
   display: inline-block;
   margin: 0 0 20px;
-  color: #64748b;
+  padding: 7px 16px;
+  background: #e2e8f0;
+  color: #334155;
+  border-radius: 3px;
   font-size: 13px;
+  font-weight: 600;
   text-decoration: none;
 }
-.listing-back:hover { text-decoration: underline; }
+.listing-back:hover { background: #cbd5e1; }
 
 .listing-main {
   display: grid;

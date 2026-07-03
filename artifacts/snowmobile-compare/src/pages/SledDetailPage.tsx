@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { snowmobiles } from "../data/snowmobiles";
 import Layout from "../components/Layout";
@@ -26,6 +27,10 @@ export default function SledDetailPage() {
       : "Sled Not Found | SledSpec.com"
   );
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   if (!sled) {
     return (
       <Layout>
@@ -44,7 +49,7 @@ export default function SledDetailPage() {
   return (
     <Layout>
       <div className="container">
-        <Link href="/" className="listing-back">← Back to listings</Link>
+        <Link href="/" className="listing-back">← Back</Link>
 
         <div className="listing-main">
           <div className="listing-photo-box">
