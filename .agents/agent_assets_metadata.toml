@@ -11,3 +11,9 @@ id = "08vAiy2a5-mRRhTO-trPa"
 uri = "file://snowmobile-compare-site.tar.gz"
 type = "unspecified"
 title = "Snowmobile Comparison Site Files (updated)"
+
+[[outputs]]
+id = "eH8J1LWh3_sK9tVXizdQJ"
+uri = "file://export/sledspec-github.zip"
+type = "unspecified"
+title = "SledSpec — GitHub-ready project (.zip)"
