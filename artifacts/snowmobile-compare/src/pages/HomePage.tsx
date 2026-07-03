@@ -95,9 +95,11 @@ export default function HomePage() {
 
   const totalModels = snowmobiles.length;
   const totalBrands = new Set(snowmobiles.map(s => s.brand)).size;
-  const totalCategories = new Set(snowmobiles.map(s => s.category)).size;
   const minPrice = Math.min(...snowmobiles.map(s => s.price));
   const maxPrice = Math.max(...snowmobiles.map(s => s.price));
+  const minYear = Math.min(...snowmobiles.map(s => s.year));
+  const maxYear = Math.max(...snowmobiles.map(s => s.year));
+  const yearLabel = minYear === maxYear ? `${minYear}` : `${minYear}–${maxYear}`;
 
   return (
     <Layout>
@@ -112,12 +114,12 @@ export default function HomePage() {
             <span className="stat-label">Brands</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">{totalCategories}</span>
-            <span className="stat-label">Riding Categories</span>
-          </div>
-          <div className="stat-card">
             <span className="stat-value">${minPrice.toLocaleString()} – ${maxPrice.toLocaleString()}</span>
             <span className="stat-label">Price Range</span>
+          </div>
+          <div className="stat-card">
+            <span className="stat-value">{yearLabel}</span>
+            <span className="stat-label">Model Years</span>
           </div>
         </div>
 
