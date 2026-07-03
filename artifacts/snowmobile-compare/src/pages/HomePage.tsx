@@ -93,29 +93,31 @@ export default function HomePage() {
   const brands = ["All", ...Array.from(new Set(snowmobiles.map(s => s.brand)))];
   const categories: (Category | "All")[] = ["All", "Trail", "Mountain", "Crossover", "Touring", "Utility"];
 
+  const totalModels = snowmobiles.length;
   const totalBrands = new Set(snowmobiles.map(s => s.brand)).size;
-  const avgPrice = Math.round(snowmobiles.reduce((a, b) => a + b.price, 0) / snowmobiles.length);
-  const maxHp = Math.max(...snowmobiles.map(s => s.horsepower));
+  const totalCategories = new Set(snowmobiles.map(s => s.category)).size;
+  const minPrice = Math.min(...snowmobiles.map(s => s.price));
+  const maxPrice = Math.max(...snowmobiles.map(s => s.price));
 
   return (
     <Layout>
       <div className="container">
         <div className="stats-bar">
           <div className="stat-card">
-            <span className="stat-value">23</span>
-            <span className="stat-label">Models Listed</span>
+            <span className="stat-value">{totalModels}</span>
+            <span className="stat-label">Models Compared</span>
           </div>
           <div className="stat-card">
             <span className="stat-value">{totalBrands}</span>
-            <span className="stat-label">Manufacturers</span>
+            <span className="stat-label">Brands</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">{maxHp} hp</span>
-            <span className="stat-label">Highest Horsepower</span>
+            <span className="stat-value">{totalCategories}</span>
+            <span className="stat-label">Riding Categories</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">${avgPrice.toLocaleString()}</span>
-            <span className="stat-label">Avg. MSRP</span>
+            <span className="stat-value">${minPrice.toLocaleString()} – ${maxPrice.toLocaleString()}</span>
+            <span className="stat-label">Price Range</span>
           </div>
         </div>
 
