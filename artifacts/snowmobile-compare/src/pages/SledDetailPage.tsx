@@ -10,6 +10,12 @@ const brandClass: Record<string, string> = {
   "Yamaha": "brand-yamaha",
 };
 
+function costTier(price: number) {
+  if (price >= 19000) return "$$$";
+  if (price >= 15000) return "$$";
+  return "$";
+}
+
 export default function SledDetailPage() {
   const { id } = useParams<{ id: string }>();
   const sled = snowmobiles.find(s => s.id === Number(id));
@@ -38,60 +44,75 @@ export default function SledDetailPage() {
   return (
     <Layout>
       <div className="container">
-        <p className="sdp-back"><Link href="/">← All snowmobiles</Link></p>
+        <Link href="/" className="listing-back">← BACK TO LISTINGS</Link>
 
-        <div className="sdp">
-          <div className="sdp__left">
+        <div className="listing-main">
+          <div className="listing-photo-box">
             {sled.image && (
               <img
                 src={sled.image}
                 alt={`${sled.year} ${sled.brand} ${sled.model}`}
-                className="sdp__photo"
+                className="listing-photo"
               />
             )}
-            <p className="sdp__price">${sled.price.toLocaleString()}</p>
-            <p className="sdp__price-note">Approx. MSRP — confirm with your dealer</p>
           </div>
 
-          <div className="sdp__right">
-            <p className="sdp__category">{sled.category} · {sled.year}</p>
-            <h1 className="sdp__name">
-              <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
-            </h1>
-            <p className="sdp__engine">{sled.engine}</p>
+          <div className="listing-side">
+            <div className="listing-card">
+              <h1 className="listing-title">
+                <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
+              </h1>
+              <span className="listing-verified">✓ VERIFIED SPECS</span>
+              <p className="listing-price">${sled.price.toLocaleString()}</p>
+              <div className="listing-badges">
+                <span className="listing-badge">{sled.category}</span>
+                <span className="listing-badge">{sled.year}</span>
+                <span className="listing-badge">{sled.horsepower} HP</span>
+                <span className="listing-badge">COST {costTier(sled.price)}</span>
+              </div>
+            </div>
 
-            <p className="sdp__description">{sled.description}</p>
-
-            <p className="sdp__official-link">
-              <a href={sled.officialUrl} target="_blank" rel="noopener noreferrer">
-                View on {sled.brand}'s official site
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </p>
-
-            <h3 className="sdp__specs-heading">Specs</h3>
-            <table className="sdp__specs-table">
-              <tbody>
-                <tr><td>Engine</td><td>{sled.engine}</td></tr>
-                <tr><td>Displacement</td><td>{sled.displacement} cc</td></tr>
-                <tr><td>Horsepower</td><td>{sled.horsepower} hp</td></tr>
-                <tr><td>Weight</td><td>{sled.weight} lbs</td></tr>
-                <tr><td>Track length</td><td>{sled.trackLength}"</td></tr>
-                <tr><td>Category</td><td>{sled.category}</td></tr>
-                <tr><td>Model year</td><td>{sled.year}</td></tr>
-              </tbody>
-            </table>
-
-            <h3 className="sdp__specs-heading">Features</h3>
-            <ul className="sdp__features">
-              {sled.features.map((f, i) => <li key={i}>{f}</li>)}
-            </ul>
+            <a
+              href={sled.officialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="listing-visit"
+            >
+              VISIT {sled.brand.toUpperCase()} SITE
+            </a>
           </div>
         </div>
 
+        <div className="listing-box">
+          <h2 className="listing-box-heading">Description</h2>
+          <p className="listing-overview">
+            <strong>Quick overview:</strong> {sled.description}
+          </p>
+
+          <h3 className="listing-sub-heading">Highlights</h3>
+          <ul className="listing-highlights">
+            {sled.features.map((f, i) => <li key={i}>{f}</li>)}
+          </ul>
+        </div>
+
+        <div className="listing-box">
+          <h2 className="listing-box-heading">Specifications</h2>
+          <table className="listing-specs">
+            <tbody>
+              <tr><td>Engine</td><td>{sled.engine}</td></tr>
+              <tr><td>Displacement</td><td>{sled.displacement} cc</td></tr>
+              <tr><td>Horsepower</td><td>{sled.horsepower} hp</td></tr>
+              <tr><td>Weight</td><td>{sled.weight} lbs</td></tr>
+              <tr><td>Track length</td><td>{sled.trackLength}"</td></tr>
+              <tr><td>Category</td><td>{sled.category}</td></tr>
+              <tr><td>Model year</td><td>{sled.year}</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         {others.length > 0 && (
-          <div className="sdp__related">
-            <h3 className="sdp__related-heading">Also worth a look</h3>
+          <div className="listing-box">
+            <h2 className="listing-box-heading">Also worth a look</h2>
             <div className="sdp__related-list">
               {others.map(s => (
                 <Link key={s.id} href={`/sled/${s.id}`} className="sdp__related-item">
@@ -105,10 +126,6 @@ export default function SledDetailPage() {
             </div>
           </div>
         )}
-
-        <p style={{ marginTop: "32px" }}>
-          <Link href="/">← Back to all snowmobiles</Link>
-        </p>
       </div>
     </Layout>
   );
