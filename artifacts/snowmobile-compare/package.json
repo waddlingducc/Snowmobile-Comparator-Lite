@@ -7,6 +7,7 @@
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
     "build": "vite build --config vite.config.ts",
     "build:static": "NODE_ENV=production PORT=5000 BASE_PATH=/ vite build --config vite.config.ts && NODE_ENV=production PORT=5000 BASE_PATH=/ node prerender.mjs",
+    "verify:static": "node verify-static.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },

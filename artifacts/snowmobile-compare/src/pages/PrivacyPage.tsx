@@ -6,105 +6,98 @@ export default function PrivacyPage() {
   usePageTitle("Privacy Policy | SledSpec.com");
   return (
     <Layout>
-      <div className="container">
+      <main className="container">
         <div className="breadcrumb">
-          <Link href="/">Home</Link>
-          <span> / </span>
-          <span>Privacy Policy</span>
+          <Link href="/" data-testid="link-privacy-home">Home</Link>
+          <span> / </span><span>Privacy Policy</span>
         </div>
-
         <div className="page-hero">
-          <h2 className="page-hero__title">Privacy Policy</h2>
-          <p className="page-hero__sub">Last updated: June 12, 2026</p>
+          <h1 className="page-hero__title">Privacy Policy</h1>
+          <p className="page-hero__sub">Publication research date: <time dateTime="2026-10-01">October 1, 2026</time></p>
         </div>
-
-        <div className="prose-content">
-          <h3>1. Introduction</h3>
+        <article className="prose-content">
+          <h3>Current application behavior</h3>
           <p>
-            SledSpec.com ("we", "us", or "our") operates this website as a free snowmobile
-            comparison resource. This Privacy Policy explains how we collect, use, and share
-            information when you visit SledSpec.com.
+            SledSpec is a static, public comparison and guide application. It has no user accounts,
+            login, payment collection, or application backend for visitor data. There is no contact
+            form submission. Filters, sorting, and comparison selections are held in browser memory;
+            the application does not save them to cookies, local storage, or a server, and reloading
+            resets them. The current application does not load analytics or advertising scripts.
           </p>
-
-          <h3>2. Information We Collect</h3>
+          <h3>Hosting and request logs</h3>
           <p>
-            We do not require you to create an account or provide any personal information to
-            use SledSpec.com. The comparison tool, filters, and guides are all available without
-            registration.
+            Loading this site sends requests to its hosting infrastructure. Hosting providers may
+            process your IP address, requested URL, request time, browser information, and referrer
+            for delivery, security, and operational logs. A static application does not make these
+            requests anonymous. The hosting operator's log retention, access, and deletion settings
+            have not been verified here; no specific retention period or deletion guarantee is claimed.
           </p>
+          <h3>External fonts and links</h3>
           <p>
-            When you use our site, certain information may be collected automatically, including:
-          </p>
-          <ul>
-            <li>Your browser type and version</li>
-            <li>Pages you visit and time spent on each page</li>
-            <li>Your approximate geographic location (country/region level only)</li>
-            <li>The device and operating system you use to access the site</li>
-            <li>Referring URL (where you came from before visiting SledSpec.com)</li>
-          </ul>
-          <p>
-            If you use our Contact form, we collect the name, email address, and message content
-            you provide. This information is used solely to respond to your inquiry.
-          </p>
-
-          <h3>3. Cookies</h3>
-          <p>
-            SledSpec.com uses cookies and similar tracking technologies. Cookies are small text
-            files stored on your device that help us understand how visitors use the site.
+            The page imports the Inter font through Google Fonts from fonts.googleapis.com and
+            fonts.gstatic.com. Your browser contacts those services while loading the page, which
+            exposes request information such as your IP address and browser headers to Google.
+            See <a href="https://policies.google.com/privacy" data-testid="link-privacy-google">Google's Privacy Policy</a>.
           </p>
           <p>
-            You can instruct your browser to refuse all cookies or to indicate when a cookie is
-            being sent. However, if you do not accept cookies, some portions of our site may not
-            function properly.
+            Manufacturer and other source links take you to separate websites. Those sites apply
+            their own privacy and cookie practices. A link does not mean SledSpec controls their
+            collection or endorses their policies.
           </p>
-
-          <h3>4. How We Use Your Information</h3>
-          <p>We use the information we collect to:</p>
-          <ul>
-            <li>Operate and improve SledSpec.com</li>
-            <li>Understand how visitors use the site so we can add more useful content</li>
-            <li>Respond to messages sent through our Contact form</li>
-            <li>Monitor for and prevent abuse or misuse of the site</li>
-          </ul>
+          <h3>Email, not a website submission</h3>
           <p>
-            We do not sell your personal information to third parties.
+            The <Link href="/contact" data-testid="link-privacy-contact">Contact page</Link> provides a
+            mailto link. Clicking it opens your email software; nothing is submitted to a SledSpec
+            backend. If you choose to send an email, its contents and sender details pass through your
+            email provider and the recipient's provider, if the mailbox is active. The existing
+            published address, info@sledspec.com, has not been verified for ownership, delivery, or
+            monitoring. Avoid sending sensitive information.
           </p>
-
-          <h3>5. Data Sharing</h3>
+          <h3>Advertising is not enabled</h3>
           <p>
-            We do not share your personal information with third parties except as required by
-            law.
+            No Google AdSense or other ad-serving script is currently loaded by this application.
+            No advertising consent mechanism or Google-certified consent management platform (CMP)
+            is implemented. This policy does not mean that future advertising is approved or ready to run.
           </p>
-
-          <h3>6. Children's Privacy</h3>
           <p>
-            SledSpec.com is not directed at children under the age of 13. We do not knowingly
-            collect personal information from children under 13. If you believe we have
-            inadvertently collected such information, please contact us so we can delete it.
+            Before enabling Google advertising, the site operator must configure the actual advertising
+            account and providers, update this policy to describe their data uses, and implement and
+            test the required consent controls. Google's{" "}
+            <a href="https://support.google.com/adsense/answer/1348695?hl=en" data-testid="link-privacy-ad-disclosures">required privacy disclosures</a>{" "}
+            include that third-party vendors, including Google, use cookies to serve ads based on prior
+            visits to this and other websites, that Google's advertising cookies enable Google and its
+            partners to personalize ads, and how users can opt out through{" "}
+            <a href="https://www.google.com/settings/ads" data-testid="link-privacy-ad-settings">Ads Settings</a>.
+            Actual participating vendors and their privacy and opt-out links must also be identified.
           </p>
-
-          <h3>7. Your Rights</h3>
           <p>
-            Depending on your location, you may have the right to access, correct, or delete
-            personal information we hold about you. To exercise these rights, contact us at{" "}
-            <a href="mailto:info@sledspec.com">info@sledspec.com</a>.
+            Google's{" "}
+            <a href="https://www.google.com/intl/en_uk/about/company/user-consent-policy-help" data-testid="link-privacy-consent-requirements">EU user consent guidance</a>{" "}
+            requires publishers serving ads to users in the EEA, UK, and Switzerland to use a
+            Google-certified CMP under the applicable TCF requirements. Required disclosures and
+            consent for cookies or local storage where legally required, and for collection, sharing,
+            and use of personal data for ad personalization, must be obtained. Users must be able
+            to withdraw consent. Non-personalized ads do not automatically remove cookie-consent duties.
+            Future disclosures must link to{" "}
+            <a href="https://business.safety.google/privacy/" data-testid="link-privacy-google-data-use">how Google uses personal data</a>{" "}
+            and reflect the actual setup and applicable regional requirements, not just a generic banner.
           </p>
-
-          <h3>8. Changes to This Policy</h3>
+          <h3>Your choices and policy updates</h3>
           <p>
-            We may update this Privacy Policy from time to time. Changes will be posted on this
-            page with an updated date. Your continued use of SledSpec.com after any changes
-            constitutes your acceptance of the revised policy.
+            You can leave external links unopened and manage browser privacy settings. Reloading clears
+            the application's in-memory selections, but does not delete hosting logs or emails.
+            Depending on your location, rights may apply to personal data held by the relevant operator
+            or service provider. For questions, consult the{" "}
+            <Link href="/contact" data-testid="link-privacy-questions">contact information and its verification limitations</Link>.
+            The operator must confirm a working channel and actual provider practices to handle such requests.
           </p>
-
-          <h3>9. Contact Us</h3>
           <p>
-            If you have any questions about this Privacy Policy, please contact us at{" "}
-            <a href="mailto:info@sledspec.com">info@sledspec.com</a> or use our{" "}
-            <Link href="/contact">Contact page</Link>.
+            This page should be updated whenever hosting, fonts, data collection, or advertising changes.
+            Read the <Link href="/about" data-testid="link-privacy-about">About page</Link> for research limitations
+            and the <Link href="/terms" data-testid="link-privacy-terms">Terms of Use</Link> for use of the content.
           </p>
-        </div>
-      </div>
+        </article>
+      </main>
     </Layout>
   );
 }

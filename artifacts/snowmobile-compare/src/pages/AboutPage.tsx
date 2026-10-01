@@ -4,134 +4,111 @@ import Layout from "../components/Layout";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function AboutPage() {
-  usePageTitle("About SledSpec.com — Who We Are & How We Work");
+  usePageTitle("About SledSpec.com — Research Methods & Limitations");
 
   return (
     <Layout>
-      <div className="container">
+      <main className="container">
         <div className="page-hero">
-          <h2 className="page-hero__title">About SledSpec.com</h2>
-          <p className="page-hero__sub">
-            A free, independent snowmobile comparison tool built by riders, for riders.
-          </p>
+          <h1 className="page-hero__title">About SledSpec.com</h1>
+          <p className="page-hero__sub">A snowmobile research starting point, not a hands-on review site.</p>
         </div>
-
         <div className="article-layout">
-          <div className="guide-detail">
+          <article className="guide-detail">
             <div className="guide-detail__body">
-
-              <div className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">Why We Built This</h3>
+              <section className="guide-detail__section">
+                <h3 className="guide-detail__section-heading">What the catalog covers</h3>
                 <p className="guide-detail__section-body">
-                  Shopping for a snowmobile is harder than it should be. Manufacturer websites are
-                  designed to sell — not to help you compare. Dealer lots vary by region, and spec
-                  sheets are scattered across PDFs, press releases, and model pages that don't
-                  talk to each other. We got frustrated searching for side-by-side numbers every
-                  season and decided to build the resource we wished existed: one page, all the
-                  specs, sortable and filterable so you can find what actually fits your riding
-                  style and budget.
+                  SledSpec brings selected snowmobiles from Ski-Doo, Polaris, Arctic Cat, and Yamaha
+                  into a filterable comparison catalog. It covers multiple model years, not a complete
+                  current-year lineup. A listed model is not evidence that it is still in production,
+                  available locally, or offered in every configuration. Check the year, engine, track,
+                  package, and market before comparing two entries.
                 </p>
-              </div>
-
-              <div className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">What SledSpec Does</h3>
+              </section>
+              <section className="guide-detail__section">
+                <h3 className="guide-detail__section-heading">AI-assisted desk research</h3>
                 <p className="guide-detail__section-body">
-                  SledSpec.com publishes free comparison data for current-model-year snowmobiles
-                  from the four major North American manufacturers: Ski-Doo, Polaris, Arctic Cat,
-                  and Yamaha. You can sort the full lineup by price, horsepower, weight, track
-                  length, or displacement — filter by brand or category — and compare up to four
-                  sleds side-by-side in a detailed panel. We also publish in-depth buying guides
-                  and explainers written by experienced riders covering everything from how to
-                  choose your first sled to understanding the difference between 2-stroke and
-                  4-stroke engines.
+                  The catalog, model summaries, and guides are prepared using AI-assisted desk research
+                  of publicly available material. This is not first-hand riding experience: SledSpec
+                  has not conducted instrumented performance tests, weighed these machines, or performed
+                  hands-on reviews. Descriptions of likely use cases are interpretations of published
+                  specifications, not measured handling, reliability, or ownership results.
                 </p>
-              </div>
-
-              <div className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">How We Compile Our Data</h3>
+                <p className="guide-detail__section-body" style={{ marginTop: "12px" }}>
+                  Publication research date: <time dateTime="2026-10-01">October 1, 2026</time>.
+                  This is a research snapshot, not a promise of continuous updates or confirmation that
+                  every linked page still describes the same model year.
+                </p>
+              </section>
+              <section className="guide-detail__section">
+                <h3 className="guide-detail__section-heading">Sources and field-level uncertainty</h3>
                 <p className="guide-detail__section-body">
-                  All specifications on SledSpec.com come from official manufacturer sources:
-                  product pages on ski-doo.com, polaris.com, arctic-cat.com, and yamaha-motor.com,
-                  as well as dealer spec sheets and press materials for each model year. We compile
-                  this data manually at the start of each season and update it when manufacturers
-                  publish corrections or mid-year changes. Prices shown are approximate U.S. MSRP
-                  as listed by the manufacturer — actual dealer pricing varies by region, package,
-                  and availability. We always recommend verifying specs and pricing directly with
-                  your local authorized dealer before making a purchase.
+                  Follow the source links on model pages and guides to inspect the underlying material.
+                  Manufacturer model pages, specifications, and owner documentation are the preferred
+                  references. A general manufacturer link provides context; it does not prove every
+                  number in an entry. Pages can change, omit a field, or describe a different package.
                 </p>
-              </div>
-
-              <div className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">Editorial Independence</h3>
+                <p className="guide-detail__section-body" style={{ marginTop: "12px" }}>
+                  Treat each field separately: a published displacement does not establish horsepower,
+                  weight, or price. Estimates are not manufacturer-confirmed figures, and unavailable
+                  values should not be interpreted as zero. Dry and ready-to-ride weights are not
+                  interchangeable. MSRP is not a dealer quote and may exclude freight, setup, taxes,
+                  accessories, and incentives. Verify uncertain fields against year-specific documents
+                  or an authorized dealer rather than relying on a ranking alone.
+                </p>
+              </section>
+              <section className="guide-detail__section">
+                <h3 className="guide-detail__section-heading">Editorial limitations and corrections</h3>
                 <p className="guide-detail__section-body">
-                  SledSpec.com is not affiliated with, endorsed by, or sponsored by Ski-Doo
-                  (Bombardier Recreational Products), Polaris Inc., Textron Arctic Cat, or
-                  Yamaha Motor Corporation. We do not receive compensation from any manufacturer
-                  or dealer for how we present, rank, or describe their products. Our guides
-                  are written independently and reflect our own analysis of publicly available
-                  information. We have no financial relationship with any snowmobile brand.
+                  AI-assisted research can misread a source, mix model years, or overstate a conclusion.
+                  The catalog is selective and may contain errors or omissions. It is not a substitute
+                  for an owner's manual, recall lookup, avalanche training, mechanical inspection, or
+                  professional safety advice. No rider credentials, named expert review, or hands-on
+                  testing are claimed here.
                 </p>
-              </div>
-
-              <div className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">Advertising</h3>
+                <p className="guide-detail__section-body" style={{ marginTop: "12px" }}>
+                  A useful correction identifies the model year and package, the disputed field, and a
+                  year-specific source supporting the change. See the{" "}
+                  <Link href="/contact" data-testid="link-about-corrections">email contact page</Link>.
+                  There is no guaranteed response or correction deadline. An unresolved field should
+                  remain uncertain rather than be presented as verified.
+                </p>
+              </section>
+              <section className="guide-detail__section">
+                <h3 className="guide-detail__section-heading">Advertising and site policies</h3>
                 <p className="guide-detail__section-body">
-                  SledSpec.com is a free resource supported by display advertising. We may
-                  display ads served by Google AdSense or other third-party advertising networks.
-                  Advertisers have no influence over our editorial content, guide topics, or
-                  how we present snowmobile specifications. For more information on how we
-                  handle data related to advertising, see our{" "}
-                  <Link href="/privacy">Privacy Policy</Link>.
+                  The current site does not load advertising scripts. This page does not assert a
+                  sponsorship history or financial relationship with manufacturers. If advertising is
+                  introduced, the operator must update disclosures and configure any required consent
+                  controls before enabling it. Read the{" "}
+                  <Link href="/privacy" data-testid="link-about-privacy">Privacy Policy</Link> and{" "}
+                  <Link href="/terms" data-testid="link-about-terms">Terms of Use</Link>.
                 </p>
-              </div>
-
-              <div className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">Corrections & Feedback</h3>
-                <p className="guide-detail__section-body">
-                  Manufacturer specifications change, and we may occasionally have a number
-                  wrong. If you spot an error — or want to suggest a model we should add —
-                  please reach out. We take accuracy seriously and will correct confirmed
-                  errors promptly. You can reach us through our{" "}
-                  <Link href="/contact">contact form</Link> or by emailing{" "}
-                  <a href="mailto:info@sledspec.com" style={{ color: "#2563eb" }}>info@sledspec.com</a>.
-                </p>
-              </div>
-
+              </section>
             </div>
-          </div>
-
+          </article>
           <aside className="article-sidebar">
             <div className="sidebar-box">
-              <p className="sidebar-box__heading">Buying Guides</p>
+              <h3 className="sidebar-box__heading">Research guides</h3>
               <ul className="sidebar-box__links">
                 {guides.slice(0, 6).map(g => (
                   <li key={g.id}>
-                    <Link href={`/guides/${g.id}`}>{g.title}</Link>
+                    <Link href={`/guides/${g.id}`} data-testid={`link-about-guide-${g.id}`}>{g.title}</Link>
                   </li>
                 ))}
               </ul>
             </div>
-
             <div className="sidebar-box">
-              <p className="sidebar-box__heading">Quick Links</p>
-              <ul className="sidebar-box__links">
-                <li><Link href="/">Snowmobile Comparison Tool</Link></li>
-                <li><Link href="/faq">Frequently Asked Questions</Link></li>
-                <li><Link href="/contact">Contact Us</Link></li>
-                <li><Link href="/privacy">Privacy Policy</Link></li>
-              </ul>
-            </div>
-
-            <div className="sidebar-box">
-              <p className="sidebar-box__heading">Compare Snowmobiles</p>
+              <h3 className="sidebar-box__heading">Explore the catalog</h3>
               <p style={{ fontSize: "13px", color: "#475569", marginBottom: "12px", lineHeight: "1.5" }}>
-                23 models from all four major brands, side by side.
+                Compare selected models across years, with attention to configuration and uncertainty.
               </p>
-              <Link href="/" className="sidebar-cta">Open Comparison Tool &rarr;</Link>
+              <Link href="/" className="sidebar-cta" data-testid="link-about-compare">Open Comparison Tool &rarr;</Link>
             </div>
           </aside>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }

@@ -1,21 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Link } from "wouter";
+import Layout from "../components/Layout";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function NotFound() {
-  return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
-          </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
-          </p>
-        </CardContent>
-      </Card>
-    </div>
-  );
+  usePageTitle("Page Not Found | SledSpec.com");
+  return <Layout><div className="container page-hero">
+    <h1 className="page-hero__title">Page not found</h1>
+    <p className="page-hero__sub">That address does not match a page in our catalog. It may have moved, or the link may be incomplete.</p>
+    <Link href="/" className="btn btn-primary">Compare snowmobiles</Link>{" "}
+    <Link href="/guides" className="btn btn-secondary">Read buying guides</Link>
+  </div></Layout>;
 }

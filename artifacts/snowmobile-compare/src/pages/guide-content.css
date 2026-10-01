@@ -1,0 +1,22 @@
+.guide-methodology { font-size: 0.9rem; line-height: 1.7; color: #475569; margin: 1rem 0; max-width: 78ch; }
+.guide-toc { padding: 1.25rem; border: 1px solid #cbd5e1; background: #f8fafc; border-radius: 8px; margin: 1.5rem 0 2rem; }
+.guide-toc h2 { font-size: 1.1rem; margin: 0 0 0.75rem; }
+.guide-toc ol, .guide-toc ul, .guide-checklist { padding-left: 1.4rem; list-style: revert; }
+.guide-toc li, .guide-checklist li { margin: 0.55rem 0; line-height: 1.7; }
+.guide-research a, .guide-methodology a, .guide-toc a, .faq-researched a { text-decoration: underline; text-underline-offset: 3px; }
+.guide-research section, .faq-researched section { scroll-margin-top: 6rem; }
+.guide-research { min-width: 0; }
+.guide-table-wrap { overflow-x: auto; margin: 1.2rem 0; max-width: 100%; }
+.guide-table-wrap:focus-visible { outline: 2px solid #2563eb; outline-offset: 3px; }
+.guide-evidence-table { border-collapse: collapse; width: 100%; font-size: 0.9rem; line-height: 1.6; }
+.guide-evidence-table th, .guide-evidence-table td { border: 1px solid #cbd5e1; padding: 0.75rem; text-align: left; vertical-align: top; min-width: 135px; }
+.guide-evidence-table thead th { background: #f1f5f9; color: #0f172a; }
+.guide-evidence-table tbody th { font-weight: 600; }
+.guide-citations { font-size: 0.8rem; line-height: 1.6; margin-top: 1rem; color: #475569; }
+.guide-sources p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+.faq-researched .faq-item__question { font-size: 1rem; line-height: 1.5; margin: 0; cursor: default; }
+.faq-researched .faq-item__answer { display: block; }
+@media (max-width: 640px) {
+  .guide-toc { padding: 1rem; }
+  .guide-evidence-table th, .guide-evidence-table td { padding: 0.6rem; }
+}

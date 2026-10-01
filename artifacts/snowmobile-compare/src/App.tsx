@@ -8,6 +8,7 @@ import ContactPage from "./pages/ContactPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import FaqPage from "./pages/FaqPage";
 import TermsPage from "./pages/TermsPage";
+import NotFound from "./pages/not-found";
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
       <Route path="/privacy" component={PrivacyPage} />
       <Route path="/faq" component={FaqPage} />
       <Route path="/terms" component={TermsPage} />
-      <Route component={HomePage} />
+      <Route component={NotFound} />
     </Switch>
   );
 }

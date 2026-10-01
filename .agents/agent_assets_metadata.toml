@@ -11,27 +11,53 @@ id = "08vAiy2a5-mRRhTO-trPa"
 uri = "file://snowmobile-compare-site.tar.gz"
 type = "unspecified"
 title = "Snowmobile Comparison Site Files (updated)"
+logical_id = "a069da1e-59f9-4b7f-ba00-df595c886908"
 
 [[outputs]]
 id = "eH8J1LWh3_sK9tVXizdQJ"
 uri = "file://export/sledspec-github.zip"
 type = "unspecified"
 title = "SledSpec — GitHub-ready project (.zip)"
+logical_id = "922a6f11-b95c-485a-bef5-b97f3102d5cc"
 
 [[outputs]]
 id = "UMX-NQr0k7neOrZgEYprw"
 uri = "file://export/sledspec-site.zip"
 type = "unspecified"
 title = "SledSpec — updated site, no cookie banner (.zip)"
+logical_id = "33b83d87-d57b-4bf3-a8a1-c71b13224f3e"
 
 [[outputs]]
 id = "ZUkSSGS1Fyml6ZHipqN1f"
 uri = "file://artifacts/snowmobile-compare/dist/snowmobile-github-pages.zip"
 type = "unspecified"
 title = "Snowmobile Static Site (GitHub Pages)"
+logical_id = "aa2b307d-34f7-472f-a3aa-b9ab9de2e9e2"
 
 [[outputs]]
 id = "KP27lsAFSgY1TUd5gCiHD"
 uri = "file://artifacts/snowmobile-compare/snowmobile-github-pages.zip"
 type = "unspecified"
-title = "Snowmobile Static Site (GitHub Pages)"
+title = "Updated SledSpec — GitHub Pages ZIP"
+description = "Verified static website package. Extract and upload its contents at your GitHub Pages publishing root, including .nojekyll and CNAME."
+logical_id = "18a21114-1669-4ddf-a165-7a63f269e937"
+content_hash = "sha256:a22f414c62d0c8eca7bfc8215008b473cb1feaed48a8b2a2837660cf7e3fb80e"
+size = 1813523
+mtime_ms = 1790898064992
+storage_uri = "gcs://replit-rams-assets-janeway/rams/assets/repl:2465ef14-0c08-433d-a21f-fec33b00def0/18a21114-1669-4ddf-a165-7a63f269e937/2e416eb1-8d33-48ee-ba7a-9214d7fef1d9"
+storage_version_token = "1790898078223665"
+content_type = "application/octet-stream"
+
+[[outputs]]
+id = "CL3s8wsuUwISI1T3VCkQA"
+uri = "file://artifacts/snowmobile-compare/docs/adsense-readiness.html"
+type = "html"
+title = "AdSense readiness report & reapplication checklist"
+description = "Official Google guidance, completed changes, validation results and remaining owner checks. No approval guarantee."
+logical_id = "8e6fcd46-53af-411d-8f10-1b85bcfc4999"
+content_hash = "sha256:92d8b2e5a2f5a2b09d0d3201e729f80e94bb4a61001e227c89a931683c11a095"
+size = 7334
+mtime_ms = 1790897921834
+storage_uri = "gcs://replit-rams-assets-janeway/rams/assets/repl:2465ef14-0c08-433d-a21f-fec33b00def0/8e6fcd46-53af-411d-8f10-1b85bcfc4999/27428b77-600f-4973-9c76-b35ba4265fa9"
+storage_version_token = "1790898078740319"
+content_type = "text/html"

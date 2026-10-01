@@ -3,14 +3,15 @@ import { Link } from "wouter";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div id="top">
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header">
         <div className="header-inner">
           <div className="header-title">
             <Link href="/" style={{ textDecoration: "none" }}>
-              <h1><span className="domain-tld">SledSpec</span><span className="domain-dot">.com</span></h1>
+              <span className="site-wordmark"><span className="domain-tld">SledSpec</span><span className="domain-dot">.com</span></span>
             </Link>
           </div>
-          <nav className="header-nav">
+          <nav className="header-nav" aria-label="Main navigation">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/guides">Guides</Link>
@@ -20,10 +21,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      {children}
+      <main id="main-content">{children}</main>
 
       <footer className="footer">
-        <p>Prices are approximate MSRP and may vary by region and dealer. Always verify specs before purchasing.</p>
+        <p>Selected models, not a complete current lineup. Source coverage and configuration vary. Confirm the exact sled, price and availability before purchasing.</p>
         <p style={{ marginTop: "6px" }}>
           © 2026 SledSpec.com — Independent snowmobile comparison tool &nbsp;·&nbsp;{" "}
           <Link href="/about" style={{ color: "inherit", textDecoration: "underline" }}>About</Link>

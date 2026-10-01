@@ -1,9 +1,10 @@
-import { useState, useMemo } from "react";
-import { Link, useLocation } from "wouter";
+import { useState, useMemo, useEffect } from "react";
+import { Link } from "wouter";
 import { snowmobiles, Snowmobile, Category } from "../data/snowmobiles";
 import { guides } from "../data/guides";
 import Layout from "../components/Layout";
 import { usePageTitle } from "../hooks/usePageTitle";
+import { specNumber, specPrice } from "../lib/specFormat";
 
 type SortKey = "price" | "horsepower" | "weight" | "displacement" | "trackLength" | "brand" | "model";
 
@@ -12,14 +13,6 @@ const brandClass: Record<string, string> = {
   "Polaris": "brand-polaris",
   "Arctic Cat": "brand-arctic",
   "Yamaha": "brand-yamaha",
-};
-
-const categoryBadge: Record<Category, string> = {
-  "Trail": "badge-trail",
-  "Mountain": "badge-mountain",
-  "Touring": "badge-touring",
-  "Crossover": "badge-crossover",
-  "Utility": "badge-utility",
 };
 
 const sortLabels: Record<SortKey, string> = {
@@ -33,32 +26,24 @@ const sortLabels: Record<SortKey, string> = {
 };
 
 export default function HomePage() {
-  usePageTitle("SledSpec.com — 2026 Snowmobile Specs, Prices & Comparisons");
-  const [, navigate] = useLocation();
+  usePageTitle("Snowmobile Comparisons & Buying Guides | SledSpec.com");
   const [sortKey, setSortKey] = useState<SortKey>("price");
   const [filterBrand, setFilterBrand] = useState("All");
   const [filterCategory, setFilterCategory] = useState("All");
+  const [filterYear, setFilterYear] = useState("All");
   const [searchText, setSearchText] = useState("");
   const [compareIds, setCompareIds] = useState<number[]>([]);
   const [showCompare, setShowCompare] = useState(false);
 
-  const extremes = useMemo(() => {
-    const maxBy = (key: "horsepower" | "price") =>
-      snowmobiles.reduce((best, s) => (s[key] > best[key] ? s : best), snowmobiles[0]);
-    const minBy = (key: "weight" | "price") =>
-      snowmobiles.reduce((best, s) => (s[key] < best[key] ? s : best), snowmobiles[0]);
-    return {
-      mostPowerful: maxBy("horsepower"),
-      lightest: minBy("weight"),
-      mostAffordable: minBy("price"),
-      mostExpensive: maxBy("price"),
-    };
+  useEffect(() => {
+    setSearchText(new URLSearchParams(window.location.search).get("q") ?? "");
   }, []);
 
   const filtered = useMemo(() => {
     let result = [...snowmobiles];
     if (filterBrand !== "All") result = result.filter(s => s.brand === filterBrand);
     if (filterCategory !== "All") result = result.filter(s => s.category === filterCategory);
+    if (filterYear !== "All") result = result.filter(s => String(s.year ?? "Unconfirmed") === filterYear);
     if (searchText.trim()) {
       const q = searchText.toLowerCase();
       result = result.filter(s =>
@@ -70,12 +55,13 @@ export default function HomePage() {
     result.sort((a, b) => {
       if (sortKey === "brand") return a.brand.localeCompare(b.brand);
       if (sortKey === "model") return a.model.localeCompare(b.model);
-      if (sortKey === "horsepower") return b.horsepower - a.horsepower;
-      if (sortKey === "weight") return a.weight - b.weight;
-      return (a[sortKey] as number) - (b[sortKey] as number);
+      const av = a[sortKey], bv = b[sortKey];
+      if (av == null) return bv == null ? a.id - b.id : 1;
+      if (bv == null) return -1;
+      return sortKey === "horsepower" ? bv - av : av - bv;
     });
     return result;
-  }, [filterBrand, filterCategory, searchText, sortKey]);
+  }, [filterBrand, filterCategory, filterYear, searchText, sortKey]);
 
   const toggleCompare = (id: number, e: React.MouseEvent | React.ChangeEvent) => {
     e.stopPropagation();
@@ -95,15 +81,20 @@ export default function HomePage() {
 
   const totalModels = snowmobiles.length;
   const totalBrands = new Set(snowmobiles.map(s => s.brand)).size;
-  const minPrice = Math.min(...snowmobiles.map(s => s.price));
-  const maxPrice = Math.max(...snowmobiles.map(s => s.price));
-  const minYear = Math.min(...snowmobiles.map(s => s.year));
-  const maxYear = Math.max(...snowmobiles.map(s => s.year));
-  const yearLabel = minYear === maxYear ? `${minYear}` : `${minYear}–${maxYear}`;
+  const years = [...new Set(snowmobiles.map(s => String(s.year ?? "Unconfirmed")))].sort().reverse();
 
   return (
     <Layout>
       <div className="container">
+        <section className="comparison-intro">
+          <p className="eyebrow">Research before the ride</p>
+          <h1>Find the right kind of snowmobile.</h1>
+          <p>Compare selected models, understand what the specifications leave out, and build a shortlist around your terrain—not just horsepower.</p>
+          <div className="intro-links">
+            <Link href="/guides/how-to-choose">Start with the buying worksheet →</Link>
+            <Link href="/about">How our research works →</Link>
+          </div>
+        </section>
         <div className="stats-bar">
           <div className="stat-card">
             <span className="stat-value">{totalModels}</span>
@@ -114,31 +105,40 @@ export default function HomePage() {
             <span className="stat-label">Brands</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">${minPrice.toLocaleString()} – ${maxPrice.toLocaleString()}</span>
-            <span className="stat-label">Price Range</span>
+            <span className="stat-value">{guides.length}</span>
+            <span className="stat-label">Practical buying & ownership guides</span>
           </div>
           <div className="stat-card">
-            <span className="stat-value">{yearLabel}</span>
-            <span className="stat-label">Model Years</span>
+            <span className="stat-value">Year-specific</span>
+            <span className="stat-label">Current & archive research</span>
           </div>
         </div>
+        <p className="research-notice"><strong>Compare like with like.</strong> This is a selected, multi-year research catalog—not a complete current lineup or a dealer inventory. “Not confirmed” means we could not substantiate the exact specification; it does not mean zero. Read each model’s source notes before relying on a number.</p>
 
         <div className="controls">
           <div>
-            <label>Brand</label>
-            <select value={filterBrand} onChange={e => setFilterBrand(e.target.value)}>
+            <label htmlFor="brand-filter">Brand</label>
+            <select id="brand-filter" value={filterBrand} onChange={e => setFilterBrand(e.target.value)}>
               {brands.map(b => <option key={b}>{b}</option>)}
             </select>
           </div>
           <div>
-            <label>Category</label>
-            <select value={filterCategory} onChange={e => setFilterCategory(e.target.value)}>
+            <label htmlFor="category-filter">Category</label>
+            <select id="category-filter" value={filterCategory} onChange={e => setFilterCategory(e.target.value)}>
               {categories.map(c => <option key={c}>{c}</option>)}
             </select>
           </div>
           <div>
-            <label>Search</label>
+            <label htmlFor="year-filter">Model year</label>
+            <select id="year-filter" value={filterYear} onChange={e => setFilterYear(e.target.value)}>
+              <option>All</option>
+              {years.map(year => <option key={year}>{year}</option>)}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="model-search">Search</label>
             <input
+              id="model-search"
               type="search"
               placeholder="model, brand, engine..."
               value={searchText}
@@ -146,7 +146,7 @@ export default function HomePage() {
               style={{ width: "180px" }}
             />
           </div>
-          <button className="btn btn-secondary" onClick={() => { setFilterBrand("All"); setFilterCategory("All"); setSearchText(""); }}>
+          <button className="btn btn-secondary" onClick={() => { setFilterBrand("All"); setFilterCategory("All"); setFilterYear("All"); setSearchText(""); }}>
             Reset
           </button>
           {compareIds.length >= 2 && (
@@ -164,7 +164,7 @@ export default function HomePage() {
               return (
                 <span key={id} className="compare-tag">
                   {s.brand} {s.model}
-                  <span className="remove" onClick={e => toggleCompare(id, e as React.MouseEvent)}>✕</span>
+                  <button type="button" className="remove" aria-label={`Remove ${s.model} from comparison`} onClick={e => toggleCompare(id, e)}>×</button>
                 </span>
               );
             })}
@@ -197,31 +197,21 @@ export default function HomePage() {
                 {(
                   [
                     ["Engine", (s: Snowmobile) => s.engine],
-                    ["Displacement", (s: Snowmobile) => s.displacement + " cc"],
-                    ["Horsepower", (s: Snowmobile) => s.horsepower + " hp"],
-                    ["Weight", (s: Snowmobile) => s.weight + " lbs"],
-                    ["Track Length", (s: Snowmobile) => s.trackLength + '"'],
-                    ["Price (MSRP)", (s: Snowmobile) => "$" + s.price.toLocaleString()],
+                      ["Model year", (s: Snowmobile) => String(s.year ?? "Not confirmed")],
+                      ["Displacement", (s: Snowmobile) => specNumber(s.displacement, " cc")],
+                      ["Horsepower", (s: Snowmobile) => specNumber(s.horsepower, " hp")],
+                      ["Weight (see source basis)", (s: Snowmobile) => specNumber(s.weight, " lb")],
+                      ["Track Length", (s: Snowmobile) => specNumber(s.trackLength, '"')],
+                      ["Published price (USD; see notes)", (s: Snowmobile) => specPrice(s.price)],
                     ["Category", (s: Snowmobile) => s.category],
                   ] as [string, (s: Snowmobile) => string][]
                 ).map(([label, fn]) => {
-                  let bestIdx = -1;
-                  if (label === "Horsepower") {
-                    const vals = compareSleds.map(s => s.horsepower);
-                    bestIdx = vals.indexOf(Math.max(...vals));
-                  } else if (label === "Price (MSRP)") {
-                    const vals = compareSleds.map(s => s.price);
-                    bestIdx = vals.indexOf(Math.min(...vals));
-                  } else if (label === "Weight") {
-                    const vals = compareSleds.map(s => s.weight);
-                    bestIdx = vals.indexOf(Math.min(...vals));
-                  }
                   return (
                     <tr key={label}>
                       <td className="row-label">{label}</td>
-                      {compareSleds.map((s, i) => (
-                        <td key={s.id} className={i === bestIdx ? "best-value" : ""}>
-                          {fn(s)}{i === bestIdx && " ★"}
+                      {compareSleds.map(s => (
+                        <td key={s.id}>
+                          {fn(s)}
                         </td>
                       ))}
                     </tr>
@@ -239,7 +229,7 @@ export default function HomePage() {
                 </tr>
               </tbody>
             </table>
-            <p style={{ fontSize: "11px", color: "#94a3b8", marginTop: "4px" }}>★ = best in category among selected sleds</p>
+            <p className="comparison-note">Numbers are not scores. Different model years, packages and weight definitions may not be directly comparable. Unknown values sort last, never as zero. Open the model pages for configuration and source details.</p>
           </div>
         )}
 
@@ -247,7 +237,7 @@ export default function HomePage() {
           <div>
             <span className="sled-section-count">
               Showing <strong>{filtered.length}</strong> of {snowmobiles.length} snowmobiles
-              {(filterBrand !== "All" || filterCategory !== "All" || searchText) && " (filtered)"}
+              {(filterBrand !== "All" || filterCategory !== "All" || filterYear !== "All" || searchText) && " (filtered)"}
             </span>
             <span style={{ fontSize: "12px", color: "#94a3b8", marginLeft: "12px" }}>
               Check to compare • Click for full details
@@ -273,14 +263,15 @@ export default function HomePage() {
               <div
                 key={sled.id}
                 className={["sled-card", compareIds.includes(sled.id) ? "sled-card--comparing" : ""].filter(Boolean).join(" ")}
-                onClick={() => navigate(`/sled/${sled.id}`)}
-                style={{ cursor: "pointer" }}
               >
                 {sled.image ? (
                   <img
                     className="sled-card__photo"
                     src={sled.image}
                     alt={`${sled.year} ${sled.brand} ${sled.model}`}
+                      loading="lazy"
+                      width={600}
+                      height={400}
                   />
                 ) : (
                   <div className="sled-card__photo-placeholder">No photo</div>
@@ -289,11 +280,12 @@ export default function HomePage() {
                 <div className="sled-card__body">
                   <div className="sled-card__title-row">
                     <h2 className="sled-card__name">
-                      <span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}
+                      <Link href={`/sled/${sled.id}`}><span className={brandClass[sled.brand]}>{sled.brand}</span> {sled.model}</Link>
                     </h2>
                     <label className="sled-card__compare" onClick={e => e.stopPropagation()}>
                       <input
                         type="checkbox"
+                        aria-label={`Compare ${sled.brand} ${sled.model}`}
                         checked={compareIds.includes(sled.id)}
                         onChange={e => toggleCompare(sled.id, e)}
                       />
@@ -301,30 +293,22 @@ export default function HomePage() {
                     </label>
                   </div>
 
-                  <p className="sled-card__engine">{sled.engine}</p>
+                  <p className="sled-card__engine">{sled.year ?? "Year unconfirmed"} · {sled.category} · {sled.engine}</p>
                   <p className="sled-card__tagline">{sled.tagline}</p>
 
                   <p className="sled-card__stats">
-                    {sled.horsepower} hp &nbsp;·&nbsp; {sled.weight} lbs &nbsp;·&nbsp; {sled.trackLength}" track
+                    {specNumber(sled.horsepower, " hp")} &nbsp;·&nbsp; Track: {specNumber(sled.trackLength, '"')}
                   </p>
 
                   <div className="sled-card__footer">
-                    <span className="sled-card__price">${sled.price.toLocaleString()}</span>
-                    <span className="sled-card__link">View specs →</span>
+                    <span className="sled-card__price">{specPrice(sled.price)}</span>
+                    <Link href={`/sled/${sled.id}`} className="sled-card__link">Research & specs →</Link>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         )}
-
-        <div className="quick-stats">
-          <span>Quick Stats:</span>
-          <span>Most Powerful: <strong>{extremes.mostPowerful.brand} {extremes.mostPowerful.model} — {extremes.mostPowerful.horsepower} hp</strong></span>
-          <span>Lightest: <strong>{extremes.lightest.brand} {extremes.lightest.model} — {extremes.lightest.weight} lbs</strong></span>
-          <span>Most Affordable: <strong>{extremes.mostAffordable.brand} {extremes.mostAffordable.model} — ${extremes.mostAffordable.price.toLocaleString()}</strong></span>
-          <span>Most Expensive: <strong>{extremes.mostExpensive.brand} {extremes.mostExpensive.model} — ${extremes.mostExpensive.price.toLocaleString()}</strong></span>
-        </div>
 
         <div className="guides-teaser-section">
           <h2 className="guides-heading">Snowmobile Guides &amp; Articles</h2>
@@ -349,10 +333,9 @@ export default function HomePage() {
         <div id="about" className="about-section">
           <h3>About SledSpec.com</h3>
           <p>
-            SledSpec is a free snowmobile comparison tool built by a rider, for riders. We put together specs,
-            pricing, and side-by-side comparisons so you can cut through the manufacturer noise and figure out
-            which sled actually fits your riding style and budget. All specs come from manufacturer websites
-            and dealer sheets — always double-check with your local dealer before buying.
+            SledSpec is a free research-based comparison resource. It brings selected model specifications,
+            configuration caveats and buying questions together to help you prepare for a dealer conversation.
+            These are desk-researched comparisons, not hands-on ride tests. <Link href="/about">Read our editorial methodology and limitations.</Link>
           </p>
           <p>
             Have a correction or want a model added? <Link href="/contact">Contact us</Link> or email{" "}
