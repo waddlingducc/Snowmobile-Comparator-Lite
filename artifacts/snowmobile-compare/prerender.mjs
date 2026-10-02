@@ -2,6 +2,7 @@ import { build } from "vite";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { emitRelease } from "./scripts/release-lib.mjs";
 
 const ROOT = import.meta.dirname;
 const OUT = path.join(ROOT, "dist/public");
@@ -60,11 +61,11 @@ async function main() {
   await fs.writeFile(path.join(OUT, "404.html"), documentFor(getPageMetadata("/404")));
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(p => `  <url><loc>${esc(canonicalUrl(p.path))}</loc></url>`).join("\n")}\n</urlset>\n`;
   await fs.writeFile(path.join(OUT, "sitemap.xml"), sitemap);
-  await fs.writeFile(path.join(ROOT, "public/sitemap.xml"), sitemap);
   await fs.writeFile(path.join(OUT, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
   await fs.writeFile(path.join(OUT, "CNAME"), `${new URL(SITE_URL).hostname}\n`);
   await fs.writeFile(path.join(OUT, ".nojekyll"), "");
-  console.log(`Rendered ${pages.length} complete HTML pages, plus a real 404, sitemap, CNAME and .nojekyll.`);
+  const release = await emitRelease(OUT, SITE_URL);
+  console.log(`Rendered ${pages.length} complete HTML pages, plus a real 404, sitemap, CNAME and .nojekyll. Release: ${release.releaseId}`);
 }
 
 main().catch(error => {

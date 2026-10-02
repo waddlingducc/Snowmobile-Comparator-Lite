@@ -5,6 +5,13 @@ import { guides } from "../data/guides";
 import Layout from "../components/Layout";
 import { usePageTitle } from "../hooks/usePageTitle";
 import { specNumber, specPrice } from "../lib/specFormat";
+import { modelResearch, type SpecField } from "../data/model-research";
+
+const fieldNotes: Record<string, SpecField> = {
+  "Model year": "year", Displacement: "displacement", Horsepower: "horsepower",
+  "Weight (see source basis)": "weight", "Track Length": "trackLength",
+  "Published price (USD; see notes)": "price",
+};
 
 type SortKey = "price" | "horsepower" | "weight" | "displacement" | "trackLength" | "brand" | "model";
 
@@ -92,6 +99,7 @@ export default function HomePage() {
           <p>Compare selected models, understand what the specifications leave out, and build a shortlist around your terrain—not just horsepower.</p>
           <div className="intro-links">
             <Link href="/guides/how-to-choose">Start with the buying worksheet →</Link>
+            <a href="/guides/how-to-choose#buying-tools">Plan costs & compare dealer quotes →</a>
             <Link href="/about">How our research works →</Link>
           </div>
         </section>
@@ -163,7 +171,7 @@ export default function HomePage() {
               const s = snowmobiles.find(x => x.id === id)!;
               return (
                 <span key={id} className="compare-tag">
-                  {s.brand} {s.model}
+                      {s.year} {s.brand} {s.model}
                   <button type="button" className="remove" aria-label={`Remove ${s.model} from comparison`} onClick={e => toggleCompare(id, e)}>×</button>
                 </span>
               );
@@ -188,12 +196,16 @@ export default function HomePage() {
                   {compareSleds.map(s => (
                     <th key={s.id}>
                       <span className={brandClass[s.brand]}>{s.brand}</span><br />
-                      {s.model}
+                      <Link href={`/sled/${s.id}`}>{s.year} {s.model}</Link>
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <th scope="row" className="row-label">Exact configuration</th>
+                  {compareSleds.map(s => <td key={s.id}>{modelResearch[s.id].configuration}</td>)}
+                </tr>
                 {(
                   [
                     ["Engine", (s: Snowmobile) => s.engine],
@@ -212,6 +224,7 @@ export default function HomePage() {
                       {compareSleds.map(s => (
                         <td key={s.id}>
                           {fn(s)}
+                          {fieldNotes[label] && <span className="compare-source-note">{modelResearch[s.id].specNotes[fieldNotes[label]]}</span>}
                         </td>
                       ))}
                     </tr>
@@ -226,6 +239,15 @@ export default function HomePage() {
                       </ul>
                     </td>
                   ))}
+                </tr>
+                <tr>
+                  <th scope="row" className="row-label">Evidence & buying questions</th>
+                  {compareSleds.map(s => <td key={s.id}>
+                    <p>{modelResearch[s.id].fit[0]}</p>
+                    <p><strong>Check:</strong> {modelResearch[s.id].buyingQuestions[0]}</p>
+                    <a href={modelResearch[s.id].sources[0].url} target="_blank" rel="noopener noreferrer">{modelResearch[s.id].sources[0].label}</a>
+                    <p><a href={`/sled/${s.id}#source-notes`}>All sources & limitations</a></p>
+                  </td>)}
                 </tr>
               </tbody>
             </table>
@@ -285,7 +307,7 @@ export default function HomePage() {
                     <label className="sled-card__compare" onClick={e => e.stopPropagation()}>
                       <input
                         type="checkbox"
-                        aria-label={`Compare ${sled.brand} ${sled.model}`}
+                        aria-label={`Compare ${sled.year} ${sled.brand} ${sled.model}`}
                         checked={compareIds.includes(sled.id)}
                         onChange={e => toggleCompare(sled.id, e)}
                       />

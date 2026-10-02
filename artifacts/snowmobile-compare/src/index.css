@@ -1540,6 +1540,9 @@ tbody td {
 .intro-links a { color: #175ba0; font-size: 14px; font-weight: 600; }
 .research-notice { border-left: 3px solid #0284c7; padding: 14px 18px; background: #eaf4fc; color: #284768; line-height: 1.65; font-size: 14px; margin: 22px 0; }
 .comparison-note { font-size: 13px; line-height: 1.6; color: #475569; }
+.compare-source-note { display: block; margin-top: 8px; font-size: 12px; line-height: 1.6; color: #475569; font-weight: normal; }
+.compare-table td { min-width: 210px; white-space: normal; vertical-align: top; }
+.compare-table th a { color: inherit; }
 .compare-tag button.remove { border: 0; background: transparent; font: inherit; padding: 4px 6px; color: inherit; cursor: pointer; }
 .sled-card__name a { color: inherit; text-decoration: none; }
 .sled-card__name a:hover { text-decoration: underline; }

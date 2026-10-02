@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { verifyRelease } from "./scripts/release-lib.mjs";
 
 const out = path.join(import.meta.dirname, "dist/public");
+const { manifest } = await verifyRelease(out);
 const { getPages, canonicalUrl } = await import(pathToFileURL(path.join(import.meta.dirname, "dist/server/entry-server.mjs")).href);
 const pages = getPages();
 const titles = new Set();
@@ -51,4 +53,4 @@ assert.deepEqual(urls.sort(), pages.map(p => canonicalUrl(p.path)).sort(), "site
 await fs.access(path.join(out, ".nojekyll"));
 assert.equal((await fs.readFile(path.join(out, "CNAME"), "utf8")).trim(), "sledspec.com");
 assert.match(await fs.readFile(path.join(out, "robots.txt"), "utf8"), /Sitemap: https:\/\/sledspec\.com\/sitemap\.xml/);
-console.log(`PASS: ${documents.size} rendered documents, unique metadata, ${checkedLinks} internal links, ${checkedAssets} assets, anchors, sitemap and GitHub support files.`);
+console.log(`PASS release ${manifest.releaseId}: ${documents.size} rendered documents, unique metadata, ${checkedLinks} internal links, ${checkedAssets} assets, anchors, sitemap, GitHub support files and all manifest SHA256 digests.`);

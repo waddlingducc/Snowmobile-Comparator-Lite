@@ -26,6 +26,11 @@ export const guideSources: Record<string, GuideSource> = {
   safety: { label: "Minnesota DNR: snowmobile safety, training and ice precautions", url: "https://www.dnr.state.mn.us/snowmobiling/safety.html" },
   avalanche: { label: "Avalanche Canada: mountain snowmobiling, forecasts and sled-based training", url: "https://avalanche.ca/resources/mountain-snowmobiling" },
   gear: { label: "Avalanche Canada: essential rescue gear and communication", url: "https://avysavvy.avalanche.ca/en-ca/essential-gear" },
+  cat2026: { label: "Arctic Cat MY2026 specification booklet (manufacturer-authored; ArcticInsider-hosted copy)", url: "https://www.arcticinsider.com/wp-content/uploads/2025/05/2026-ARCTIC-CAT-MODEL-SPECS.pdf" },
+  catMountainManual: { label: "Arctic Cat MY2026 ZR/Riot/M 600/858 operator manual, p/n 653-00054", url: "https://www.arcticcat.com/hubfs/model-archive-resources/2026/snowmobile/m-858-sno-pro/2026-m-858-sno-pro-owners-manual-en.pdf?hsLang=en-us" },
+  catTouringManual: { label: "Arctic Cat MY2026 ZR/Riot/Pantera 7000/9000 operator manual, p/n 653-00049", url: "https://www.arcticcat.com/hubfs/model-archive-resources/2026/snowmobile/pantera-7000/2026-pantera-7000-owners-manual-en.pdf?hsLang=en-us" },
+  viper2024: { label: "Yamaha 2024 SRViper L-TX GT: historical US price and separate charges", url: "https://yamahamotorsports.com/models/srviper-l-tx-gt-24" },
+  viper2025: { label: "Yamaha 2025 SRViper L-TX GT: historical US price and separate charges", url: "https://yamahamotorsports.com/models/srviper-l-tx-gt" },
 };
 const sources = (...ids: string[]) => ids.map(id => guideSources[id]);
 
@@ -35,7 +40,7 @@ export const guides: Guide[] = [
     title: "How to Choose Your First Snowmobile",
     summary: "Turn a riding plan into a shortlist, compare complete ownership costs, and know what to verify before paying a deposit.",
     readTime: "Decision worksheet",
-    sources: sources("buying", "manuals", "safety"),
+    sources: sources("buying", "manuals", "safety", "viper2024", "viper2025"),
     sections: [
       {
         heading: "Start with a route, not an engine",
@@ -68,6 +73,12 @@ export const guides: Guide[] = [
         bullets: ["Calculation: 9,000 + 1,200 + 800 + 700 + 600 = 12,300. Replace every input with your quotes.", "The $600 reserve is money set aside, not necessarily spent. This example excludes financing, resale proceeds and depreciation.", "For an economic cost comparison, use depreciation plus running costs and interest; do not count both full purchase price and depreciation as expenses."],
       },
       {
+        heading: "Compare the same price layers",
+        body: "Yamaha's archived SRViper GT pages show why a lower MSRP can mislead. The 2024 page lists $16,199 MSRP, $545 destination and $300 freight surcharge: $17,044 before any tax, preparation or other fees. The 2025 page lists $16,299 and $600 destination: $16,899 on that limited basis. The older year has the lower base but the higher listed subtotal by $145. These are historical advertised amounts, not current offers or a reason to prefer one condition over another.",
+        bullets: ["Use the dealer-quote worksheet to separate base price, freight/setup, accessories, fees and tax; mark missing mandatory charges unresolved.", "Request the written tax basis from each dealer. A trade-in allowance and financing offer should not conceal the vehicle's price.", "Transfer the normalized acquisition amount into the ownership-cost planner, then add your own fuel, oil, service, transport and resale assumptions.", "Save the quote date, currency and exact engine/track alongside the totals so a later offer can be compared consistently."],
+        sourceIds: ["viper2024", "viper2025"],
+      },
+      {
         heading: "Compare new and used without mileage shortcuts",
         body: "A low odometer reading is not a condition report. For either choice, verify the VIN, exact model year, configuration, ownership documents, applicable recalls and any remaining warranty terms. Ask an independent qualified technician to inspect a used machine before purchase, especially if its maintenance history is incomplete. New stock can still need recall work or storage-related attention; confirm what the dealer will deliver in writing.",
         bullets: ["Request service invoices and ask about modifications, collisions, overheating and storage.", "Have track, steering, brakes, suspension and drivetrain condition assessed; obtain a repair estimate, not just a pass/fail opinion.", "Do not accept a seller's explanation of a sticking throttle, brake fault or fuel leak as a minor issue to fix later.", "Compare the delivered cost of the used machine plus known repairs with the delivered new quote. Keep an uncertainty reserve separate."],
@@ -86,7 +97,7 @@ export const guides: Guide[] = [
     title: "Trail vs. Mountain Snowmobiles: Choose for Your Terrain",
     summary: "Understand track and chassis tradeoffs, the limits of crossover labels, and how a real route changes the buying decision.",
     readTime: "Terrain decision guide",
-    sources: sources("buying", "manual", "avalanche"),
+    sources: sources("buying", "manual", "avalanche", "catMountainManual"),
     sections: [
       {
         heading: "The route is the starting point",
@@ -106,9 +117,9 @@ export const guides: Guide[] = [
       },
       {
         heading: "Packed snow changes the operating limits",
-        body: "The Polaris RMK-family manual reviewed for this guide warns that inadequate snow can mean inadequate slide lubrication and engine cooling. That is an operating restriction, not merely a loss of performance. Do not assume a deep-snow machine is suitable for a long hard-packed approach because it physically fits on the trail. Check your model's low-snow instructions, track restrictions and approved equipment. Scratchers are not a universal cure or permission to ignore temperature warnings.",
+        body: "The Polaris RMK-family manual warns that inadequate snow can mean inadequate slide lubrication and engine cooling. Arctic Cat's MY2026 600/858 manual goes further in its Deep Lug Track (M) section: it describes powder/deep-snow use, trail speed and scratcher requirements, track-specific sustained-speed limits and damage risks on ice or hard-packed snow. It also warns that track damage can precede the temperature light. A physically passable approach can therefore be unsuitable for the selected machine.",
         bullets: ["Ask the dealer to show the specific manual pages for your proposed track and cooling system.", "Plan an alternate route or cancel when conditions do not meet the machine's requirements.", "Treat an overheating warning or unusual running condition according to the manual; do not continue simply to reach better snow."],
-        sourceIds: ["manual"],
+        sourceIds: ["manual", "catMountainManual"],
       },
       {
         heading: "Worked route example: a crossover is not an average",
@@ -129,7 +140,7 @@ export const guides: Guide[] = [
     title: "2-Stroke vs. 4-Stroke Snowmobiles: Compare Ownership, Not Stereotypes",
     summary: "Separate engine design from package weight, service obligations and running costs with a transparent comparison worksheet.",
     readTime: "Engine comparison worksheet",
-    sources: sources("engines", "manuals", "buying"),
+    sources: sources("engines", "manuals", "buying", "catMountainManual", "catTouringManual"),
     sections: [
       {
         heading: "What the labels do and do not tell you",
@@ -154,6 +165,12 @@ export const guides: Guide[] = [
         sourceIds: ["manuals"],
       },
       {
+        heading: "Use the exact fuel and service schedule in the budget",
+        body: "Two manuals from one manufacturer illustrate the difference. Arctic Cat's MY2026 600/858 C-TEC2 manual specifies premium 91-octane fuel and injection-oil obligations. Its 7000/9000 four-stroke manual distinguishes the 7000's 87-octane requirement from the 9000's 91, and includes engine-oil/filter and valve-clearance work. The shared manufacturer does not make fuel grade or service cost interchangeable.",
+        bullets: ["Give the shop your exact engine, mileage and calendar/storage history when requesting service quotes.", "Use separate fuel-price assumptions when the two candidates require different grades.", "For an injection-oil machine, budget documented consumption or a clearly labeled estimate; for a four-stroke, include the applicable oil/filter service.", "These examples identify budgeting questions. Read the complete applicable fuel and service instructions before operating or maintaining a machine."],
+        sourceIds: ["catMountainManual", "catTouringManual"],
+      },
+      {
         heading: "Worked running-cost example",
         body: "Assume two hypothetical candidates each travel 1,000 km. Candidate A uses 16 L/100 km and candidate B 13 L/100 km; assume fuel costs $1.80/L for both. These inputs are invented solely to show the calculation, are not measured economy and do not represent a particular engine type. A uses 160 L costing $288; B uses 130 L costing $234. The modeled fuel difference is $54, before oil or service.",
         bullets: ["Formula: distance ÷ 100 × L/100 km × fuel price.", "Add A's actual injection-oil consumption if applicable, and each machine's scheduled service, to compare running cash costs.", "If one hypothetical service quote is $100 higher, that alone exceeds this example's $54 fuel saving. Do not decide on fuel use alone.", "Repeat with your own high- and low-use estimates. Snow, load, pace and route changes make a single forecast uncertain."],
@@ -171,7 +188,7 @@ export const guides: Guide[] = [
     title: "How to Read Snowmobile Specs Without False Comparisons",
     summary: "Normalize year, trim, weight and track definitions, then use a worked loading example to expose missing information.",
     readTime: "Spec-checking worksheet",
-    sources: sources("engines", "buying", "manuals"),
+    sources: sources("engines", "buying", "manuals", "cat2026", "catMountainManual"),
     sections: [
       {
         heading: "Identify the machine before comparing numbers",
@@ -202,6 +219,12 @@ export const guides: Guide[] = [
         heading: "Worked loading example with explicit assumptions",
         body: "Assume an invented machine weighs 220 kg in a stated condition that excludes fuel and 8 kg of other required fluids. Assume it receives 35 L of fuel at an illustrative density of 0.74 kg/L, plus 12 kg of accessories and 9 kg of luggage. Fuel mass is 35 × 0.74 = 25.9 kg. Machine plus luggage is therefore 220 + 25.9 + 8 + 12 + 9 = 274.9 kg. This is not a specification for any snowmobile.",
         bullets: ["If the published 220 kg already includes those 8 kg of fluids, the result becomes 266.9 kg. Definition changes the comparison.", "A hypothetical 90 kg equipped rider brings the operating total to 364.9 kg under the first assumption; this does not establish any allowable load.", "Fuel density varies with blend and temperature. The assumed factor is arithmetic input, not a required constant.", "Weigh the actual loaded machine for critical capacity decisions and check how the manufacturer defines its load rating."],
+      },
+      {
+        heading: "A real regional mismatch: ZR 858 R-XC",
+        body: "The MY2026 Arctic Cat specification booklet's page 11 lists a 137 x 15 x 1.352-inch fully clipped Cobra for ZR 858 R-XC. The year's shared operator manual identifies an EU R-XC model code with a 137-inch track and 1.75-inch lug designation. Both support the length; they do not support an identical regional track. The booklet's 481-lb estimated dry figure belongs to its described build, not automatically to every machine with the same name.",
+        bullets: ["Copy the market and full model code from the seller's documents.", "Match the installed track to the sales specification; a later replacement may differ from both sources.", "The shared manual advises against studding tracks with lugs over 1.6 inches. A traction-accessory decision needs the actual track, not just its circumference.", "When two sources disagree, retain the disagreement and ask for configuration evidence instead of averaging or choosing the more attractive number."],
+        sourceIds: ["cat2026", "catMountainManual"],
       },
       {
         heading: "Turn unknowns into questions, not rankings",
@@ -304,7 +327,7 @@ export const guides: Guide[] = [
     title: "Snowmobile Pre-Season Maintenance: A Manual-First Checklist",
     summary: "Organize inspections and service records, identify stop-riding faults, and leave model-specific procedures to the correct manual or technician.",
     readTime: "Service planning checklist",
-    sources: sources("manual", "manuals", "safety"),
+    sources: sources("manual", "manuals", "safety", "catTouringManual"),
     sections: [
       {
         heading: "This is a planning checklist, not a repair procedure",
@@ -335,6 +358,12 @@ export const guides: Guide[] = [
         body: "Do not automatically drain fuel, remove carburetors, fog through an intake, run an engine for a fixed time or replace every fluid on an invented annual schedule. Storage may involve different fuel treatment, lubrication or built-in procedures depending on the engine. Follow the specified fuel, oil, coolant, battery and storage instructions. Never open a hot pressurized cooling system. Fuel-system work and disposal require suitable precautions and may be better left to a shop.",
         bullets: ["For two-strokes, confirm the lubrication system and approved oil; do not assume premixing is required.", "For four-strokes, use the correct oil-level checking conditions, fluid and scheduled service, not a generic 'change it after summer' rule.", "Match charging equipment and storage instructions to the actual battery type.", "Keep receipts, fluid specifications and service dates so next season's decisions are evidence-based."],
         sourceIds: ["manuals"],
+      },
+      {
+        heading: "Turn an archived Pantera's history into a service quote",
+        body: "For a 2026 Pantera 7000, the applicable Arctic Cat 7000/9000 manual includes engine-oil/filter service, valve-clearance inspection, storage preparation and passenger-use guidance. Ask the shop to apply those sections to the odometer and last-service date before pricing a tour. On a used touring machine, passenger heaters, footrests, backrest and storage hardware also need a condition check; a complete engine invoice does not document them.",
+        bullets: ["Bring the exact 7000 model identification rather than a generic Pantera description; 9000 instructions differ in relevant places.", "Separate overdue scheduled work from repairs discovered on inspection.", "Request a written scope and parts/labor estimate, and retain it with the service record.", "Check passenger equipment and permitted combined load before promising a shared trip."],
+        sourceIds: ["catTouringManual"],
       },
       {
         heading: "Worked service-log decision",

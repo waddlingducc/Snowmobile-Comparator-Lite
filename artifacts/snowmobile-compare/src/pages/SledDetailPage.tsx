@@ -12,7 +12,7 @@ export default function SledDetailPage() {
   const sled = snowmobiles.find(s => String(s.id) === id);
   const research = sled ? modelResearch[sled.id] : undefined;
   usePageTitle(sled ? `${sled.brand} ${sled.model} | SledSpec.com` : "Page Not Found");
-  useEffect(() => { window.scrollTo(0, 0); }, [id]);
+  useEffect(() => { if (!window.location.hash) window.scrollTo(0, 0); }, [id]);
   if (!sled || !research) return <NotFound />;
 
   const rows = [
@@ -90,6 +90,7 @@ export default function SledDetailPage() {
         <h2>Questions to take to the seller</h2>
         <ol>{research.buyingQuestions.map((item, i) => <li key={i}>{item}</li>)}</ol>
         <p>Use the <Link href="/guides/how-to-choose">buying worksheet</Link> to compare complete quotes, and the <Link href="/guides/reading-specs">specification guide</Link> to check whether the figures use the same basis.</p>
+        <p><a href="/guides/how-to-choose#buying-tools">Calculate ownership costs and compare itemized dealer quotes →</a></p>
       </section>
 
       <section className="research-section" id="source-notes">

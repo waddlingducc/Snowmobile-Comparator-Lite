@@ -3,6 +3,8 @@ import { guides, guideSources, researchedDate, researchedDateLabel } from "../da
 import Layout from "../components/Layout";
 import { usePageTitle } from "../hooks/usePageTitle";
 import "./guide-content.css";
+import OwnershipPlanner from "../components/buying-tools/OwnershipPlanner";
+import DealerQuoteWorksheet from "../components/buying-tools/DealerQuoteWorksheet";
 
 export default function GuideDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -53,6 +55,7 @@ export default function GuideDetailPage() {
               <h2>On this page</h2>
               <ol>{guide.sections.map((section, idx) => <li key={section.heading}><a href={`#section-${idx + 1}`} data-testid={`link-guide-section-${idx + 1}`}>{section.heading}</a></li>)}</ol>
               <a href="#guide-sources" data-testid="link-guide-sources">Sources and verification notes</a>
+              {id === "how-to-choose" && <p><a href="#buying-tools">Ownership calculator & dealer-quote worksheet</a></p>}
             </nav>
             <div className="guide-detail__body">
               {guide.sections.map((section, idx) => (
@@ -69,6 +72,15 @@ export default function GuideDetailPage() {
                 </section>
               ))}
             </div>
+
+            {id === "how-to-choose" && <section id="buying-tools" className="guide-detail__section">
+              <h2 className="guide-detail__section-heading">Put your buying plan into numbers</h2>
+              <p>Use your own quotes and riding assumptions. These tools calculate a budget—not a recommendation to purchase. Start blank or load an explicitly hypothetical example. Inputs stay in this page’s memory; download or print before leaving.</p>
+              <noscript>The interactive calculators require JavaScript. You can still use the formulas and worksheets below to work out costs manually.</noscript>
+              <OwnershipPlanner />
+              <DealerQuoteWorksheet />
+            </section>}
+            {["2-stroke-vs-4-stroke", "best-beginner-snowmobiles", "reading-specs"].includes(id ?? "") && <p className="research-notice"><a href="/guides/how-to-choose#buying-tools">Use the ownership-cost calculator and dealer-quote worksheet</a> to apply these checks to your shortlist.</p>}
 
             {guide.sources && guide.sources.length > 0 && (
               <section className="guide-sources" id="guide-sources">

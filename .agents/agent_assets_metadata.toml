@@ -61,3 +61,31 @@ mtime_ms = 1790897921834
 storage_uri = "gcs://replit-rams-assets-janeway/rams/assets/repl:2465ef14-0c08-433d-a21f-fec33b00def0/8e6fcd46-53af-411d-8f10-1b85bcfc4999/27428b77-600f-4973-9c76-b35ba4265fa9"
 storage_version_token = "1790898078740319"
 content_type = "text/html"
+
+[[outputs]]
+id = "xpIFSXd08-gxHkmbF3JF4"
+uri = "file://artifacts/snowmobile-compare/sledspec-bfa2ce508680456f072db7be3691abd9257e0c3f67c6729d0b736b9bb313f36e.zip"
+type = "unspecified"
+title = "SledSpec — new GitHub Pages release ZIP"
+description = "Root-layout static site with calculators, deeper source research and release manifest. Ready to upload; not published."
+logical_id = "cf3d607b-7fa3-4bf6-846a-0cc97d7edfd3"
+content_hash = "sha256:111ceec20c91ea14c2bccf62b9b201d328ed7fda6f011f25f62623f6bf45b18d"
+size = 2697953
+mtime_ms = 1790906876467
+storage_uri = "gcs://replit-rams-assets-janeway/rams/assets/repl:2465ef14-0c08-433d-a21f-fec33b00def0/cf3d607b-7fa3-4bf6-846a-0cc97d7edfd3/4c2aded0-25e6-4c6d-aacf-cb0814ff99fe"
+storage_version_token = "1790908386422939"
+content_type = "application/octet-stream"
+
+[[outputs]]
+id = "H-dXiLNr444lzXTbPZHR8"
+uri = "file://artifacts/snowmobile-compare/docs/rework-delivery.html"
+type = "html"
+title = "Release checklist and remaining owner evidence"
+description = "What changed, exact upload guidance, verification limits and unresolved approval prerequisites."
+logical_id = "4ab965be-ddda-4223-bddf-a0bfb304d57f"
+content_hash = "sha256:1b0ce048fe42752f2721113b8ad84e9a433804f47397623b409a281b6339be9c"
+size = 6957
+mtime_ms = 1790908361652
+storage_uri = "gcs://replit-rams-assets-janeway/rams/assets/repl:2465ef14-0c08-433d-a21f-fec33b00def0/4ab965be-ddda-4223-bddf-a0bfb304d57f/526c283c-51f6-4a57-93cf-50a00287dbb9"
+storage_version_token = "1790908387037453"
+content_type = "text/html"

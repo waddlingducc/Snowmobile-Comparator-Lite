@@ -1,0 +1,1431 @@
+{
+  "checkedAt": "2026-10-02T02:07:57.155Z",
+  "origin": "https://sledspec.com",
+  "expectedRelease": "bfa2ce508680456f072db7be3691abd9257e0c3f67c6729d0b736b9bb313f36e",
+  "observedRelease": null,
+  "status": "fail",
+  "checks": [
+    {
+      "route": "/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7c1ef9c1d7c71e61b1768edc3ee21966674b60659891ad75547b29001ee8a33b",
+      "expectedSha256": "91366e8941f06328670f00ea4138425e3f106fad04afa9fc17796bfbb640e4ef",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "SledSpec.com — 2026 Snowmobile Specs, Prices &amp; Comparisons",
+      "canonical": "https://sledspec.com/",
+      "description": "Compare 2026 snowmobiles from Ski-Doo, Polaris, Arctic Cat, and Yamaha. Side-by-side specs, pricing, and in-depth buying guides for every riding style.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/__sledspec_preflight_nonexistent_route__/",
+      "kind": "404",
+      "result": "fail",
+      "status": 404,
+      "finalUrl": "https://sledspec.com/__sledspec_preflight_nonexistent_route__/",
+      "lastModified": null,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "93c1ad96e16f3cdcdcb1d485c63899ed4416c4e6da4cc5f9255511d92eccdcd4",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body",
+        "404 missing noindex metadata"
+      ],
+      "release": null,
+      "title": "Page Not Found — SledSpec.com",
+      "canonical": "https://sledspec.com/",
+      "description": "The page you were looking for could not be found on SledSpec.com.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/404.html",
+      "kind": "404",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/404.html",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "93c1ad96e16f3cdcdcb1d485c63899ed4416c4e6da4cc5f9255511d92eccdcd4",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body",
+        "404 missing noindex metadata"
+      ],
+      "release": null,
+      "title": "Page Not Found — SledSpec.com",
+      "canonical": "https://sledspec.com/",
+      "description": "The page you were looking for could not be found on SledSpec.com.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/about/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/about/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "19effd131db45dfc4334e5e9863cc538ab879ac851af4833d11d12e2ca912d4e",
+      "expectedSha256": "df9fba62b216be8ca54a8342136ba5dc40b48c395a638fa67f4ad8087f0d101c",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "About SledSpec.com — How We Compare Snowmobiles",
+      "canonical": "https://sledspec.com/about/",
+      "description": "How SledSpec compares 2026 snowmobiles and sources specs, pricing, and buying guides.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/ads.txt",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/ads.txt",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "0661bec96b6d28d2c0827100c06269b099117e0babe60685a3f0af56c7545b98",
+      "expectedSha256": "0661bec96b6d28d2c0827100c06269b099117e0babe60685a3f0af56c7545b98",
+      "problems": []
+    },
+    {
+      "route": "/assets/index-BsfTO0n9.css",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 404,
+      "finalUrl": "https://sledspec.com/assets/index-BsfTO0n9.css",
+      "lastModified": null,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "6d4d5cffa6113b8ca9aef27aeba784871d4903a5d35dcac93ea666d627bbebe9",
+      "problems": [
+        "HTTP 404; expected 200",
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/assets/index-DqDWh7XJ.js",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 404,
+      "finalUrl": "https://sledspec.com/assets/index-DqDWh7XJ.js",
+      "lastModified": null,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "394252e8735cc721598e767f51dc374ede138e5876c3806c1114b6b70ceb267f",
+      "problems": [
+        "HTTP 404; expected 200",
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/assets/norm_id01-DdOcIWO0.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id01-DdOcIWO0.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "473bdee245324f1e015202a48cd3b3ff99d83d9367a3fbd245498b5de5d77154",
+      "expectedSha256": "473bdee245324f1e015202a48cd3b3ff99d83d9367a3fbd245498b5de5d77154",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id02-DcDlE2Bh.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id02-DcDlE2Bh.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "dcab088c5a2c064e529eec1c0b3fbf0b6c0ff90ae7fbfca0438faaed3a8becff",
+      "expectedSha256": "dcab088c5a2c064e529eec1c0b3fbf0b6c0ff90ae7fbfca0438faaed3a8becff",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id03-LzTH5xBz.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id03-LzTH5xBz.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "eac24ec43f988ad8beb2ce96147a5333741e6f059d9daa7adf474ed7c2d9ce08",
+      "expectedSha256": "eac24ec43f988ad8beb2ce96147a5333741e6f059d9daa7adf474ed7c2d9ce08",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id04-D-p-uibZ.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id04-D-p-uibZ.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "256e8974c6981a33e1e9ec07a5843ca76690c33dfd130b7ffe7f74cc0ae2c3cd",
+      "expectedSha256": "256e8974c6981a33e1e9ec07a5843ca76690c33dfd130b7ffe7f74cc0ae2c3cd",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id05-Bcq7Hi87.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id05-Bcq7Hi87.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "b063b417ef1848c9bc46693025fed759f3a857ef0a677f52b8c3784c79fc6452",
+      "expectedSha256": "b063b417ef1848c9bc46693025fed759f3a857ef0a677f52b8c3784c79fc6452",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id06-BZ6UurGe.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id06-BZ6UurGe.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "794499a976872efb4673c2c70b923cb6da4e9a31cf8669bc9aeda2be05bfb809",
+      "expectedSha256": "794499a976872efb4673c2c70b923cb6da4e9a31cf8669bc9aeda2be05bfb809",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id07-C0pyxg43.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id07-C0pyxg43.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "9218a2054459f82ec167d4ede33fb999cfe9ec006beeb0687beaacd145d5bf36",
+      "expectedSha256": "9218a2054459f82ec167d4ede33fb999cfe9ec006beeb0687beaacd145d5bf36",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id08-B8cZoEx6.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id08-B8cZoEx6.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "7a5d9184144dd83f66cc0c654bfb04d204b1d6378a48caa8275a142482a0887d",
+      "expectedSha256": "7a5d9184144dd83f66cc0c654bfb04d204b1d6378a48caa8275a142482a0887d",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id09-CtUyLuU1.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id09-CtUyLuU1.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "0fc5bc17cc686c7da6f1e7b5b78113cb8182c5784d36154bcc40f91e369280e5",
+      "expectedSha256": "0fc5bc17cc686c7da6f1e7b5b78113cb8182c5784d36154bcc40f91e369280e5",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id10-DP000FS4.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id10-DP000FS4.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "cb5ec4f75b190edb5b646484f4759c6f89f34e65deb4cc41ee3b4ad3c5ea738c",
+      "expectedSha256": "cb5ec4f75b190edb5b646484f4759c6f89f34e65deb4cc41ee3b4ad3c5ea738c",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id11-BFc9uOvv.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id11-BFc9uOvv.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "57de91964407eb0009ab05c14ecec92da9ebf74a64c1bf02c99af7e1052bc8c7",
+      "expectedSha256": "57de91964407eb0009ab05c14ecec92da9ebf74a64c1bf02c99af7e1052bc8c7",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id12-CtL-uQPA.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id12-CtL-uQPA.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "b0b834130ab71f43a0de2cac0fc9a5d73ca6de6f092f883fdee493d741c94e2c",
+      "expectedSha256": "b0b834130ab71f43a0de2cac0fc9a5d73ca6de6f092f883fdee493d741c94e2c",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id13-Dc3DGlWA.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id13-Dc3DGlWA.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "d62eb9d70638f0edd2f9aaaa00ee1a7b81bc0171e8969b5865e942c9c95aa29d",
+      "expectedSha256": "d62eb9d70638f0edd2f9aaaa00ee1a7b81bc0171e8969b5865e942c9c95aa29d",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id14-DtLOdo5r.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id14-DtLOdo5r.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "a0d7e80578787f6d46182bc30621a158ded957aa0d2afbb9bdbcfc2a3944c7d4",
+      "expectedSha256": "a0d7e80578787f6d46182bc30621a158ded957aa0d2afbb9bdbcfc2a3944c7d4",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id15-gg1-yIis.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id15-gg1-yIis.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "0442d2a2dfd1910685bc7b74fb0ed31c0548b9bac8f6cc995a1c2b2c98450576",
+      "expectedSha256": "0442d2a2dfd1910685bc7b74fb0ed31c0548b9bac8f6cc995a1c2b2c98450576",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id16-DPVCsOyW.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id16-DPVCsOyW.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "06966b112e61927f205b565515e23307fba41fa34bc1ced76e74d2ce56d969ab",
+      "expectedSha256": "06966b112e61927f205b565515e23307fba41fa34bc1ced76e74d2ce56d969ab",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id17-B3PZPkiM.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id17-B3PZPkiM.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "3c6c799f48051d646ccfb9792405b194266697375961fb82eff9fc0bf8fa96c5",
+      "expectedSha256": "3c6c799f48051d646ccfb9792405b194266697375961fb82eff9fc0bf8fa96c5",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id18-BOUqHMxi.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id18-BOUqHMxi.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "d3ee6bcf8fcbfd08439ae0853e8cce8f66cbae07ddc6e7c989802dbafc10e0ac",
+      "expectedSha256": "d3ee6bcf8fcbfd08439ae0853e8cce8f66cbae07ddc6e7c989802dbafc10e0ac",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id19-DPXobXGW.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id19-DPXobXGW.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "f6bca4bf9f8f6d357f81e77cb4c90b2eb67d43f3d6119f12500c2876900d0b6e",
+      "expectedSha256": "f6bca4bf9f8f6d357f81e77cb4c90b2eb67d43f3d6119f12500c2876900d0b6e",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id20-1O0IZfIC.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id20-1O0IZfIC.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "f626d16edbdc49762943f07a20983273fde68f7fbae975db0b8c1502732d026e",
+      "expectedSha256": "f626d16edbdc49762943f07a20983273fde68f7fbae975db0b8c1502732d026e",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id21-BNK623IH.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id21-BNK623IH.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "907245e396355dbeccd7183872b5469ee602f13e4d038b2ac51660f16cad5b17",
+      "expectedSha256": "907245e396355dbeccd7183872b5469ee602f13e4d038b2ac51660f16cad5b17",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id22-ZEE5XwoD.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id22-ZEE5XwoD.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "3f24b0295f75e85a70c3194bfcf56bcabdd2c12b33c14de6f7be741503c4dfb1",
+      "expectedSha256": "3f24b0295f75e85a70c3194bfcf56bcabdd2c12b33c14de6f7be741503c4dfb1",
+      "problems": []
+    },
+    {
+      "route": "/assets/norm_id23-BjlbG5i_.jpg",
+      "kind": "asset/support",
+      "result": "pass",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/assets/norm_id23-BjlbG5i_.jpg",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/jpeg",
+      "sha256": "29f95dd0cfbcd3951887e6877f6fb61ac9358798008b6cf17003cd6b28cf1271",
+      "expectedSha256": "29f95dd0cfbcd3951887e6877f6fb61ac9358798008b6cf17003cd6b28cf1271",
+      "problems": []
+    },
+    {
+      "route": "/contact/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/contact/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "23f55ed329789deebd20362dafa4ea0a7f53872cc023d0ffae4085f60d788d83",
+      "expectedSha256": "ccfd3f9beb44dd3f55942f43e4b1e2b51742963e837afe750afba08a3de9abbd",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Contact — SledSpec.com",
+      "canonical": "https://sledspec.com/contact/",
+      "description": "Get in touch with SledSpec.com about the snowmobile comparison data.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/faq/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/faq/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ef05786fee540082997ded3a1b3f4d3270591b89f7e7fc1ac1d9810ecd3ffb7c",
+      "expectedSha256": "262a7c2e88405e846d3af97a5673942fd7ce36bd3710bbfed1d6c2275c463643",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Snowmobile FAQ — SledSpec.com",
+      "canonical": "https://sledspec.com/faq/",
+      "description": "Common questions about snowmobile pricing, categories, maintenance, and safety gear.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/favicon-sled.png",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/favicon-sled.png",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "image/png",
+      "sha256": "bf617aef205e5a6cf52e058622baf1cb6884f4824b9698d11dfb8a98e87a77fa",
+      "expectedSha256": "9ed2084b584f65c9c00ba7ca9ca4ea8160ad6b7a50090287f6f896dac8071c89",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/favicon.svg",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 404,
+      "finalUrl": "https://sledspec.com/favicon.svg",
+      "lastModified": null,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "191ee1b151b876873c7f4f1e856b0f3e5679a3d7a406b5b504829aa112b78eb5",
+      "problems": [
+        "HTTP 404; expected 200",
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/guides/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "10aa8455c3787f2691dcb58fc2a4ae0455120f015d4d15d6d7367b435bb0dd31",
+      "expectedSha256": "70388a7011dc1cdf2b196f9e543c32c327d2eaf834187c59b3f8cbff82290137",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Snowmobile Buying Guides — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/",
+      "description": "Practical guides to choosing, comparing, riding, and maintaining a snowmobile.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/2-stroke-vs-4-stroke/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/2-stroke-vs-4-stroke/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "74a7b2057b67084d978905acbd6ffe2ac1016280f4affa2924d8308f62aa6b75",
+      "expectedSha256": "d8e9d50c9c4e9d3678af5f9d8926c9ce948ab945d8fcc0e6f46ac86c74dde194",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2-Stroke vs. 4-Stroke Snowmobile Engines Explained — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/2-stroke-vs-4-stroke/",
+      "description": "The engine debate is one of the most common arguments in snowmobiling. Here's the practical breakdown of what each type means for real-world riding.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/best-beginner-snowmobiles/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/best-beginner-snowmobiles/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "fac81d36bbf7eaa2ed81a70cf2401951deb7734b6fb56dcfdf2a325e937023d1",
+      "expectedSha256": "ed640250ea0441d13b29f9ecc7800d550bb8c49e45e5daff47aea507ff7164eb",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Best Snowmobiles for Beginners in 2026 — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/best-beginner-snowmobiles/",
+      "description": "Not every sled is forgiving when you're learning. These models stand out for manageable power, approachable handling, and fair pricing for first-time buyers.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/how-to-choose/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/how-to-choose/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "83be3fd2ebaa435a2a71ab060a81aa18dfb3f3685dcbf69cf4036ccb3292a70f",
+      "expectedSha256": "23566cf6d9237e6ecbab037e24e1333b36c9501de5b7a846907b69470ebc1cdf",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "How to Choose Your First Snowmobile — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/how-to-choose/",
+      "description": "Buying your first sled is exciting but overwhelming. Here's how to cut through the options and find the right fit.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/reading-specs/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/reading-specs/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c87c0354c9e84087d4ee16b0abe5cb758bd37cfc3ccc9baca804d30414e14190",
+      "expectedSha256": "ece4d390c34ad4d7237e807cf03805f15c8078da5b027b5878964fdec802eea3",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "How to Read Snowmobile Specs (And What Actually Matters) — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/reading-specs/",
+      "description": "Manufacturer spec sheets can be confusing. Here's what each number actually means for your riding experience.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/safety-gear/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/safety-gear/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "183d15db697cee0367bd0b612553476416dd01ed4f677e404a0eabccfd21e176",
+      "expectedSha256": "215ba7fea0fa7cf290dfcddf7e12f9fb1c4b61f0a7b9803293749b6954947f9d",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Snowmobile Safety &amp; Gear: What You Actually Need — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/safety-gear/",
+      "description": "Snowmobiling is one of the more dangerous winter sports. The right gear dramatically reduces your risk — here's what matters.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/snowmobile-maintenance/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/snowmobile-maintenance/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c48965e3bb318546cfaee34c4462eb2f7599b8cfec9a98bf4a5d85f59c8d0bcc",
+      "expectedSha256": "4fcf4aaa76db9526627c463bec9f6f64ee884c222e6508ecc1b095a270d4dfc5",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Snowmobile Pre-Season Maintenance: A Complete Checklist — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/snowmobile-maintenance/",
+      "description": "Nothing ruins a riding season like a preventable breakdown. Here's the full pre-season checklist experienced riders use before the first ride of the year.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/guides/trail-vs-mountain/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/guides/trail-vs-mountain/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "da23ee3f331c3a488207bc4a3b8ade823855594d88579f674f55ae8f705b7f5f",
+      "expectedSha256": "6b16a4033e69f4acec7a3fcc88b7b03c2cd5e1a8c8223effb841865abfe9c439",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Trail vs. Mountain Snowmobiles: What's the Difference? — SledSpec.com",
+      "canonical": "https://sledspec.com/guides/trail-vs-mountain/",
+      "description": "Two of the most popular sled categories, but they're built for completely different conditions. Here's how to tell them apart.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/opengraph.jpg",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 404,
+      "finalUrl": "https://sledspec.com/opengraph.jpg",
+      "lastModified": null,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "3364315a4a3b15835ebed1ec065800eeca5af253d47a2d613cfb058012f218a1",
+      "problems": [
+        "HTTP 404; expected 200",
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/privacy/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/privacy/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "b843906398ba8c55edf46070b3a94e36a3fc81a1f919ddd9e8bee85d8dc3dd25",
+      "expectedSha256": "918b345a398362c62f2aaadef6e8e40dbf7be195a2231115bf994c5bb4075544",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Privacy Policy — SledSpec.com",
+      "canonical": "https://sledspec.com/privacy/",
+      "description": "How SledSpec.com handles data, cookies, and third-party advertising.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/release.json",
+      "kind": "manifest",
+      "result": "fail",
+      "status": 404,
+      "finalUrl": "https://sledspec.com/release.json",
+      "lastModified": null,
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "93f0ffc99c05e41ff1155db6eb2a0e8ae26a6ac0ed5286df8d93fc4cc785ff05",
+      "expectedSha256": "3ebf0f1b967614febabb3228a526e3e2bbe55adb596fa98bb27ce46be5e1a5d4",
+      "problems": [
+        "HTTP 404; expected 200",
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/robots.txt",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/robots.txt",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/plain; charset=utf-8",
+      "sha256": "bc9188dbcc4c56c3ab11aa59288131daf57f7d28cf35aa4085a8c1d1c93fd3e3",
+      "expectedSha256": "dca3d77d00402a5f56a366efa81def1ea6d26521a20e33b5b6ba089275e50963",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/sitemap.xml",
+      "kind": "asset/support",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sitemap.xml",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "application/xml",
+      "sha256": "13c59cfae37e2590f0766af0ba68e86d638074a2f27538501e37dca053f30f0a",
+      "expectedSha256": "21892d87b18a146c170df0ec12ae46aee0ca3a30a35580a454b4ebb51c5e31ea",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)"
+      ]
+    },
+    {
+      "route": "/sled/1/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/1/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ffc9310763a767348999cb8816c6783aa122326aa4249c13185d88bcd081d245",
+      "expectedSha256": "6a77bc0c1ae6f630ff40855b6c76bd44af04159bb5a82b09f5836eb125084f17",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Ski-Doo Summit X Expert — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/1/",
+      "description": "Ski-Doo's top mountain sled — 180 hp turbo through a 165&quot; track.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/10/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/10/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a2cdf796e2bdc0a81c2d28c9ae68fd14a4b18fa74f8fb35a5be0acf036c5156c",
+      "expectedSha256": "69dfa3149d8a1a534510867424ff3cd2ecf68db040e3838bdd4341e160918e7c",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Polaris Switchback Assault 850 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/10/",
+      "description": "Stand-up Matryx crossover — works on trail and handles off it.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/11/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/11/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "f62624ce9c2cc06e22cdf36ee979cf11338c2a4944dd8c105f5463d7fcedc13b",
+      "expectedSha256": "f3cf429b3ea932828779616326a5067012a1896bb44cf8d50eb7d97a7d752d0f",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Polaris Titan Adventure — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/11/",
+      "description": "650-lb work sled with a winch, racks, and a 20&quot; wide track.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/12/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/12/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "7a843d6cfe9b94d6e53d9ea343b056cbe27e8e6de8f645929b63fff7dfb129ab",
+      "expectedSha256": "cb46ab9ece314602f1fbf33cf4dd661242a0158b99ac75df48ec4eb1bd9e54e8",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Polaris Indy XC 650 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/12/",
+      "description": "Well-priced entry performance trail sled — 130 hp, FOX shocks, Matryx chassis.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/13/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/13/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "860bac2a0b945b753d2c2654ec3dd8c731f6b2f9a3fe158af1f344af65a82712",
+      "expectedSha256": "48090129acdae744deeb28f3e41ffef4335325ff9c1f3b6d674fdeee10b38183",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Arctic Cat M 858 Sno Pro — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/13/",
+      "description": "Alpha One single-beam suspension — a different geometry for steep terrain.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/14/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/14/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "33ee88b760a2260d78fdbc14e5e3fadfa69a9b1e0f4ea3afde4a200133edb3b3",
+      "expectedSha256": "199dfc52f455a373e513ebcc48ebc61c03aed2626253e59fa44449eab0d9f2e7",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Arctic Cat ZR 858 RR — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/14/",
+      "description": "Race-ready trail sled with FOX 1.5 ZERO shocks on the Catalyst platform.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/15/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/15/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "168ad2aa1e867eaf87e645fae9d4b437e25ffa773c7911e5cec590d08516d8ab",
+      "expectedSha256": "3ebeb5073ed4182f81f6cfa994c977e8733fb4baabdabd2aa58aedc90a843ce3",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Arctic Cat Riot 858 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/15/",
+      "description": "Arctic Cat's crossover — 858 C-TEC2 on a 146&quot; track.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/16/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/16/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "4ce9b380ec4b2143597c871fce1169e36057e2de87abaa13bc939305536029df",
+      "expectedSha256": "2be147edd045e8793b120159323321ca1fe69325db7ef99fcca529af984e1996",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Arctic Cat ZR 600 137 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/16/",
+      "description": "125 hp, 137&quot; track, $13,500 — solid entry-level trail sled.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/17/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/17/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "5226d70ceb99fdb9c2253839dfbd0c6661b6ee44127072bcd7b29f4823a31168",
+      "expectedSha256": "7549d4b7e850c6a6d6d3c475a12388e505a3247600487ed0df441d1ebdfb6897",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Arctic Cat M 600 Alpha One — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/17/",
+      "description": "Alpha One mountain sled in an affordable 600cc package.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/18/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/18/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "07aea922414d9de0b1894afb12c33dcbb152802e880265c9e4c31cf646f0acda",
+      "expectedSha256": "9fdc53c1127a6657da90888544c89ae00b5b21da592b1a0488aa1f610a6dbcbf",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Arctic Cat Pantera 7000 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/18/",
+      "description": "Arctic Cat two-up touring — with a Yamaha engine inside.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/19/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/19/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "e52e5bc1445db06b619b9c61854abb7db4e7aa351832f23dda1ed8d4bef2302b",
+      "expectedSha256": "e28eac0c4f58228203f6718f2879a4f1d7292f988e0f139b3bcb78fcb118fe88",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2025 Yamaha Sidewinder SRX LE — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/19/",
+      "description": "200 hp — the most powerful sled in the 2026 lineup.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/2/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/2/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "68dd3618634d77ef74ad7ffd1692cdf8502136955c4f2a469260884d4794c9d7",
+      "expectedSha256": "32769d0325234a3caa587d15cabe15398cc289a084870de63e01ef491051b6ab",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Ski-Doo Renegade X-RS — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/2/",
+      "description": "Turbo 4-stroke crossover with suspension that adjusts itself.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/20/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/20/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2b0c01625df6b7211bb0fe72cc82ffaf17ad9e6cf96c749653e14c0aa5e4c1d4",
+      "expectedSha256": "71d04eb7155aebe388866bec03437b0fa881b002f41c856c8113285873daae6c",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2025 Yamaha Sidewinder M-TX LE — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/20/",
+      "description": "200 hp mountain sled on a 153&quot; PowerClaw track.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/21/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/21/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "64479e5ed2faf3a9cc5cdc538219ea7ba926492e8bd2c5ff2dc764f0866eb022",
+      "expectedSha256": "f591ece52cd0f62161655f4d49c7b0b12f84ee53a20d8dfd01625650ba882ff8",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2025 Yamaha SR Viper L-TX GT — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/21/",
+      "description": "Reliable Yamaha touring — 4-stroke engine, FOX shocks, no drama.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/22/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/22/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "d8627136e07b4e0e64e4917322d7baf46fdfcacec98b2baf6cd6afdb27f8b193",
+      "expectedSha256": "c4a2f9911c713204c08860accb09ba3924af652c283c29ecef8ae7a1fe63c469",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2025 Yamaha SR Viper L-TX — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/22/",
+      "description": "Yamaha's naturally aspirated 4-stroke trail sled — proven Genesis 1049 triple.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/23/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/23/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "10b38fff45db018ebaac35b8bad52fe5b3309a3f4a712ab93688b6daf954580d",
+      "expectedSha256": "7bab4603d78ecc9d8a5e8cb3c95a0c1ac44b67ab21cdcbc972e33a32c83f3dc5",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2025 Yamaha Transporter Lite — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/23/",
+      "description": "The most affordable new sled from a major manufacturer at $9,999.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/3/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/3/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "2b10bdd7552ae33fcccd6055c0a75f63d9d4104206c0a4478ddcee68324014cc",
+      "expectedSha256": "4116f12db279f89e72223b164bb8972894f6ac39135d344a93524f7c0d0ec4ea",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Ski-Doo MXZ X-RS — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/3/",
+      "description": "Race-spec trail sled — competition shocks, 165 hp 850 E-TEC.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/4/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/4/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "525a78145f3b3afefbdadf6002d8ac7c27a2f35cebc270d2632968933662ad12",
+      "expectedSha256": "b78bd5dbeb72acbfd387c0c89998afb753257b44ba1bc26275ef541c0046d08f",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Ski-Doo Freeride 850 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/4/",
+      "description": "180 hp turbo on a 154&quot; mountain track — good for riders who do both.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/5/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/5/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "c7750d3ef37d6ecdcee26274fd539b0f5bdece4d23b2facfad515bf180bbd6b6",
+      "expectedSha256": "b7b8fefc2a631f90e8cba8a5390e924a9e1f451453882543d0d74311ed082b10",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Ski-Doo Backcountry X-RS — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/5/",
+      "description": "Handles groomed trails and off-trail riding without forcing a choice.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/6/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/6/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "3ab96f1fc188d7a52f708e4505197037a4a2b8e93107e68dbdd7b451c74a0f9a",
+      "expectedSha256": "df5ab92ffd253cb9f3d5b9765ae649c26edde4ed3d271696a6f4a6a4d13f6b62",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Ski-Doo Expedition SE — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/6/",
+      "description": "Two-up touring sled — heated seats, winch, built for long distances.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/7/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/7/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "8f22a78d8ad1889f73cbe80216374fc085c64fe40ffab8d54feb551a805c6c31",
+      "expectedSha256": "55fbd722f663120bca456b2afbbf84cd37c81e6fe6493774b557d5b32dc4231c",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Polaris RMK Khaos Slash — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/7/",
+      "description": "Short-tunnel mountain sled built for riding tight trees.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/8/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/8/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "a2ad1201ffdc40d2ea049d6acfad76d35c7e6268ba3be85bd32c8fae0728ae71",
+      "expectedSha256": "e90000dce53785f20997e62d5f8fde3edbf2ffaa7953185d8d11a6c3962748a5",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Polaris PRO RMK 850 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/8/",
+      "description": "420 lbs — one of the lightest mountain sleds in its class.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/sled/9/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/sled/9/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "ba6fa655975305bf3e33de0dfb6d511ba8646fb5ddfccfad6b87bf3436c17c2c",
+      "expectedSha256": "695100520c08236ebe7e760df9b23491c32a3adaedfa8db6453107543eaa5f0e",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "2026 Polaris Indy VR1 — Specs, Price &amp; Review | SledSpec.com",
+      "canonical": "https://sledspec.com/sled/9/",
+      "description": "Polaris's most powerful and most loaded trail sled — 180 hp.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    },
+    {
+      "route": "/terms/",
+      "kind": "html",
+      "result": "fail",
+      "status": 200,
+      "finalUrl": "https://sledspec.com/terms/",
+      "lastModified": "Mon, 06 Jul 2026 18:24:05 GMT",
+      "contentType": "text/html; charset=utf-8",
+      "sha256": "29c00df8037ec86ad17792219d2b43843f91b0a7f41276c3e880d542faf1038c",
+      "expectedSha256": "cb927d54ca714af86a000526c65dc05a7b7dab3f3e3a4fb3cb823d15d8462333",
+      "problems": [
+        "Response bytes differ from expected release (SHA256 mismatch)",
+        "Missing or stale release marker",
+        "Missing server-rendered readable page body"
+      ],
+      "release": null,
+      "title": "Terms of Service — SledSpec.com",
+      "canonical": "https://sledspec.com/terms/",
+      "description": "The terms and conditions for using SledSpec.com.",
+      "hasReadableMain": false,
+      "rootEmpty": true,
+      "assetReferences": [
+        "/assets/index-w7EDSHk2.js",
+        "/assets/index-BqxOHCqe.css"
+      ]
+    }
+  ],
+  "summary": "FAIL: public release is not verified. 47 mismatches; 0 unreadable responses. No deployment or AdSense approval is implied."
+}

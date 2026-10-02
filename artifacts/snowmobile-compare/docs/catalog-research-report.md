@@ -1,5 +1,7 @@
 # Catalog research audit
 
+> Historical first-pass audit. For the subsequent full-manual research, resolved Arctic Cat fields, regional conflicts and current per-model evidence, use [source-audit-rework.md](source-audit-rework.md). Do not treat the unresolved fields below as the current catalog state.
+
 Research performed: **2026-10-01 UTC**, established from the execution environment's actual date. This is not a review publication date or a claim of ongoing live verification.
 
 ## Scope and editorial standard

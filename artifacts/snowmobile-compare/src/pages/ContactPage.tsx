@@ -7,7 +7,7 @@ export default function ContactPage() {
 
   return (
     <Layout>
-      <main className="container">
+      <div className="container">
         <div className="breadcrumb">
           <Link href="/" data-testid="link-contact-home">Home</Link>
           <span> / </span><span>Contact</span>
@@ -20,12 +20,12 @@ export default function ContactPage() {
           <article className="guide-detail">
             <div className="guide-detail__body">
               <section className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">Open your email app</h3>
+                <h2 className="guide-detail__section-heading">Open your email app</h2>
                 <p className="guide-detail__section-body">
                   The existing published address is{" "}
                   <a href="mailto:info@sledspec.com" data-testid="link-contact-email">info@sledspec.com</a>.
-                  Mailbox ownership, delivery, and monitoring have not been verified. The site owner
-                  must verify this address before relying on it as a working contact channel.
+                  Mailbox ownership, delivery, and monitoring have not been confirmed. Treat it as
+                  an unconfirmed contact channel, not a guaranteed way to reach an editor.
                 </p>
                 <p className="guide-detail__section-body" style={{ marginTop: "12px" }}>
                   This link opens your configured email application; it does not send a message through
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 </a>
               </section>
               <section className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">What to include in a correction</h3>
+                <h2 className="guide-detail__section-heading">What to include in a correction</h2>
                 <ul style={{ fontSize: "14px", color: "#475569", lineHeight: "2", marginLeft: "20px" }}>
                   <li>The SledSpec page URL and the model year, engine, track, and package.</li>
                   <li>The specific field or statement that appears wrong.</li>
@@ -58,7 +58,7 @@ export default function ContactPage() {
                 </p>
               </section>
               <section className="guide-detail__section">
-                <h3 className="guide-detail__section-heading">Research questions, not service support</h3>
+                <h2 className="guide-detail__section-heading">Research questions, not service support</h2>
                 <p className="guide-detail__section-body">
                   Read the <Link href="/about" data-testid="link-contact-methods">research methods and limitations</Link>{" "}
                   before relying on a specification. SledSpec is a desk-research comparison resource,
@@ -71,7 +71,7 @@ export default function ContactPage() {
           </article>
           <aside className="article-sidebar">
             <div className="sidebar-box">
-              <h3 className="sidebar-box__heading">Useful pages</h3>
+              <h2 className="sidebar-box__heading">Useful pages</h2>
               <ul className="sidebar-box__links">
                 <li><Link href="/faq" data-testid="link-contact-faq">Frequently asked questions</Link></li>
                 <li><Link href="/privacy" data-testid="link-contact-privacy">Privacy Policy</Link></li>
@@ -79,12 +79,12 @@ export default function ContactPage() {
               </ul>
             </div>
             <div className="sidebar-box">
-              <h3 className="sidebar-box__heading">Compare snowmobiles</h3>
+              <h2 className="sidebar-box__heading">Compare snowmobiles</h2>
               <Link href="/" className="sidebar-cta" data-testid="link-contact-compare">Open Comparison Tool &rarr;</Link>
             </div>
           </aside>
         </div>
-      </main>
+      </div>
     </Layout>
   );
 }
